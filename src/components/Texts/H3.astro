@@ -1,0 +1,15 @@
+---
+import Text from './Text.astro';
+import { getTextProps } from '../../utils/helper';
+
+interface Props {
+	className?: string;
+}
+
+const { className } = Astro.props;
+const textProps = getTextProps('h3', className);
+---
+
+<Text type={textProps.type} className={textProps.className}>
+	<slot/>
+</Text>

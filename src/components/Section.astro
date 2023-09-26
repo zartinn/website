@@ -1,0 +1,17 @@
+---
+import { colors } from '../utils/colors.astro';
+
+
+interface Props {
+	backgroundColor?: 'primary' | 'secondary';
+	theme?: 'light' | 'dark';
+}
+const { backgroundColor = 'primary', theme = 'dark'} = Astro.props;
+
+
+let bgColorClass = colors.background[theme][backgroundColor]
+---
+
+<section class={`w-screen px-20 py-6 ${bgColorClass}`}>
+    <slot />
+</section>

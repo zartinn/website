@@ -1,0 +1,20 @@
+---
+interface Props {
+	className?: string;
+    type: 'h1' | 'h2' | 'h3' | 'p'
+}
+
+const { className = '', type } = Astro.props;
+
+const classMap = {
+	h1: 'text-h1',
+	h2: 'text-h2',
+	h3: 'text-h3',
+	p: 'text-p'
+};
+const TextEl = type;
+---
+
+<TextEl class={`font-americano ${classMap[type]} ${className}`}>
+	<slot/>
+</TextEl>
