@@ -1,4 +1,6 @@
 ---
+import Link from '../Link/Link.astro';
+import { Logo } from '../Icons/Logo';
 interface Props {
     page: string;
 }
@@ -33,28 +35,24 @@ const menu = [
     }
 ];
 
-const getTransitionName = (linkId: string) => {
+const isActive = (linkId: string) => {
     const currentPage = page || 'home';
-    const name = currentPage === linkId ? undefined : linkId;
-    return name;
+    return currentPage === linkId;
 }
 
 ---
 
 <header
-    class="grid gap-4 bg-dark-bg-p p-8 z-10 sticky shadow-header shadow-light-bg-s grid-cols-5"
+    class="flex gap-4 items-center justify-between bg-dark-bg-p p-8 z-10 sticky shadow-header shadow-light-bg-s"
 >
-    {menu.map(menuItem => 
-        <a
-            rel="prefetch-intent"
-            transition:name={getTransitionName(menuItem.id)}
-            transition:animate="none"
-            href={`/${menuItem.link}`}
-            class="font-americano text-body text-light-bg-p"
-        >
-            {menuItem.name}
-        </a>
-    )}
+    <a href="/">
+        <Logo fillColor="white" />
+    </a>
+    <div class="grid grid-cols-5 gap-10">
+        {menu.map(menuItem => 
+            <Link linkInfo={menuItem} active={isActive(menuItem.id)}/>
+        )}
+    </div>
 </header>
 
 <script>
@@ -68,3 +66,9 @@ const getTransitionName = (linkId: string) => {
     document.addEventListener('animationend', removeTransitionAttribute);
     removeTransitionAttribute();
 </script>
+
+<style>
+    svg {
+        filter: drop-shadow(3px 3px 2px rgb(255 255 255 / 0.4));
+    }
+</style>

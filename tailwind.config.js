@@ -9,10 +9,10 @@ const colors = {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{html,js,astro}'],
+    content: ['./src/**/*.{html,ts,js,astro}'],
     theme: {
       colors: {
-        'dark-bg-p': colors.dark_primary,
+        'dark-bg-p':    colors.dark_primary,
         'dark-bg-s':    colors.dark_secondary,
         'dark-clr-p':   colors.dark_clr_primary,
         'light-bg-p':   colors.light_primary,

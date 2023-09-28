@@ -1,0 +1,48 @@
+---
+interface Props {
+    active?: boolean,
+    linkInfo: { id: string, link: string, name: string}
+}
+
+const { active, linkInfo } = Astro.props;
+
+const getTransitionName = (linkInfo: { id: string, link: string, name: string}) => {
+    return active ? undefined : linkInfo.id;
+}
+---
+
+<div class="flex">
+    <a
+        rel="prefetch-intent"
+        transition:name={getTransitionName(linkInfo)}
+        transition:animate="none"
+        href={`/${linkInfo.link}`}
+        class=`font-americano text-body ${active ? 'text-dark-clr-p' : 'text-light-bg-p'}`
+    >
+        {linkInfo.name}
+    </a>
+</div>
+
+<style>
+    a {
+        position: relative;
+        height: fit-content;
+        transition: background-color 300ms;
+    }
+    a::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        box-shadow: white;
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 300ms;
+    }
+    a:hover::after {
+        transform: scaleX(1);
+    }
+</style>
