@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Section from '../components/Section.astro';
-import Title from '../components/Texts/Title.astro';
+import { Card, H1, Header, Section, Title} from '../components';
+
 ---
 
 <Layout title="Welcome to my Portfolio">
+	<!-- Header on each page due to View Transition problem when in Layout -->
+	<Header page="home"/>
 	<main>
 		<Section>
-			<Title/>	
+			<Title/>
+			<!-- <H1 transitionName="home">Home</H1> -->
 		</Section>
 		<Section backgroundColor="secondary">
 			<h2>Craft</h2>
@@ -39,61 +41,5 @@ import Title from '../components/Texts/Title.astro';
 	</main>
 </Layout>
 
-<style is:global>
-    @font-face {
-        font-family: 'GT Americano';
-        src: url('/assets/fonts/GT-America-Standard-Regular.woff2') format('woff2'),
-            url('/assets/fonts/GT-America-Standard-Regular.woff') format('woff');
-        font-display: swap;
-    }
-</style>
-
 <style>
-	main {
-		width: 100vw;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
 </style>

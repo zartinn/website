@@ -6,11 +6,11 @@ export function getTextProps(tag: TextTag, className?: string) {
       h1: 'text-h1',
       h2: 'text-h2',
       h3: 'text-h3',
-      p: 'text-p'
+      p: 'text-body'
     };
   
     return {
       type: tag,
-      className: `font-americano ${classMap[tag]} ${className || ''}`
+      className: `${classMap[tag]} ${className || ''}`
     };
 }

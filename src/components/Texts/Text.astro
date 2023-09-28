@@ -1,20 +1,26 @@
 ---
 interface Props {
 	className?: string;
+	transitionName?: string;
     type: 'h1' | 'h2' | 'h3' | 'p'
 }
 
-const { className = '', type } = Astro.props;
+const { className = '', type, transitionName } = Astro.props;
 
-const classMap = {
-	h1: 'text-h1',
-	h2: 'text-h2',
-	h3: 'text-h3',
-	p: 'text-p'
-};
 const TextEl = type;
 ---
+{
+	transitionName ?
+		<TextEl
+			class={`font-americano text-light-bg-p ${className}`}
+			transition:name={transitionName}
+			transition:animate="none"
+		>
+			<slot/>
+		</TextEl>
+	:
+		<TextEl class={`font-americano text-light-bg-p ${className}`}>
+			<slot/>
+		</TextEl>
 
-<TextEl class={`font-americano ${classMap[type]} ${className}`}>
-	<slot/>
-</TextEl>
+}

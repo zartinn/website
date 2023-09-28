@@ -1,14 +1,23 @@
+const colors = {
+  dark_primary: '#1E1E1E',
+  dark_secondary: '#2B2B2B',
+  light_primary: '#FFFDF9',
+  light_secondary: '#FFFBF3',
+  dark_clr_primary: '#8AC7FF',
+  light_clr_primary: '#415E79',
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./src/**/*.{html,js,astro}'],
     theme: {
       colors: {
-        'dark-bg-p': '#1E1E1E',
-        'dark-bg-s': '#2B2B2B',
-        'dark-clr-p': '#8AC7FF',
-        'light-bg-p': '#FFFDF9',
-        'light-bg-s': '#FFFBF3',
-        'light-clr-p': '#415E79',
+        'dark-bg-p': colors.dark_primary,
+        'dark-bg-s':    colors.dark_secondary,
+        'dark-clr-p':   colors.dark_clr_primary,
+        'light-bg-p':   colors.light_primary,
+        'light-bg-s':   colors.light_secondary,
+        'light-clr-p':  colors.light_clr_primary,
       },
       fontFamily: {
         americano: 'GT Americano',
@@ -24,6 +33,10 @@ module.exports = {
         'html-m': '14px',
         'html-l': '15px',
       },
-      extend: {}
+      extend: {
+        boxShadow: {
+          header: `0px -3px 15px 0px`,
+        }
+      }
     },
   }

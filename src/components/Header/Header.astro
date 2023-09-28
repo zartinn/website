@@ -1,0 +1,70 @@
+---
+interface Props {
+    page: string;
+}
+
+const { page } = Astro.props;
+
+const menu = [
+    {
+        id: 'home',
+        link: '',
+        name: 'Home'
+    }, 
+    {
+        id: 'craft',
+        link: 'craft',
+        name: 'Craft'
+    },
+    {
+        id: 'feats',
+        link: 'feats',
+        name: 'Feats'
+    },
+    {
+        id: 'journey',
+        link: 'journey',
+        name: 'Journey'
+    },
+    {
+        id: 'contact',
+        link: 'contact',
+        name: 'Contact'
+    }
+];
+
+const getTransitionName = (linkId: string) => {
+    const currentPage = page || 'home';
+    const name = currentPage === linkId ? undefined : linkId;
+    return name;
+}
+
+---
+
+<header
+    class="grid gap-4 bg-dark-bg-p p-8 z-10 sticky shadow-header shadow-light-bg-s grid-cols-5"
+>
+    {menu.map(menuItem => 
+        <a
+            rel="prefetch-intent"
+            transition:name={getTransitionName(menuItem.id)}
+            transition:animate="none"
+            href={`/${menuItem.link}`}
+            class="font-americano text-body text-light-bg-p"
+        >
+            {menuItem.name}
+        </a>
+    )}
+</header>
+
+<script>
+    const removeTransitionAttribute = (evt?: AnimationEvent) => {
+        if (!evt || evt.animationName === '-ua-view-transition-fade-out') {
+            const h1El = document.getElementsByTagName('h1')?.item(0);
+            h1El?.removeAttribute('data-astro-transition-scope');
+        }
+    }
+
+    document.addEventListener('animationend', removeTransitionAttribute);
+    removeTransitionAttribute();
+</script>

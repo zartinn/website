@@ -1,39 +1,43 @@
 ---
+import { H1, H2, Header, P, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 
 ---
 
 <Layout title="Journey - Career Path and Milestones">
+	  <Header page="journey"/>
     <main>
-      <h1>Journey</h1>
-      <p>A timeline illustrating key milestones and pivotal moments in my career.</p>
+      <Section>
+        <H1 transitionName="journey">Journey</H1>
+        <P>A timeline illustrating key milestones and pivotal moments in my career.</P>
+      </Section>
   
       <!-- Section: Early Career -->
-      <section id="early-career">
-        <h2>Early Career</h2>
-        <p>Highlights from the initial stages of my professional journey.</p>
+      <Section>
+        <H2>Early Career</H2>
+        <P>Highlights from the initial stages of my professional journey.</P>
         <!-- Content detailing early career experiences here -->
-      </section>
+      </Section>
   
       <!-- Section: Mid-Career -->
-      <section id="mid-career">
-        <h2>Mid-Career</h2>
-        <p>Significant experiences and accomplishments from the mid-stage of my career.</p>
+      <Section>
+        <H2>Mid-Career</H2>
+        <P>Significant experiences and accomplishments from the mid-stage of my career.</P>
         <!-- Content detailing mid-career milestones here -->
-      </section>
+      </Section>
   
       <!-- Section: Recent Activities -->
-      <section id="recent-activities">
-        <h2>Recent Activities</h2>
-        <p>Current engagements and projects that demonstrate my evolving skill set.</p>
+      <Section>
+        <H2>Recent Activities</H2>
+        <P>Current engagements and projects that demonstrate my evolving skill set.</P>
         <!-- Content detailing recent activities and current projects here -->
-      </section>
+      </Section>
   
       <!-- Section: Future Goals -->
-      <section id="future-goals">
-        <h2>Future Goals</h2>
-        <p>Anticipated next steps and objectives for ongoing professional growth.</p>
+      <Section>
+        <H2>Future Goals</H2>
+        <P>Anticipated next steps and objectives for ongoing professional growth.</P>
         <!-- Content detailing future career goals here -->
-      </section>
+      </Section>
     </main>
 </Layout>

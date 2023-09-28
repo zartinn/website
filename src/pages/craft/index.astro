@@ -1,43 +1,47 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { H1, H2, Header, P, Section } from '../../components';
 
 ---
 
 <Layout title="Craft - My Expertise">
-    <main>
-      <h1>Craft</h1>
-      <p>Your one-stop shop for getting to know my expertise, technologies I've mastered, and the certifications that back it up.</p>
-  
-      <!-- Skills Section -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-          <li>Backend Development</li>
-          <li>Frontend Development</li>
-          <li>DevOps</li>
-          <!-- Add more as needed -->
-        </ul>
-      </section>
-  
-      <!-- Technologies Section -->
-      <section id="technologies">
-        <h2>Technologies</h2>
-        <ul>
-          <li>JavaScript</li>
-          <li>Python</li>
-          <li>Docker</li>
-          <!-- Add more as needed -->
-        </ul>
-      </section>
-  
-      <!-- Certifications Section -->
-      <section id="certifications">
-        <h2>Certifications</h2>
-        <ul>
-          <li>AWS Certified Solutions Architect</li>
-          <li>Google Cloud Professional Cloud Architect</li>
-          <!-- Add more as needed -->
-        </ul>
-      </section>
-    </main>
+  <Header page="craft"/>
+  <main>
+    <Section>
+      <H1 transitionName="craft">Craft</H1>
+      <P>Your one-stop shop for getting to know my expertise, technologies I've mastered, and the certifications that back it up.</P>
+    </Section>
+
+    <!-- Skills Section -->
+    <Section>
+      <H2>Skills</H2>
+      <ul>
+        <li>Backend Development</li>
+        <li>Frontend Development</li>
+        <li>DevOps</li>
+        <!-- Add more as needed -->
+      </ul>
+    </Section>
+
+    <!-- Technologies Section -->
+    <Section>
+      <H2>Technologies</H2>
+      <ul>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Docker</li>
+        <!-- Add more as needed -->
+      </ul>
+    </Section>
+
+    <!-- Certifications Section -->
+    <Section>
+      <H2>Certifications</H2>
+      <ul>
+        <li>AWS Certified Solutions Architect</li>
+        <li>Google Cloud Professional Cloud Architect</li>
+        <!-- Add more as needed -->
+      </ul>
+    </Section>
+  </main>
 </Layout>

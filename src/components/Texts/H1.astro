@@ -4,13 +4,14 @@ import { getTextProps } from '../../utils/helper';
 
 interface Props {
 	className?: string;
+	transitionName?: string;
 }
 
-const { className } = Astro.props;
+const { className, transitionName } = Astro.props;
 
 const textProps = getTextProps('h1', className);
 ---
 
-<Text type={textProps.type} className={textProps.className}>
+<Text type={textProps.type} className={textProps.className} transitionName={transitionName}>
 	<slot/>
 </Text>
