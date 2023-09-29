@@ -1,6 +1,8 @@
 ---
 import Link from '../Link/Link.astro';
-import { Logo } from '../Icons/Logo';
+import Logo from '../Icons/Logo.astro';
+import ThemeToggle from '../Icons/ThemeToggle.astro';
+
 interface Props {
     page: string;
 }
@@ -45,7 +47,7 @@ const isActive = (linkId: string) => {
 <header
     class="flex gap-4 items-center justify-between bg-dark-bg-p p-8 z-10 sticky shadow-header shadow-fg-primary"
 >
-    <a href="/">
+    <a href="/" rel="prefetch-intent">
         <Logo />
     </a>
     <div class="grid grid-cols-5 gap-10">
@@ -53,9 +55,11 @@ const isActive = (linkId: string) => {
             <Link linkInfo={menuItem} active={isActive(menuItem.id)}/>
         )}
     </div>
+    <ThemeToggle/>
 </header>
 
 <script>
+    // Transitions API workaround for Header links to work
     const removeTransitionAttribute = (evt?: AnimationEvent) => {
         if (!evt || evt.animationName === '-ua-view-transition-fade-out') {
             const h1El = document.getElementsByTagName('h1')?.item(0);

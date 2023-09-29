@@ -1,12 +1,3 @@
-const colors = {
-  dark_primary: '#1E1E1E',
-  dark_secondary: '#2B2B2B',
-  light_primary: '#FFFDF9',
-  light_secondary: '#FFFBF3',
-  dark_clr_primary: '#8AC7FF',
-  light_clr_primary: '#415E79',
-}
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./src/**/*.{html,ts,js,astro}'],

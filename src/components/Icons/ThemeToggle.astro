@@ -1,0 +1,20 @@
+---
+import Moon from './Moon.astro';
+import Sun from './Sun.astro';
+---
+
+<div transition:persist id="toggle-icon" class="cursor-pointer w-8">
+    <Moon/>
+    <Sun/>
+</div>
+
+<script>
+    const toggleIcon = document.getElementById("toggle-icon");
+    toggleIcon?.addEventListener('click', () => {
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        const root = document.documentElement;
+        root.setAttribute('theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+</script>

@@ -1,5 +1,5 @@
 ---
-import { colors } from '../../utils/helper';
+import { colorMap } from '../../utils/helper';
 
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 const { backgroundColor = 'primary'} = Astro.props;
 
 
-let bgColorClass = colors.background[backgroundColor];
+let bgColorClass = colorMap.background[backgroundColor];
 ---
 
 <section class={`w-screen px-20 py-6 ${bgColorClass}`}>
