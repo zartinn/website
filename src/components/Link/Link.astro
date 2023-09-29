@@ -17,7 +17,7 @@ const getTransitionName = (linkInfo: { id: string, link: string, name: string}) 
         transition:name={getTransitionName(linkInfo)}
         transition:animate="none"
         href={`/${linkInfo.link}`}
-        class=`font-americano text-body ${active ? 'text-dark-clr-p' : 'text-light-bg-p'}`
+        class=`font-americano text-body ${active ? 'text-clr-primary after:bg-clr-primary' : 'text-fg-primary after:bg-fg-primary'}`
     >
         {linkInfo.name}
     </a>
@@ -33,8 +33,6 @@ const getTransitionName = (linkInfo: { id: string, link: string, name: string}) 
         content: '';
         width: 100%;
         height: 2px;
-        box-shadow: white;
-        background-color: white;
         position: absolute;
         bottom: 0;
         left: 0;

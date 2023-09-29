@@ -17,13 +17,7 @@ export function getTextProps(tag: TextTag, className?: string) {
 
 export const colors = {
   background: {
-      dark: {
-          primary: 'bg-dark-bg-p',
-          secondary: 'bg-dark-bg-s'
-      },
-      light: {
-          primary: 'bg-light-bg-p',
-          secondary: 'bg-light-bg-s'
-      }
+    primary: 'bg-bg-primary',
+    secondary: 'bg-bg-secondary'
   }
 }

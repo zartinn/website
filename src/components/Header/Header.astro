@@ -43,10 +43,10 @@ const isActive = (linkId: string) => {
 ---
 
 <header
-    class="flex gap-4 items-center justify-between bg-dark-bg-p p-8 z-10 sticky shadow-header shadow-light-bg-s"
+    class="flex gap-4 items-center justify-between bg-dark-bg-p p-8 z-10 sticky shadow-header shadow-fg-primary"
 >
     <a href="/">
-        <Logo fillColor="white" />
+        <Logo />
     </a>
     <div class="grid grid-cols-5 gap-10">
         {menu.map(menuItem => 
@@ -66,9 +66,3 @@ const isActive = (linkId: string) => {
     document.addEventListener('animationend', removeTransitionAttribute);
     removeTransitionAttribute();
 </script>
-
-<style>
-    svg {
-        filter: drop-shadow(3px 3px 2px rgb(255 255 255 / 0.4));
-    }
-</style>

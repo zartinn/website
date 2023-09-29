@@ -12,12 +12,11 @@ module.exports = {
     content: ['./src/**/*.{html,ts,js,astro}'],
     theme: {
       colors: {
-        'dark-bg-p':    colors.dark_primary,
-        'dark-bg-s':    colors.dark_secondary,
-        'dark-clr-p':   colors.dark_clr_primary,
-        'light-bg-p':   colors.light_primary,
-        'light-bg-s':   colors.light_secondary,
-        'light-clr-p':  colors.light_clr_primary,
+        'bg-primary': 'var(--bg-primary)',
+        'fg-primary': 'var(--fg-primary)',
+        'bg-secondary': 'var(--bg-secondary)',
+        'fg-secondary': 'var(--fg-secondary)',
+        'clr-primary': 'var(--clr-primary)',
       },
       fontFamily: {
         americano: 'GT Americano',

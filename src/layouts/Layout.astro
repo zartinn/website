@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions fallback="none" />
 	</head>
-	<body class="bg-dark-bg-p">
+	<body class="bg-bg-primary">
 		<slot />
 	</body>
 </html>
@@ -35,15 +35,15 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--fg-primary: #FFFDF9;
+		--fg-primary-shadow: rgb(255 253 249 / 0.4);
+		--bg-primary: #1E1E1E;
+		--clr-primary: #8AC7FF;	
+	
+		/* --fg-primary: #1E1E1E;
+		--fg-primary-shadow: rgb(30 30 30 / 0.4);
+		--bg-primary: #FFFDF9;
+		--clr-primary: #1990ff; */
 	}
 	html {
 		font-family: system-ui, sans-serif;

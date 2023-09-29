@@ -12,14 +12,14 @@ const TextEl = type;
 {
 	transitionName ?
 		<TextEl
-			class={`font-americano text-light-bg-p ${className}`}
+			class={`font-americano text-fg-primary ${className}`}
 			transition:name={transitionName}
 			transition:animate="none"
 		>
 			<slot/>
 		</TextEl>
 	:
-		<TextEl class={`font-americano text-light-bg-p ${className}`}>
+		<TextEl class={`font-americano text-fg-primary ${className}`}>
 			<slot/>
 		</TextEl>
 

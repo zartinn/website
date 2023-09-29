@@ -4,12 +4,11 @@ import { colors } from '../../utils/helper';
 
 interface Props {
 	backgroundColor?: 'primary' | 'secondary';
-	theme?: 'light' | 'dark';
 }
-const { backgroundColor = 'primary', theme = 'dark'} = Astro.props;
+const { backgroundColor = 'primary'} = Astro.props;
 
 
-let bgColorClass = colors.background[theme][backgroundColor]
+let bgColorClass = colors.background[backgroundColor];
 ---
 
 <section class={`w-screen px-20 py-6 ${bgColorClass}`}>

@@ -1,10 +1,9 @@
-export function Logo({ fillColor, width = '52', height = '52' }: { fillColor: 'black' | 'white', width?: string, height?: string }) {
-    const filterColor = fillColor === 'white' ? '255 255 255' : '0 0 0';
+export function Logo({ width = '52', height = '52' }: { width?: string, height?: string }) {
 
     return (
         <svg
-            style={{ filter: `drop-shadow(2px 3px 2px rgb(${filterColor} / 0.4))` }}
-            fill={fillColor}
+            style={{ filter: `drop-shadow(2px 3px 2px var(--fg-primary-shadow))` }}
+            fill="var(--fg-primary)"
             width={width}
             height={height}
             viewBox="0 0 256 256"
