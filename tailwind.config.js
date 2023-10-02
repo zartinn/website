@@ -2,6 +2,14 @@
 module.exports = {
     content: ['./src/**/*.{html,ts,js,astro}'],
     theme: {
+      screens: {
+        tablet: '800px',
+        desktop: '1150px',
+        'desktop-s': '1250px',
+        'desktop-m': '1400px',
+        'desktop-l': '1600px',
+        'desktop-xl': '1800px',
+      },
       colors: {
         'bg-primary': 'var(--bg-primary)',
         'bg-primary-70': 'var(--bg-primary-70)',

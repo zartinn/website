@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import { Header } from '../components';
 interface Props {
 	title: string;
 }
@@ -9,7 +8,11 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="text-html-default" transition:animate="none">
+<html
+	lang="en"
+	transition:animate="none"
+	class="desktop:text-html-xs desktop-s:text-html-s desktop-m:text-html-m desktop-l:text-html-l desktop-xl:text-html-default text-html-default"
+>
 	<head>
 		<script data-astro="raw">
 			const getTheme = () => localStorage.getItem("theme") || "light";
