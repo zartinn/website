@@ -1,7 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import { Card, Header, Section, Title, ContentContainer } from '../components';
+import { Card, Header, Section, Title, ContentContainer, MyImage } from '../components';
 import zartin1 from '../assets/images/zartin_1.jpg';
 
 ---
@@ -15,7 +14,7 @@ import zartin1 from '../assets/images/zartin_1.jpg';
 				<Title/>
 			</ContentContainer>
 			<ContentContainer className="flex justify-center items-center">
-				<Image class="rounded-full border-clr-primary border-4" src={zartin1} alt="portrait of Martin - ai generated" width={400}/>
+				<MyImage src={zartin1} alt="portrait of Martin - ai generated" width={400}/>
 			</ContentContainer>
 		</Section>
 		<Section backgroundColor="secondary">
