@@ -1,5 +1,5 @@
 ---
-import { H1, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H1, H2, Header, P, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 
 ---
@@ -8,29 +8,37 @@ import Layout from '../../layouts/Layout.astro';
   <Header page="feats"/>
   <main>
     <Section>
-      <H1 transitionName="feats">Feats</H1>
-      <P>An overview of selected professional accomplishments.</P>
+      <ContentContainer singleContainer>
+        <H1 transitionName="feats">Feats</H1>
+        <P>An overview of selected professional accomplishments.</P>
+      </ContentContainer>
     </Section>
-
+    
     <!-- Section: Abstracted Overviews -->
     <Section>
-      <H2>Abstracted Overviews</H2>
-      <P>Concise case studies that articulate challenges and solutions, while maintaining confidentiality.</P>
-      <!-- Case studies content here -->
+      <ContentContainer singleContainer>
+        <H2>Abstracted Overviews</H2>
+        <P>Concise case studies that articulate challenges and solutions, while maintaining confidentiality.</P>
+        <!-- Case studies content here -->
+      </ContentContainer>
     </Section>
 
     <!-- Section: Component Showcase -->
     <Section>
-      <H2>Component Showcase</H2>
-      <P>A demonstration of reusable components designed for modularity and efficiency.</P>
-      <!-- Interactive component gallery here -->
+      <ContentContainer singleContainer>
+        <H2>Component Showcase</H2>
+        <P>A demonstration of reusable components designed for modularity and efficiency.</P>
+        <!-- Interactive component gallery here -->
+      </ContentContainer>
     </Section>
 
     <!-- Section: Teaching & Coaching -->
     <Section>
-      <H2>Teaching & Coaching</H2>
-      <P>Endorsements from mentees and brief discussion of curriculum development.</P>
-      <!-- Testimonials and curriculum discussion here -->
+      <ContentContainer singleContainer>
+        <H2>Teaching & Coaching</H2>
+        <P>Endorsements from mentees and brief discussion of curriculum development.</P>
+        <!-- Testimonials and curriculum discussion here -->
+      </ContentContainer>
     </Section>
   </main>
 </Layout>

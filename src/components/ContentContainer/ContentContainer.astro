@@ -1,0 +1,13 @@
+---
+interface Props {
+    className?: string
+    singleContainer?: boolean
+}
+const { className = '', singleContainer = false } = Astro.props;
+
+
+---
+
+<div class={`${singleContainer ? 'w-150' : 'w-96'} ${className}`}>
+    <slot />
+</div>

@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import { Card, H2, Header, Section, Title} from '../components';
+import { Card, Header, Section, Title, ContentContainer } from '../components';
+import zartin1 from '../assets/images/zartin_1.jpg';
 
 ---
 
@@ -9,33 +11,40 @@ import { Card, H2, Header, Section, Title} from '../components';
 	<Header page="home"/>
 	<main>
 		<Section>
-			<Title/>
+			<ContentContainer>
+				<Title/>
+			</ContentContainer>
+			<ContentContainer className="flex justify-center items-center">
+				<Image class="rounded-full border-clr-primary border-4" src={zartin1} alt="portrait of Martin - ai generated" width={400}/>
+			</ContentContainer>
 		</Section>
 		<Section backgroundColor="secondary">
-			<h2>Craft</h2>
-			<p>Your one-stop-shop for web dev excellence.</p>
-			<ul role="list" class="tech-card-grid bg-blue">
-				<Card
-					href="/craft"
-					title="Craft"
-					body="Dive into my skill set, technologies, and certifications."
-				/>
-				<Card
-					href="/feats"
-					title="Feats"
-					body="Explore my projects, case studies, and component showcase."
-				/>
-				<Card
-					href="/journey"
-					title="Journey"
-					body="My career timeline and milestones."
-				/>
-				<Card
-					href="/contact"
-					title="Contact"
-					body="Get in touch for collaboration or inquiries."
-				/>
-			</ul>
+			<ContentContainer>
+				<h2>Craft</h2>
+				<p>Your one-stop-shop for web dev excellence.</p>
+				<ul role="list" class="flex flex-col tech-card-grid bg-blue gap-20">
+					<Card
+						href="/craft"
+						title="Craft"
+						body="Dive into my skill set, technologies, and certifications."
+					/>
+					<Card
+						href="/feats"
+						title="Feats"
+						body="Explore my projects, case studies, and component showcase."
+					/>
+					<Card
+						href="/journey"
+						title="Journey"
+						body="My career timeline and milestones."
+					/>
+					<Card
+						href="/contact"
+						title="Contact"
+						body="Get in touch for collaboration or inquiries."
+					/>
+				</ul>
+			</ContentContainer>
 		</Section>
 	</main>
 </Layout>

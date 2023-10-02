@@ -4,6 +4,7 @@ module.exports = {
     theme: {
       colors: {
         'bg-primary': 'var(--bg-primary)',
+        'bg-primary-70': 'var(--bg-primary-70)',
         'fg-primary': 'var(--fg-primary)',
         'bg-secondary': 'var(--bg-secondary)',
         'fg-secondary': 'var(--fg-secondary)',
@@ -26,6 +27,9 @@ module.exports = {
       extend: {
         boxShadow: {
           header: `0px -3px 15px 0px`,
+        },
+        width: {
+          150: '40rem'
         }
       }
     },

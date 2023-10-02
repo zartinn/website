@@ -4,13 +4,14 @@ import { colorMap } from '../../utils/helper';
 
 interface Props {
 	backgroundColor?: 'primary' | 'secondary';
+    className?: string
 }
-const { backgroundColor = 'primary'} = Astro.props;
+const { backgroundColor = 'primary', className = ''} = Astro.props;
 
 
 let bgColorClass = colorMap.background[backgroundColor];
 ---
 
-<section class={`w-screen px-20 py-6 ${bgColorClass}`}>
+<section class={`w-screen p-20 flex justify-center gap-40 ${bgColorClass} ${className}`}>
     <slot />
 </section>

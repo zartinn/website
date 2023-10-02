@@ -45,17 +45,19 @@ const isActive = (linkId: string) => {
 ---
 
 <header
-    class="flex gap-4 items-center justify-between bg-dark-bg-p p-8 z-10 sticky shadow-header shadow-fg-primary"
+    class="flex gap-4 items-center justify-between bg-dark-bg-p p-8 z-10 sticky top-0 bg-bg-primary-70 shadow-header shadow-fg-primary backdrop-blur-lg"
 >
     <a href="/" rel="prefetch-intent">
         <Logo />
     </a>
-    <div class="grid grid-cols-5 gap-10">
-        {menu.map(menuItem => 
-            <Link linkInfo={menuItem} active={isActive(menuItem.id)}/>
-        )}
+    <div class="flex gap-12">
+        <nav class="grid grid-cols-5 gap-10">
+            {menu.map(menuItem => 
+                <Link linkInfo={menuItem} active={isActive(menuItem.id)}/>
+            )}
+        </nav>
+        <ThemeToggle/>
     </div>
-    <ThemeToggle/>
 </header>
 
 <script>

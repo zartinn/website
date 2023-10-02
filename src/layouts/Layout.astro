@@ -43,43 +43,50 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		--light-primary: #FFFDF9;
-		--light-secondary: #FFFDF9;
+		--light-primary: 255, 253, 249;
+		--light-secondary: 245, 245, 240;
 		--light-shadow: rgb(255 253 249 / 0.4);
-		--dark-primary: #1E1E1E;
-		--dark-secondard: #1E1E1E;
+		--dark-primary: 30, 30, 30;
+		--dark-secondary: 40, 40, 40;
 		--dark-shadow: rgb(30 30 30 / 0.4);
-		--primary-clr-light: #1990ff;
-		--primary-clr-dark: #8AC7FF;
+		--primary-clr-light: 25, 144, 255;
+		--primary-clr-dark: 138, 199, 255;
 
-		--fg-primary: var(--light-primary);
+		--fg-primary: rgb(var(--light-primary));
 		--fg-shadow: var(--light-shadow);
-		--bg-primary: var(--dark-primary);
-		--clr-primary: var(--primary-clr-dark);
+		--bg-primary: rgb(var(--dark-primary));
+		--bg-primary-70: rgba(var(--dark-primary), 0.85);
+		--clr-primary: rgb(var(--primary-clr-dark));
 	}
 
 	@media (prefers-color-scheme: dark) {
 		:root {
-			--fg-primary: var(--light-primary);
+			--fg-primary: rgb(var(--light-primary));
 			--fg-shadow: var(--light-shadow);
-			--bg-primary: var(--dark-primary);
-			--clr-primary: var(--primary-clr-dark);
+			--bg-primary: rgb(var(--dark-primary));
+			--bg-primary-70: rgba(var(--dark-primary), 0.85);
+			--bg-secondary: rgb(var(--dark-secondary));
+			--clr-primary: rgb(var(--primary-clr-dark));
 			color-scheme: dark;
 		}
 	}
 
 	:root[theme="dark"] {
-		--fg-primary: var(--light-primary);
+		--fg-primary: rgb(var(--light-primary));
 		--fg-shadow: var(--light-shadow);
-		--bg-primary: var(--dark-primary);
-		--clr-primary: var(--primary-clr-dark);
+		--bg-primary: rgb(var(--dark-primary));
+		--bg-primary-70: rgba(var(--dark-primary), 0.85);
+		--bg-secondary: rgb(var(--dark-secondary));
+		--clr-primary: rgb(var(--primary-clr-dark));
 		color-scheme: dark;
 	}
 	:root[theme="light"] {
-		--fg-primary: var(--dark-primary);
+		--fg-primary: rgb(var(--dark-primary));
 		--fg-shadow: var(--dark-shadow);
-		--bg-primary: var(--light-primary);
-		--clr-primary: var(--primary-clr-light);
+		--bg-primary: rgb(var(--light-primary));
+		--bg-primary-70: rgba(var(--light-primary), 0.85);
+		--bg-secondary: rgb(var(--light-secondary));
+		--clr-primary: rgb(var(--primary-clr-light));
 		color-scheme: light;
 	}
 	html {
