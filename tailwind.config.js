@@ -37,7 +37,8 @@ module.exports = {
           header: `0px -3px 15px 0px`,
         },
         width: {
-          150: '40rem'
+          150: '58rem',
+          200: '96rem'
         }
       }
     },
