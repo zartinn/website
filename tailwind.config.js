@@ -17,6 +17,8 @@ module.exports = {
         'bg-secondary': 'var(--bg-secondary)',
         'fg-secondary': 'var(--fg-secondary)',
         'clr-primary': 'var(--clr-primary)',
+        'clr-secondary': 'var(--clr-secondary)',
+        'contrast': 'var(--contrast-border)'
       },
       fontFamily: {
         americano: 'GT Americano',
@@ -37,8 +39,16 @@ module.exports = {
           header: `0px -3px 15px 0px`,
         },
         width: {
+          'content-double': '34rem',
+          'content-single': '78rem',
           150: '58rem',
           200: '96rem'
+        },
+        scale: {
+          102: '1.02'
+        },
+        grayscale: {
+          50: '50%'
         }
       }
     },
