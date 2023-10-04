@@ -13,7 +13,7 @@ const { src, alt, href, title, description } = Astro.props;
 const beforeElClasses = 'before:w-[calc(100%_+_4px)] before:h-[calc(100%_+_4px)] before:absolute before:-top-0.5 before:-left-0.5 before:bg-gradient-to-br before:from-clr-primary before:to-clr-secondary before:rounded-3xl';
 ---
 
-<a href={href} class="grayscale-50 hover:grayscale-0 transition-all group rounded-xl p-8 flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2 cursor-pointer">
+<a href={href} class="grayscale-50 hover:grayscale-0 transition-all duration-500 group rounded-xl p-8 flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2 cursor-pointer">
 	<div class={`rounded-3xl relative ${beforeElClasses}`}>
 		<div class="relative rounded-3xl overflow-hidden w-full z-10">
 			<Image src={src} alt={alt} width={800} class="w-full group-hover:scale-105 transition-transform duration-500"/>

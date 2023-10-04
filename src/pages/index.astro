@@ -1,14 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Header, Section, Title, ContentContainer, MyImage, H2, P, H3, Card } from '../components';
+import { Header, Section, Title, ContentContainer, MyImage, H2, P, Card } from '../components';
 import zartin1 from '../assets/images/zartin_1.jpg';
 import craft from '../assets/images/cards/craft.png';
 import journey from '../assets/images/cards/journey.png';
 import contact from '../assets/images/cards/contact.png';
-import feats from '../assets/images/cards/feats1.png';
+import feats from '../assets/images/cards/feats3.png';
 
-
-import { Image } from 'astro:assets';
+const linkInfos = [
+	{
+		image: craft,
+		alt: 'Craft card image',
+		href: '/craft',
+		title: 'Craft',
+		description: 'In-depth expertise in modern technologies and development practices'
+	},
+	{
+		image: feats,
+		alt: 'Feats card image',
+		href: '/feats',
+		title: 'Feats',
+		description: 'Selected achievements that exemplify my problem-solving skills and dedication'
+	},
+	{
+		image: journey,
+		alt: 'Journey card image',
+		href: '/journey',
+		title: 'Journey',
+		description: 'A professional trajectory characterized by continuous learning and adaptability'
+	},
+	{
+		image: contact,
+		alt: 'Contact card image',
+		href: '/contact',
+		title: 'Contact',
+		description: 'Open channels for communication and future collaborations'
+	}
+]
 
 ---
 
@@ -32,10 +60,9 @@ import { Image } from 'astro:assets';
 		</Section>
 		<Section>
 			<ContentContainer singleContainer className="grid grid-cols-2 grid-rows-2 gap-20">
-				<Card src={craft} alt="craft background" href="/craft" title="Craft" description="See my craft"/>
-				<Card src={feats} alt="craft background" href="/feats" title="Feats" description="See my craft"/>
-				<Card src={journey} alt="craft background" href="/journey" title="Journey" description="See my craft"/>
-				<Card src={contact} alt="craft background" href="/contact" title="Contact" description="See my craft"/>
+				{linkInfos.map(info => (
+					<Card src={info.image} alt={info.alt} href={info.href} title={info.title} description={info.description}/>
+				))}
 			</ContentContainer>
 		</Section>
 	</main>
