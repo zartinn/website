@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Header, Section, Title, ContentContainer, MyImage, H2, P, Card } from '../../components';
+import zartin1 from '../../assets/images/zartin_1.jpg';
+import craft from '../../assets/images/cards/craft.png';
+import journey from '../../assets/images/cards/journey.png';
+import contact from '../../assets/images/cards/contact.png';
+import feats from '../../assets/images/cards/feats3.png';
+
+interface Props {
+	T?: Record<string, any>
+}
+
+const { T } = Astro.props;
+
+const linkInfos = [
+	{
+		image: craft,
+		alt: 'Craft card image',
+		href: '/craft',
+		title: 'Craft',
+		description: 'In-depth expertise in modern technologies and development practices'
+	},
+	{
+		image: feats,
+		alt: 'Feats card image',
+		href: '/feats',
+		title: 'Feats',
+		description: 'Selected achievements that exemplify my problem-solving skills and dedication'
+	},
+	{
+		image: journey,
+		alt: 'Journey card image',
+		href: '/journey',
+		title: 'Journey',
+		description: 'A professional trajectory characterized by continuous learning and adaptability'
+	},
+	{
+		image: contact,
+		alt: 'Contact card image',
+		href: '/contact',
+		title: 'Contact',
+		description: 'Open channels for communication and future collaborations'
+	}
+]
+
+---
+
+<Layout title="Welcome to my Portfolio">
+	<!-- Header on each page due to View Transition problem when in Layout -->
+	<Header page="home"/>
+	<main>
+		<Section>
+			<ContentContainer>
+				<Title/>
+			</ContentContainer>
+			<ContentContainer className="flex justify-center items-center">
+				<MyImage src={zartin1} alt="portrait of Martin - ai generated" width={400}/>
+			</ContentContainer>
+		</Section>
+		<Section backgroundColor="secondary">
+			<ContentContainer singleContainer>
+				<H2 className="mb-4" >Building Tomorrow's Solutions Together — Today.</H2>
+				<P>Your project is my project: I deliver comprehensive software solutions with a <span class="text-clr-primary">customer-first</span> ethos. As a dedicated problem-solver, I tackle challenges head-on to create robust, scalable products. Let's collaborate and build tomorrow's solutions—today.</P>
+			</ContentContainer>
+		</Section>
+		<Section>
+			<ContentContainer singleContainer className="grid grid-cols-2 grid-rows-2 gap-20">
+				{linkInfos.map(info => (
+					<Card src={info.image} alt={info.alt} href={info.href} title={info.title} description={info.description}/>
+				))}
+			</ContentContainer>
+		</Section>
+	</main>
+</Layout>
+
+<style>
+</style>

@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { ContentContainer, H1, H2, Header, P, Section } from '../../components';
+
+---
+
+<Layout title="Craft - My Expertise">
+  <Header page="craft"/>
+  <main>
+    <Section>
+      <ContentContainer singleContainer>
+        <H1 transitionName="craft">Craft</H1>
+        <P>Your one-stop shop for getting to know my expertise, technologies I've mastered, and the certifications that back it up.</P>
+      </ContentContainer>
+    </Section>
+
+    <!-- Skills Section -->
+    <Section>
+      <ContentContainer singleContainer>
+        <H2>Skills</H2>
+        <ul>
+          <li>Backend Development</li>
+          <li>Frontend Development</li>
+          <li>DevOps</li>
+          <!-- Add more as needed -->
+        </ul>
+      </ContentContainer>
+    </Section>
+
+    <!-- Technologies Section -->
+    <Section>
+      <ContentContainer singleContainer>
+        <H2>Technologies</H2>
+        <ul>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Docker</li>
+          <!-- Add more as needed -->
+        </ul>
+      </ContentContainer>
+    </Section>
+
+    <!-- Certifications Section -->
+    <Section>
+      <ContentContainer singleContainer>
+        <H2>Certifications</H2>
+        <ul>
+          <li>AWS Certified Solutions Architect</li>
+          <li>Google Cloud Professional Cloud Architect</li>
+          <!-- Add more as needed -->
+        </ul>
+      </ContentContainer>
+    </Section>
+  </main>
+</Layout>
