@@ -1,0 +1,42 @@
+{
+    "HOME": {
+        "INTRO": {
+            "TITLE": {
+                "ZARTIN_FULL": "Zartin",
+                "ZACHOSZCZ_FIRST_PART": "Z",
+                "ZACHOSZCZ_LAST_PART": "achoszcz",
+                "MARTIN_FIRST_PART": "M",
+                "MARTIN_SECOND_PART": "artin",
+                "GREETING": "Hi, ich bin",
+                "INTRODUCTION_1": "Viele kennen mich auch als",
+                "INTRODUCTION_2": "Ob Du mich Martin oder Zartin nennst, sei dir sicher, dass Du eine Mischung aus grundlegendem Wissen und bahnbrechender Innovation bekommst."
+            }
+        },
+        "TEASER": {
+            "TITLE": "Gemeinsam bauen wir die Lösungen von morgen — heute.",
+            "DESCRIPTION": "Dein Projekt ist mein Projekt: Ich liefere umfassende Softwarelösungen mit einer kundenorientierten Ethik. Als engagierter Problemlöser stelle ich mich Herausforderungen direkt, um robuste, skalierbare Produkte zu schaffen. Lass uns zusammenarbeiten und die Lösungen von morgen bauen — heute."
+        },
+        "CARDS": {
+            "craft": {
+                "TITLE": "Fachkompetenz",
+                "DESCRIPTION": "Tiefgreifende Expertise in modernen Technologien und Entwicklungspraktiken",
+                "ALT": "Fachkompetenz Kartenbild"
+            },
+            "feats": {
+                "TITLE": "Erfolge",
+                "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen",
+                "ALT": "Erfolge Kartenbild"
+            },
+            "journey": {
+                "TITLE": "Laufbahn",
+                "DESCRIPTION": "Eine berufliche Laufbahn, die sich durch kontinuierliches Lernen und Anpassungsfähigkeit auszeichnet",
+                "ALT": "Laufbahn Kartenbild"
+            },
+            "contact": {
+                "TITLE": "Kontakt",
+                "DESCRIPTION": "Offene Kommunikationskanäle für zukünftige Zusammenarbeiten",
+                "ALT": "Kontakt Kartenbild"
+            }
+        }
+    }
+}

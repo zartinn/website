@@ -1,0 +1,42 @@
+{
+    "HOME": {
+        "INTRO": {
+            "TITLE": {
+                "ZARTIN_FULL": "Zartin",
+                "ZACHOSZCZ_FIRST_PART": "Z",
+                "ZACHOSZCZ_LAST_PART": "achoszcz",
+                "MARTIN_FIRST_PART": "M",
+                "MARTIN_SECOND_PART": "artin",
+                "GREETING": "Hi, I'm",
+                "INTRODUCTION_1": "Though many know me as",
+                "INTRODUCTION_2": "Whether you call me Martin or Zartin, know that you're getting a blend of foundational knowledge and cutting-edge innovation."
+            }
+        },
+        "TEASER": {
+            "TITLE": "Building Tomorrow's Solutions Together — Today.",
+            "DESCRIPTION": "Your project is my project: I deliver comprehensive software solutions with a customer-first ethos. As a dedicated problem-solver, I tackle challenges head-on to create robust, scalable products. Let's collaborate and build tomorrow's solutions—today."
+        },
+        "CARDS": {
+            "craft": {
+                "TITLE": "Craft",
+                "DESCRIPTION": "In-depth expertise in modern technologies and development practices",
+                "ALT": "Craft card image"
+            },
+            "feats": {
+                "TITLE": "Feats",
+                "DESCRIPTION": "Selected achievements that exemplify my problem-solving skills and dedication",
+                "ALT": "Feats card image"
+            },
+            "journey": {
+                "TITLE": "Journey",
+                "DESCRIPTION": "A professional trajectory characterized by continuous learning and adaptability",
+                "ALT": "Journey card image"
+            },
+            "contact": {
+                "TITLE": "Contact",
+                "DESCRIPTION": "Open channels for communication and future collaborations",
+                "ALT": "Contact card image"
+            }
+        }
+    }
+}
