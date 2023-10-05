@@ -1,16 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { ContentContainer, H1, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H2, Header, P, Section } from '../../components';
+import { Image } from 'astro:assets';
+import craft from '../../assets/images/cards/craft.png';
+import type { Translations } from '../../utils/typings';
+
+interface Props {
+  T: Translations['CRAFT']
+}
+
+const { T } = Astro.props;
 
 ---
 
 <Layout title="Craft - My Expertise">
   <Header page="craft"/>
-  <main>
+  <!-- <main transition:name="craft" transition:animate="initial"> -->
+  <main transition:name="craft">
+    
     <Section>
+      <Image
+        src={craft} 
+        alt="craft background image"
+        class="w-full h-full object-cover absolute opacity-30"
+				transition:name="craft-image"
+      />
       <ContentContainer singleContainer>
-        <H1 transitionName="craft">Craft</H1>
-        <P>Your one-stop shop for getting to know my expertise, technologies I've mastered, and the certifications that back it up.</P>
+        <h3 class="text-h1 text-fg-primary" transition:name="craft-title">{T.TITLE}</h3>
+        <!-- <H2 className="text-h1 text-fg-primary" transitionName="craft-title">Craft</H2> -->
+        <P transitionName="craft-description">{T.DESCRIPTION}</P>
       </ContentContainer>
     </Section>
 

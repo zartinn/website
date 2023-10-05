@@ -40,5 +40,9 @@
                 "ALT": "Contact card image"
             }
         }
+    },
+    "CRAFT": {
+        "TITLE": "Craft",
+        "DESCRIPTION": "In-depth expertise in modern technologies and development practices"
     }
 }

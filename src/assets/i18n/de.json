@@ -40,5 +40,9 @@
                 "ALT": "Kontakt Kartenbild"
             }
         }
+    },
+    "CRAFT": {
+        "TITLE": "Fachkompetenz",
+        "DESCRIPTION": "Tiefgreifende Expertise in modernen Technologien und Entwicklungspraktiken"
     }
 }

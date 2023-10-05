@@ -8,10 +8,13 @@ interface Props {
 }
 
 const { className, transitionName } = Astro.props;
-
 const textProps = getTextProps('h1', className);
 ---
 
-<Text type={textProps.type} className={textProps.className} transitionName={transitionName}>
+<Text
+	type={textProps.type}
+	className={textProps.className}
+	transitionName={transitionName}
+>
 	<slot/>
 </Text>
