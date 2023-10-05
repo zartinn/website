@@ -14,7 +14,9 @@
         },
         "TEASER": {
             "TITLE": "Gemeinsam bauen wir die Lösungen von morgen — heute.",
-            "DESCRIPTION": "Dein Projekt ist mein Projekt: Ich liefere umfassende Softwarelösungen mit einer kundenorientierten Ethik. Als engagierter Problemlöser stelle ich mich Herausforderungen direkt, um robuste, skalierbare Produkte zu schaffen. Lass uns zusammenarbeiten und die Lösungen von morgen bauen — heute."
+            "DESCRIPTION_1": "Dein Projekt ist mein Projekt: Ich liefere umfassende Softwarelösungen mit einer",
+            "DESCRIPTION_2": " Ethik. Als engagierter Problemlöser stelle ich mich Herausforderungen direkt, um robuste, skalierbare Produkte zu schaffen. Lass uns zusammenarbeiten und die Lösungen von morgen bauen — heute.",
+            "CUSTOMER_FIRST": " kundenorientierten "
         },
         "CARDS": {
             "craft": {

@@ -14,7 +14,9 @@
         },
         "TEASER": {
             "TITLE": "Building Tomorrow's Solutions Together — Today.",
-            "DESCRIPTION": "Your project is my project: I deliver comprehensive software solutions with a customer-first ethos. As a dedicated problem-solver, I tackle challenges head-on to create robust, scalable products. Let's collaborate and build tomorrow's solutions—today."
+            "DESCRIPTION_1": "Your project is my project: I deliver comprehensive software solutions with a",
+            "DESCRIPTION_2": "ethos. As a dedicated problem-solver, I tackle challenges head-on to create robust, scalable products. Let's collaborate and build tomorrow's solutions—today.",
+            "CUSTOMER_FIRST": " customer-first "
         },
         "CARDS": {
             "craft": {
