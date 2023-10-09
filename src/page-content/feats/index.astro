@@ -1,18 +1,27 @@
 ---
-import { ContentContainer, H1, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H2, Header, P, Section } from '../../components';
+import { IntroSection } from '../../sections';
 import Layout from '../../layouts/Layout.astro';
+import image from '../../assets/images/cards/feats_wide.png';
+import type { Translations } from '../../utils/typings';
+
+interface Props {
+  T: Translations['FEATS']
+}
+
+const { T } = Astro.props;
 
 ---
 
 <Layout title="Feats - Professional Accomplishments">
   <Header page="feats"/>
-  <main>
-    <Section>
-      <ContentContainer singleContainer>
-        <H1 transitionName="feats">Feats</H1>
-        <P>An overview of selected professional accomplishments.</P>
-      </ContentContainer>
-    </Section>
+  <main transition:name="feats">
+    <IntroSection
+      id="feats",
+      image={image}
+      title={T.TITLE}
+      description={T.DESCRIPTION}
+    />
     
     <!-- Section: Abstracted Overviews -->
     <Section>

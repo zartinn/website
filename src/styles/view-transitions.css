@@ -86,26 +86,46 @@
 .craft-title {
     view-transition-name: craft-title;
 }
-.home-title {
-    view-transition-name: home-title;
+.contact-title {
+    view-transition-name: contact-title;
+}
+.journey-title {
+    view-transition-name: journey-title;
+}
+.feats-title {
+    view-transition-name: feats-title;
 }
 
 ::view-transition-old(craft-image),
-::view-transition-new(craft-image) {
+::view-transition-new(craft-image),
+::view-transition-old(contact-image),
+::view-transition-new(contact-image),
+::view-transition-old(feats-image),
+::view-transition-new(feats-image) ,
+::view-transition-old(journey-image),
+::view-transition-new(journey-image)  {
     mix-blend-mode: normal;
     height: 100%;
     overflow: auto;
     object-fit: cover;
 }
 
-::view-transition-old(craft-description) {
-    visibility: visible;
-}
-
 ::view-transition-old(craft-title),
 ::view-transition-new(craft-title),
 ::view-transition-old(craft-description),
-::view-transition-new(craft-description) {
+::view-transition-new(craft-description),
+::view-transition-old(contact-title),
+::view-transition-new(contact-title),
+::view-transition-old(contact-description),
+::view-transition-new(contact-description),
+::view-transition-old(feats-title),
+::view-transition-new(feats-title),
+::view-transition-old(feats-description),
+::view-transition-new(feats-description),
+::view-transition-old(journey-title),
+::view-transition-new(journey-title),
+::view-transition-old(journey-description),
+::view-transition-new(journey-description) {
     inline-size: auto;
     height: 100%;
 }

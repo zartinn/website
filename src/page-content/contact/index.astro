@@ -1,18 +1,28 @@
 ---
-import { ContentContainer, H1, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H2, Header, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
+import image from '../../assets/images/cards/contact.png';
+import type { Translations } from '../../utils/typings';
+import { IntroSection } from '../../sections';
+
+
+interface Props {
+  T: Translations['CONTACT']
+}
+
+const { T } = Astro.props;
 
 ---
 
 <Layout title="Contact - Get in Touch">
   <Header page="contact"/>
-  <main>
-    <Section>
-      <ContentContainer singleContainer>
-        <H1 transitionName="contact">Contact</H1>
-        <P>If you're interested in collaborating or just want to say hello, feel free to reach out.</P>
-      </ContentContainer>
-    </Section>
+  <main transition:name="contact">
+    <IntroSection
+      id="contact",
+      image={image}
+      title={T.TITLE}
+      description={T.DESCRIPTION}
+    />
 
     <!-- Contact Form -->
     <Section>

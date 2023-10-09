@@ -1,18 +1,29 @@
 ---
-import { ContentContainer, H1, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H2, Header, P, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
+import image from '../../assets/images/cards/journey.png';
+import type { Translations } from '../../utils/typings';
+import { IntroSection } from '../../sections';
+
+
+interface Props {
+  T: Translations['JOURNEY']
+}
+
+const { T } = Astro.props;
+
 
 ---
 
 <Layout title="Journey - Career Path and Milestones">
 	  <Header page="journey"/>
-    <main>
-      <Section>
-        <ContentContainer singleContainer>
-          <H1 transitionName="journey">Journey</H1>
-          <P>A timeline illustrating key milestones and pivotal moments in my career.</P>
-        </ContentContainer>
-      </Section>
+    <main transition:name="journey">
+      <IntroSection
+        id="journey",
+        image={image}
+        title={T.TITLE}
+        description={T.DESCRIPTION}
+      />
   
       <!-- Section: Early Career -->
       <Section>

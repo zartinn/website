@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import { ContentContainer, H1, P, Section } from '../../components';
+import { myBackgroundTransition } from '../../utils/animations';
+
+interface Props {
+    title: string,
+    description: string,
+    image: ImageMetadata,
+    id: string;
+}
+
+const { title, description, image, id } = Astro.props;
+
+---
+
+<Section>
+    <Image
+        src={image} 
+        alt={`${id} background image`}
+        class="image w-full h-full object-cover absolute opacity-30"
+        transition:name={`${id}-image`}
+        transition:animate={myBackgroundTransition}
+    />
+    <ContentContainer singleContainer className="z-10">
+        <H1 className={`${id}-title`} transitionName={`${id}-title`}>{title}</H1>
+        <P transitionName={`${id}-description`}>{description}</P>
+    </ContentContainer>
+</Section>

@@ -44,5 +44,17 @@
     "CRAFT": {
         "TITLE": "Fachkompetenz",
         "DESCRIPTION": "Tiefgreifende Expertise in modernen Technologien und Entwicklungspraktiken"
+    },
+    "CONTACT": {
+        "TITLE": "Kontakt",
+        "DESCRIPTION": "Offene Kommunikationskanäle für zukünftige Zusammenarbeiten"
+    },
+    "FEATS": {
+        "TITLE": "Erfolge",
+        "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen"
+    },
+    "JOURNEY": {
+        "TITLE": "Laufbahn",
+        "DESCRIPTION": "Eine berufliche Laufbahn, die sich durch kontinuierliches Lernen und Anpassungsfähigkeit auszeichnet"
     }
 }

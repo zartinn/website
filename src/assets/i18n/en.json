@@ -44,5 +44,17 @@
     "CRAFT": {
         "TITLE": "Craft",
         "DESCRIPTION": "In-depth expertise in modern technologies and development practices"
+    },
+    "CONTACT": {
+        "TITLE": "Contact",
+        "DESCRIPTION": "Open channels for communication and future collaborations"
+    },
+    "FEATS": {
+        "TITLE": "Feats",
+        "DESCRIPTION": "Selected achievements that exemplify my problem-solving skills and dedication"
+    },
+    "JOURNEY": {
+        "TITLE": "Journey",
+        "DESCRIPTION": "A professional trajectory characterized by continuous learning and adaptability"
     }
 }
