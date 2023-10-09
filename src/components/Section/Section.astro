@@ -12,6 +12,8 @@ const { backgroundColor = 'primary', className = ''} = Astro.props;
 let bgColorClass = colorMap.background[backgroundColor];
 ---
 
-<section class={`w-screen p-20 flex justify-center items-center gap-40 ${bgColorClass} ${className}`}>
+<section
+    class={`w-screen min-h-section p-20 flex justify-center overflow-hidden relative items-center gap-40 ${bgColorClass} ${className}`}
+>
     <slot />
 </section>

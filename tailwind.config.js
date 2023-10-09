@@ -38,6 +38,9 @@ module.exports = {
         boxShadow: {
           header: `0px -3px 15px 0px`,
         },
+        minHeight: {
+          section: '25rem'
+        },
         width: {
           'content-double': '34rem',
           'content-single': '78rem',

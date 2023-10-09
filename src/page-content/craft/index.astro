@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { ContentContainer, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H1, H2, Header, P, Section } from '../../components';
 import { Image } from 'astro:assets';
 import craft from '../../assets/images/cards/craft.png';
 import type { Translations } from '../../utils/typings';
@@ -11,23 +11,38 @@ interface Props {
 
 const { T } = Astro.props;
 
+const animateBackground = {
+  old: {
+    name: 'toBackgroundOld',
+    fillMode: 'forwards',
+  },
+  new: {
+    name: 'toBackgroundNew',
+    fillMode: 'backwards',
+  }
+};
+
+const myBackgroundTransition = {
+  forwards: animateBackground,
+  backwards: animateBackground,
+};
+
 ---
 
 <Layout title="Craft - My Expertise">
   <Header page="craft"/>
-  <!-- <main transition:name="craft" transition:animate="initial"> -->
-  <main transition:name="craft">
+  <main class="craft" transition:name="craft">
     
     <Section>
       <Image
         src={craft} 
         alt="craft background image"
-        class="w-full h-full object-cover absolute opacity-30"
+        class="image w-full h-full object-cover absolute opacity-30"
 				transition:name="craft-image"
+        transition:animate={myBackgroundTransition}
       />
-      <ContentContainer singleContainer>
-        <h3 class="text-h1 text-fg-primary" transition:name="craft-title">{T.TITLE}</h3>
-        <!-- <H2 className="text-h1 text-fg-primary" transitionName="craft-title">Craft</H2> -->
+      <ContentContainer singleContainer className="z-10">
+        <H1 className="craft-title" transitionName="craft-title">{T.TITLE}</H1>
         <P transitionName="craft-description">{T.DESCRIPTION}</P>
       </ContentContainer>
     </Section>

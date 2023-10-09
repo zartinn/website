@@ -1,0 +1,111 @@
+@keyframes toBackgroundOld {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes toBackgroundNew {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes toCardOld {
+    0% {
+        opacity: 1;
+        filter: grayscale(0);
+    }
+    100% {
+        opacity: 0;
+        filter: grayscale(50%);
+    }
+}
+
+@keyframes toCardNew {
+    0% {
+        opacity: 0;
+        filter: grayscale(0);
+    }
+    100% {
+        opacity: 1;
+        filter: grayscale(50%);
+    }
+}
+
+@keyframes toH1 {
+    0% {
+        mix-blend-mode: normal;
+        height: 100%;
+        overflow: auto;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+    100% {
+        mix-blend-mode: normal;
+        height: 100%;
+        overflow: auto;
+        font-size: 3.75rem;
+        line-height: 4.5rem;
+    }
+}
+
+@keyframes toHThreeOld {
+    0% {
+        opacity: 1;
+        font-size: 3.75rem;
+        line-height: 4.5rem;
+    }
+    100% {
+        opacity: 0;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+}
+
+
+@keyframes toHThreeNew {
+    0% {
+        opacity: 0;
+        font-size: 3.75rem;
+        line-height: 4.5rem;
+    }
+    100% {
+        opacity: 1;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+}
+
+/* Workaround for keeping the view-transition-name property because astro removes it from h1 elements */
+.craft-title {
+    view-transition-name: craft-title;
+}
+.home-title {
+    view-transition-name: home-title;
+}
+
+::view-transition-old(craft-image),
+::view-transition-new(craft-image) {
+    mix-blend-mode: normal;
+    height: 100%;
+    overflow: auto;
+    object-fit: cover;
+}
+
+::view-transition-old(craft-description) {
+    visibility: visible;
+}
+
+::view-transition-old(craft-title),
+::view-transition-new(craft-title),
+::view-transition-old(craft-description),
+::view-transition-new(craft-description) {
+    inline-size: auto;
+    height: 100%;
+}

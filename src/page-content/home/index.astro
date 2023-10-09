@@ -18,6 +18,7 @@ const images = [craft, feats, journey, contact];
 const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 	const cardKey = key as keyof typeof T.CARDS;
 	return {
+		id: cardKey,
 		image: images[idx],
 		alt: T.CARDS[cardKey].ALT,
 		href: `/${cardKey}`,
@@ -49,7 +50,14 @@ const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 		<Section>
 			<ContentContainer singleContainer className="grid grid-cols-2 grid-rows-2 gap-20">
 				{linkInfos.map(info => (
-					<Card src={info.image} alt={info.alt} href={info.href} title={info.title} description={info.description}/>
+					<Card
+						id={info.id}
+						src={info.image}
+						alt={info.alt}
+						href={info.href}
+						title={info.title}
+						description={info.description}
+					/>
 				))}
 			</ContentContainer>
 		</Section>

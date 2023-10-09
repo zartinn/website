@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { H3, LangLink, P } from '..';
 interface Props {
+	id: string,
     src: ImageMetadata,
     alt: string,
 	href: string;
@@ -9,17 +10,46 @@ interface Props {
 	description: string;
 }
 
-const { src, alt, href, title, description } = Astro.props;
+const { src, alt, href, title, description, id } = Astro.props;
 const beforeElClasses = 'before:w-[calc(100%_+_4px)] before:h-[calc(100%_+_4px)] before:absolute before:-top-0.5 before:-left-0.5 before:bg-gradient-to-br before:from-clr-primary before:to-clr-secondary before:rounded-3xl';
+const linkClasses = 'grayscale-50 hover:grayscale-0 transition-all duration-500 group rounded-xl p-8 flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2 cursor-pointer';
+
+const animateCard = {
+  old: {
+    name: 'toCardOld',
+    fillMode: 'forwards',
+  },
+  new: {
+    name: 'toCardNew',
+    fillMode: 'backwards',
+  }
+};
+
+const myCardTransition = {
+  forwards: animateCard,
+  backwards: animateCard,
+};
+
 ---
 
-<LangLink href={href} className="grayscale-50 hover:grayscale-0 transition-all duration-500 group rounded-xl p-8 flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2 cursor-pointer">
+<LangLink
+	href={href}
+	className={`${id} ${linkClasses}`}
+	transitionName={id}
+>
 	<div class={`rounded-3xl relative ${beforeElClasses}`}>
-		<div class="relative rounded-3xl overflow-hidden w-full z-10">
-			<Image src={src} alt={alt} width={800} class="w-full group-hover:scale-105 transition-transform duration-500"/>
+		<div class="relative rounded-3xl overflow-hidden w-full bg-bg-primary">
+			<Image
+				src={src}
+				alt={alt}
+				width={800}
+				class="z-10 w-full group-hover:scale-105 transition-transform duration-500 object-cover"
+				transition:name={`${id}-image`}
+				transition:animate={myCardTransition}
+			/>
 		</div>
 	</div>
-	<H3>{title}</H3>
+	<h3 class="text text-h3 text-fg-primary" transition:name={`${id}-title`}>{title}</h3>
 	<div class="h-1 w-1/2 bg-gradient-to-r from-clr-primary to-clr-secondary rounded-3xl"></div>
-	<P className="text-center">{description}</P>
+	<P className="text-center" transitionName={`${id}-description`}>{description}</P>
 </LangLink>

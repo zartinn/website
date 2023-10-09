@@ -1,15 +1,12 @@
 ---
-import type { TransitionAnimationValue } from 'astro';
-
 interface Props {
     href: string,
     className?: string,
     rel?: string,
-    transitionAnimate?: TransitionAnimationValue,
     transitionName?: string,
 }
 
-const { href, className, rel, transitionAnimate, transitionName } = Astro.props;
+const { href, className, rel, transitionName } = Astro.props;
 const { lang = '' } = Astro.params;
 const langLink = lang ? `/${lang}${href}` : href;
 ---
@@ -19,7 +16,6 @@ const langLink = lang ? `/${lang}${href}` : href;
     rel={rel}
     class={className}
     transition:name={transitionName}
-    transition:animate={transitionAnimate}
 >
     <slot/>
 </a>
