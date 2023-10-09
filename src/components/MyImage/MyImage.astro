@@ -14,5 +14,12 @@ const { src, alt, width, height } = Astro.props;
 
 
 <div class="flex rounded-full border-clr-primary border-4 overflow-hidden">
-    <Image class="hover:scale-105 transition-transform duration-500" src={src} alt={alt} width={width} height={height}/>
+    <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading="eager"
+        class="w-full hover:scale-105 transition-transform duration-500"
+    />
 </div>

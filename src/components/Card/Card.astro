@@ -37,12 +37,12 @@ const myCardTransition = {
 	className={`${id} ${linkClasses}`}
 	transitionName={id}
 >
-	<div class={`rounded-3xl relative ${beforeElClasses}`}>
+	<div class={`rounded-3xl relative ${beforeElClasses} w-full`}>
 		<div class="relative rounded-3xl overflow-hidden w-full bg-bg-primary">
 			<Image
 				src={src}
 				alt={alt}
-				width={800}
+				width={400}
 				class="z-10 rounded-3xl w-full group-hover:scale-105 transition-transform duration-500 object-cover"
 				transition:name={`${id}-image`}
 				transition:animate={myCardTransition}

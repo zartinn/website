@@ -38,7 +38,7 @@ const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 				<Title T={T.INTRO.TITLE} />
 			</ContentContainer>
 			<ContentContainer className="flex justify-center items-center">
-				<MyImage src={zartin1} alt="portrait of Martin - ai generated" width={400}/>
+				<MyImage src={zartin1} alt="portrait of Martin - ai generated" width={600}/>
 			</ContentContainer>
 		</Section>
 		<Section backgroundColor="secondary">
@@ -48,7 +48,7 @@ const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 			</ContentContainer>
 		</Section>
 		<Section>
-			<ContentContainer singleContainer className="grid grid-cols-2 grid-rows-2 gap-20">
+			<ContentContainer singleContainer className="flex flex-col desktop:grid grid-cols-2 grid-rows-2 gap-20">
 				{linkInfos.map(info => (
 					<Card
 						id={info.id}

@@ -8,6 +8,6 @@ const { className = '', singleContainer = false } = Astro.props;
 
 ---
 
-<div class={`${singleContainer ? 'w-content-single' : 'w-content-double'} ${className}`}>
+<div class={`w-full ${singleContainer ? 'desktop:w-content-single' : 'desktop:w-content-double'} ${className}`}>
     <slot />
 </div>
