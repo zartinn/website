@@ -1,40 +1,44 @@
 @keyframes toBackgroundOld {
     0% {
         opacity: 1;
+        filter: blur(0) grayscale(50%);
     }
     100% {
         opacity: 0;
+        filter: blur(4px) grayscale(0);
     }
 }
 
 @keyframes toBackgroundNew {
     0% {
         opacity: 0;
+        filter: blur(0) grayscale(50%);
     }
     100% {
         opacity: 1;
+        filter: blur(4px) grayscale(0);
     }
 }
 
 @keyframes toCardOld {
     0% {
         opacity: 1;
-        filter: grayscale(0);
+        filter: blur(4px) grayscale(0);
     }
     100% {
         opacity: 0;
-        filter: grayscale(50%);
+        filter: blur(0) grayscale(50%);
     }
 }
 
 @keyframes toCardNew {
     0% {
         opacity: 0;
-        filter: grayscale(0);
+        filter: blur(4px) grayscale(0);
     }
     100% {
         opacity: 1;
-        filter: grayscale(50%);
+        filter: blur(0) grayscale(50%);
     }
 }
 

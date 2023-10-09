@@ -55,6 +55,9 @@ module.exports = {
         },
         objectPosition: {
           feats: '0 45%'
+        },
+        opacity: {
+          'bg-image': 'var(--bg-image-opacity)'
         }
       }
     },

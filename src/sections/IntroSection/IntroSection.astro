@@ -19,7 +19,7 @@ const imageClass = id === 'feats' ? 'object-feats' : '';
     <Image
         src={image} 
         alt={`${id} background image`}
-        class={`w-full h-full object-cover absolute opacity-30 ${imageClass}`}
+        class={`w-full h-full object-cover absolute opacity-bg-image blur-sm ${imageClass}`}
         transition:name={`${id}-image`}
         transition:animate={myBackgroundTransition}
     />
