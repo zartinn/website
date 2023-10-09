@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { title, description, image, id } = Astro.props;
+const imageClass = id === 'feats' ? 'object-feats' : '';
 
 ---
 
@@ -18,7 +19,7 @@ const { title, description, image, id } = Astro.props;
     <Image
         src={image} 
         alt={`${id} background image`}
-        class="image w-full h-full object-cover absolute opacity-30"
+        class={`w-full h-full object-cover absolute opacity-30 ${imageClass}`}
         transition:name={`${id}-image`}
         transition:animate={myBackgroundTransition}
     />

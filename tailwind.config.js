@@ -52,6 +52,9 @@ module.exports = {
         },
         grayscale: {
           50: '50%'
+        },
+        objectPosition: {
+          feats: '0 45%'
         }
       }
     },
