@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { H3, LangLink, P } from '..';
+import { LangLink, P } from '..';
 interface Props {
 	id: string,
     src: ImageMetadata,
@@ -28,7 +28,8 @@ const animateCard = {
 const myCardTransition = {
   forwards: animateCard,
   backwards: animateCard,
-};
+}
+
 
 ---
 

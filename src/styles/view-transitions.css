@@ -1,3 +1,25 @@
+@keyframes toHeaderOld {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes toHeaderNew {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+::view-transition-group(header) {
+    z-index: 10;
+    backdrop-filter: blur(16px);
+}
+
 @keyframes toBackgroundOld {
     0% {
         opacity: 1;

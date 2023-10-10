@@ -5,9 +5,10 @@ import ThemeToggle from '../Icons/ThemeToggle.astro';
 
 interface Props {
     page?: string;
+    isHome?: boolean;
 }
 
-const { page } = Astro.props;
+const { page, isHome } = Astro.props;
 
 const menu = [
     {
@@ -41,10 +42,32 @@ const isActive = (linkId: string) => {
     const currentPage = page || 'home';
     return currentPage === linkId;
 }
+const pageSpecificClasses = isHome ? 'sticky' : 'absolute w-screen -translate-y-full'
+const headerClasses = `${pageSpecificClasses} flex gap-4 justify-center bg-dark-bg-p px-20 py-8 z-50 top-0 bg-bg-primary-70 shadow-header backdrop-blur-lg shadow-fg-primary transition-transform`;
 
+const animateHeader = {
+  old: {
+    name: 'toHeaderOld',
+    fillMode: 'forwards',
+  },
+  new: {
+    name: 'toHeaderNew',
+    fillMode: 'backwards',
+  }
+};
+
+const myHeaderTransition = {
+  forwards: animateHeader,
+  backwards: animateHeader,
+};
 ---
 
-<header class="flex gap-4 justify-center bg-dark-bg-p px-20 py-8 z-50 sticky top-0 bg-bg-primary-70 shadow-header shadow-fg-primary backdrop-blur-lg">
+<header
+    id="header"
+    class={headerClasses}
+    transition:name="header"
+    transition:animate={myHeaderTransition}
+>
     <div class="flex gap-4 items-center justify-between w-200">
         <a href="/" rel="prefetch-intent">
             <Logo />
