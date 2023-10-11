@@ -1,11 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-import { ContentContainer, H2, Section } from '../../components';
+import { Card, ContentContainer, H2, Section } from '../../components';
 import image from '../../assets/images/cards/craft.png';
 import icons from '../../assets/icons';
 import type { Translations } from '../../utils/typings';
 import { IntroSection } from '../../sections';
-import { Image } from 'astro:assets';
+import craft from '../../assets/images/cards/craft.png';
+import feats from '../../assets/images/cards/feats.png';
+import journey from '../../assets/images/cards/journey.png';
+import contact from '../../assets/images/cards/contact.png';
 
 
 
@@ -14,6 +18,18 @@ interface Props {
 }
 
 const { T } = Astro.props;
+
+const images = [craft, feats, journey, contact];
+const manifestoInfo = Object.keys(T.MANIFESTO).map((key, idx) => {
+	const cardKey = key as keyof typeof T.MANIFESTO;
+	return {
+		image: images[idx],
+		alt: T.MANIFESTO[cardKey].ALT,
+		title: T.MANIFESTO[cardKey].TITLE,
+		description: T.MANIFESTO[cardKey].DESCRIPTION,
+    tools: T.MANIFESTO[cardKey].TOOLS
+	}
+});
 
 
 ---
@@ -31,8 +47,8 @@ const { T } = Astro.props;
     <!-- Technologies Section -->
     <Section backgroundColor="secondary">
       <ContentContainer singleContainer>
-        <H2>Technologies I have worked with</H2>
-        <ul class="grid grid-cols-4 grid-rows-4 gap-y-16 gap-x-32 mt-16">
+        <H2 className="mb-16">Technologies I have worked with</H2>
+        <ul class="grid grid-cols-4 grid-rows-4 gap-y-16 gap-x-32">
           { icons.map(icon => (
             <li class="flex justify-center">
               <Image src={icon.img} alt={icon.alt} height="96"/>
@@ -45,12 +61,18 @@ const { T } = Astro.props;
     <!-- Methologies/Services Section -->
     <Section>
       <ContentContainer singleContainer>
-        <H2>My Technical Manifesto</H2>
-        <ul>
-          <li>Backend Development</li>
-          <li>Frontend Development</li>
-          <li>DevOps</li>
-        </ul>
+        <H2 className="mb-16">My Technical Manifesto</H2>
+        <div class="flex flex-col desktop:grid grid-cols-2 grid-rows-2 gap-20">
+          {manifestoInfo.map(info => (
+            <Card
+              src={info.image}
+              alt={info.alt}
+              title={info.title}
+              description={info.description}
+              tools={info.tools}
+            />
+          ))}
+        </div>
       </ContentContainer>
     </Section>
 

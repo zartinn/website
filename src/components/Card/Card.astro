@@ -1,54 +1,26 @@
 ---
-import CardImage from './CardImage/CardImage.astro';
-import { H3, LangLink, P } from '..';
+import CardContent from './CardContent/CardContent.astro';
+
 interface Props {
 	id?: string,
     src: ImageMetadata,
     alt: string,
-	href: string;
 	title: string;
 	description: string;
+	tools: string;
 }
 
-const { src, alt, href, title, description, id } = Astro.props;
-const beforeElClasses = 'before:w-[calc(100%_+_4px)] before:h-[calc(100%_+_4px)] before:absolute before:-top-0.5 before:-left-0.5 before:bg-gradient-to-br before:from-clr-primary before:to-clr-secondary before:rounded-3xl';
-const linkClasses = 'grayscale-50 hover:grayscale-0 transition-all duration-500 group rounded-xl p-8 flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2 cursor-pointer';
-
-
-const transitionProps: any = {}
-if (id !== undefined) {
-	transitionProps.link = {
-		transitionName: id
-	};
-	transitionProps.image = {
-		transitionName: `${id}-image`,
-	}
-	transitionProps.title = {
-		transitionName: `${id}-title`
-	}
-	transitionProps.description = {
-		transitionName: `${id}-description`
-	}
-}
-
+const { src, alt, title, description, id = '', tools } = Astro.props;
+const containerClasses = 'grayscale-50 hover:grayscale-0 transition-all duration-500 group rounded-xl p-8 flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2';
 
 ---
 
-<LangLink
-	href={href}
-	className={`${id} ${linkClasses}`}
-	{...transitionProps.link}
->
-	<div class={`rounded-3xl relative ${beforeElClasses} w-full`}>
-		<div class="relative rounded-3xl overflow-hidden w-full bg-bg-primary">
-			<CardImage
-				src={src}
-				alt={alt}
-				{...transitionProps.image}
-			/>
-		</div>
-	</div>
-	<H3 {...transitionProps.title}>{title}</H3>
-	<div class="h-1 w-1/2 bg-gradient-to-r from-clr-primary to-clr-secondary rounded-3xl"></div>
-	<P className="text-center" {...transitionProps.description}>{description}</P>
-</LangLink>
+<div class={containerClasses}>
+	<CardContent
+		src={src}
+		alt={alt}
+		title={title}
+		description={description}
+		tools={tools}
+	/>
+</div>

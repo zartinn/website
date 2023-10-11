@@ -43,7 +43,33 @@
     },
     "CRAFT": {
         "TITLE": "Craft",
-        "DESCRIPTION": "In-depth expertise in modern technologies and development practices"
+        "DESCRIPTION": "In-depth expertise in modern technologies and development practices",
+        "MANIFESTO": {
+            "craft": {
+                "TITLE": "Client-Centric Rapid Development",
+                "DESCRIPTION": "In today’s fast-paced world, understanding client requirements and adapting quickly is key. I prioritize direct communication and iterative development. This means less time deciphering needs and more time building solutions tailored to you.",
+                "TOOLS": "Real-time collaboration tools (e.g., Slack, Trello) for keeping clients in the loop.",
+                "ALT": "client-centric card image"
+            },
+            "feats": {
+                "TITLE": "Comprehensive Technical Services",
+                "DESCRIPTION": "Whether it's crafting pixel-perfect frontends, robust backends, streamlining CI/CD pipelines, or providing expert consultancy, I offer a comprehensive suite of services. Let's make your vision a reality, from concept to deployment.",
+                "TOOLS": "Frontend (React, Vue, SASS), Backend (Node.js, Express, MongoDB), CI/CD (Jenkins, GitHub Actions), and Consultation sessions via Zoom or Teams.",
+                "ALT": "Technical services card image"
+            },
+            "journey": {
+                "TITLE": "Architectural Excellence with Cloud Expertise",
+                "DESCRIPTION": "With a certified proficiency in AWS, I pride myself on designing resilient, scalable, and efficient software architectures. From designing robust microservices to leveraging cloud-native solutions, I ensure your software not only meets current demands but is future-proof.",
+                "TOOLS": "AWS (Lambda, EC2, S3, etc.), Docker, Serverless Framework, Terraform.",
+                "ALT": "Architectural card image"
+            },
+            "contact": {
+                "TITLE": "Holistic Code Quality",
+                "DESCRIPTION": "Beyond just \"working\" code, I focus on clarity, maintainability, and anticipating unseen edge cases. While Test-Driven Development (TDD) is valuable, I emphasize holistic code quality—ensuring each line is purposeful, tested, and contributes to the larger software vision.",
+                "TOOLS": "ESLint, Prettier, Jest, Mocha, Chai.",
+                "ALT": "code quality card image"
+            }
+        }
     },
     "CONTACT": {
         "TITLE": "Contact",

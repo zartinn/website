@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import type { Translations } from '../../utils/typings';
-import { Header, Section, Title, ContentContainer, MyImage, H2, P, Card } from '../../components';
+import { Header, Section, Title, ContentContainer, MyImage, H2, P, CardLink } from '../../components';
 import zartin1 from '../../assets/images/zartin_1.jpg';
 import craft from '../../assets/images/cards/craft.png';
 import feats from '../../assets/images/cards/feats.png';
@@ -50,7 +50,7 @@ const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 		<Section>
 			<ContentContainer singleContainer className="flex flex-col desktop:grid grid-cols-2 grid-rows-2 gap-20">
 				{linkInfos.map(info => (
-					<Card
+					<CardLink
 						id={info.id}
 						src={info.image}
 						alt={info.alt}

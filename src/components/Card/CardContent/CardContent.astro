@@ -1,0 +1,47 @@
+---
+import { H3, P } from '../..';
+import CardImage from '../CardImage/CardImage.astro';
+
+interface Props {
+    id?: string
+    src: ImageMetadata,
+    alt: string,
+	title: string;
+	description: string;
+    tools?: string;
+}
+
+const { src, alt, title, description, id = '', tools } = Astro.props;
+const transitionProps: any = {}
+if (id) {
+	transitionProps.image = {
+		transitionName: `${id}-image`,
+	}
+	transitionProps.title = {
+		transitionName: `${id}-title`
+	}
+	transitionProps.description = {
+		transitionName: `${id}-description`
+	}
+}
+
+const beforeElClasses = 'before:w-[calc(100%_+_4px)] before:h-[calc(100%_+_4px)] before:absolute before:-top-0.5 before:-left-0.5 before:bg-gradient-to-br before:from-clr-primary before:to-clr-secondary before:rounded-3xl';
+
+---
+
+<div class={`rounded-3xl relative ${beforeElClasses} w-full`}>
+    <div class="relative rounded-3xl overflow-hidden w-full bg-bg-primary">
+        <CardImage
+            src={src}
+            alt={alt}
+            {...transitionProps.image}
+        />
+    </div>
+</div>
+<H3 className="text-center" {...transitionProps.title}>{title}</H3>
+<div class="h-1 w-1/2 bg-gradient-to-r from-clr-primary to-clr-secondary rounded-3xl"></div>
+<P className="text-center" {...transitionProps.description}>{description}</P>
+{ tools &&
+    <div class="h-1 w-1/2 bg-gradient-to-r from-clr-primary to-clr-secondary rounded-3xl"></div>
+    <P className="text-center">{tools}</P>
+}
