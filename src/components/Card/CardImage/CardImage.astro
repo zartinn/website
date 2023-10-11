@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+    src: ImageMetadata,
+    alt: string,
+    transitionName?: string
+}
+
+const { src, alt, transitionName } = Astro.props;
+
+
+const animateCard = {
+  old: {
+    name: 'toCardOld',
+    fillMode: 'forwards',
+  },
+  new: {
+    name: 'toCardNew',
+    fillMode: 'backwards',
+  }
+};
+
+const myCardTransition = {
+  forwards: animateCard,
+  backwards: animateCard,
+}
+
+---
+
+
+<Image
+    src={src}
+    alt={alt}
+    width={400}
+    class="z-10 rounded-3xl w-full group-hover:scale-105 transition-transform duration-500 object-cover"
+    transition:animate={myCardTransition}
+    transition:name={transitionName}
+/>
