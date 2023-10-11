@@ -32,7 +32,7 @@ const { T } = Astro.props;
     <Section backgroundColor="secondary">
       <ContentContainer singleContainer>
         <H2>Technologies I have worked with</H2>
-        <ul class="grid grid-cols-4 grid-rows-4 gap-16 mt-16">
+        <ul class="grid grid-cols-4 grid-rows-4 gap-y-16 gap-x-32 mt-16">
           { icons.map(icon => (
             <li class="flex justify-center">
               <Image src={icon.img} alt={icon.alt} height="96"/>
