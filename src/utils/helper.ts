@@ -1,17 +1,23 @@
 
 import type { TextTag } from './typings';
 
-export function getTextProps(tag: TextTag, className?: string) {
+export function getTextProps(tag: TextTag, className?: string, small?: boolean) {
     const classMap = {
       h1: 'text-h1',
       h2: 'text-h2',
       h3: 'text-h3',
-      p: 'text-body'
+      p: {
+        default: 'text-body',
+        small: 'text-body-small'
+      }
     };
+
+    const pClassName = small ? classMap['p'].small : classMap['p'].default;
+    const classNameTag = tag === 'p' ? pClassName : classMap[tag];
   
     return {
       type: tag,
-      className: `${classMap[tag]} ${className || ''}`
+      className: `${classNameTag} ${className || ''}`
     };
 }
 

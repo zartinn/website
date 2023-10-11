@@ -6,10 +6,10 @@ import image from '../../assets/images/cards/craft.png';
 import icons from '../../assets/icons';
 import type { Translations } from '../../utils/typings';
 import { IntroSection } from '../../sections';
-import craft from '../../assets/images/cards/craft.png';
-import feats from '../../assets/images/cards/feats.png';
-import journey from '../../assets/images/cards/journey.png';
-import contact from '../../assets/images/cards/contact.png';
+import client from '../../assets/images/manifesto/handshake.png';
+import technical from '../../assets/images/manifesto/technical-services.png';
+import aws from '../../assets/images/manifesto/cloud-expertise.png';
+import codequality from '../../assets/images/manifesto/code-quality.png';
 
 
 
@@ -19,7 +19,7 @@ interface Props {
 
 const { T } = Astro.props;
 
-const images = [craft, feats, journey, contact];
+const images = [client, technical, aws, codequality];
 const manifestoInfo = Object.keys(T.MANIFESTO).map((key, idx) => {
 	const cardKey = key as keyof typeof T.MANIFESTO;
 	return {
@@ -73,18 +73,6 @@ const manifestoInfo = Object.keys(T.MANIFESTO).map((key, idx) => {
             />
           ))}
         </div>
-      </ContentContainer>
-    </Section>
-
-    <!-- Certifications Section -->
-    <Section>
-      <ContentContainer singleContainer>
-        <H2>Certifications</H2>
-        <ul>
-          <li>AWS Certified Solutions Architect</li>
-          <li>Google Cloud Professional Cloud Architect</li>
-          <!-- Add more as needed -->
-        </ul>
       </ContentContainer>
     </Section>
   </main>

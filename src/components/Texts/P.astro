@@ -5,10 +5,11 @@ import { getTextProps } from '../../utils/helper';
 interface Props {
 	className?: string;
 	transitionName?: string;
+	small?: string;
 }
 
-const { className, transitionName } = Astro.props;
-const textProps = getTextProps('p', className);
+const { className, transitionName, small } = Astro.props;
+const textProps = getTextProps('p', className, small );
 ---
 
 <Text
