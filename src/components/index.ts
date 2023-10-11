@@ -10,6 +10,7 @@ export { default as H2 } from './Texts/H2.astro';
 export { default as H3 } from './Texts/H3.astro';
 export { default as P } from './Texts/P.astro';
 export { default as Title } from './Texts/Title.astro';
+export { default as BackIcon } from './Icons/Back.astro';
 
 
 
