@@ -6,10 +6,20 @@ let imports = '';
 
 let iconArray = 'const icons = [\n';
 
-fs.readdirSync(iconsDir).forEach(file => {
+// Sort files based on numerical prefix
+const sortedFiles = fs.readdirSync(iconsDir).sort((a, b) => {
+  const numA = parseInt(a.split('-')[0], 10);
+  const numB = parseInt(b.split('-')[0], 10);
+  return numA - numB;
+});
+
+sortedFiles.forEach(file => {
   if (file.match(/\.svg$/)) {
+    // Strip numerical prefix and hyphen from filename
+    const cleanName = file.replace(/^\d+-/, '');
+    
     // Convert filename to camelCase for variable name
-    const iconName = file.replace('.svg', '').replace(/-([a-z])/g, g => g[1].toUpperCase());
+    const iconName = cleanName.replace('.svg', '').replace(/-([a-z])/g, g => g[1].toUpperCase());
 
     // Convert camelCase back to regular words for alt text
     const altText = iconName.replace(/([A-Z])/g, ' $1').toLowerCase();
