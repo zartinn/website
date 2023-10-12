@@ -23,8 +23,10 @@ const imageClass = id === 'feats' ? 'object-feats' : '';
         transition:name={`${id}-image`}
         transition:animate={myBackgroundTransition}
     />
-    <ContentContainer singleContainer className="z-10">
-        <H1 className={`${id}-title mb-12`} transitionName={`${id}-title`}>{title}</H1>
-        <P transitionName={`${id}-description`}>{description}</P>
+    <ContentContainer className="z-10">
+        <H1 className={`${id}-title`} transitionName={`${id}-title`} type="xl">{title}</H1>
+    </ContentContainer>
+    <ContentContainer className="z-10">
+        <P className="text-center italic" type="xl">{description}</P>
     </ContentContainer>
 </Section>

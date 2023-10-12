@@ -1,19 +1,31 @@
 
 import type { TextTag } from './typings';
 
-export function getTextProps(tag: TextTag, className?: string, small?: boolean) {
+export function getTextProps(tag: TextTag, className?: string, type: 'default' | 'xl' | 'small' = 'default') {
     const classMap = {
-      h1: 'text-h1',
-      h2: 'text-h2',
-      h3: 'text-h3',
+      h1: {
+        default: 'text-h1',
+        xl: 'text-h1-xl font-bold',
+        small: ''
+      },
+      h2: {
+        xl: '',
+        small: '',
+        default: 'text-h2'
+      },
+      h3: {
+        xl: '',
+        small: '',
+        default: 'text-h3',
+      },
       p: {
+        xl: 'text-body-xl',
         default: 'text-body',
         small: 'text-body-small'
       }
     };
 
-    const pClassName = small ? classMap['p'].small : classMap['p'].default;
-    const classNameTag = tag === 'p' ? pClassName : classMap[tag];
+    const classNameTag = classMap[tag][type];
   
     return {
       type: tag,
