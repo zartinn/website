@@ -13,6 +13,10 @@ export { default as H3 } from './Texts/H3.astro';
 export { default as P } from './Texts/P.astro';
 export { default as Title } from './Texts/Title.astro';
 export { default as BackIcon } from './Icons/Back.astro';
+export { default as LinkedinIcon } from './Icons/social/Linkedin.astro';
+export { default as GithubIcon } from './Icons/social/Github.astro';
+export { default as MailIcon } from './Icons/social/Mail.astro';
+export { default as AstroIcon } from './Icons/technologies/Astro.astro';
 
 
 

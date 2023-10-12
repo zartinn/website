@@ -46,7 +46,7 @@ const isActive = (linkId: string) => {
 // const pageSpecificClasses = isHome ? 'sticky' : 'absolute w-screen -translate-y-full'
 const pageSpecificClasses = 'sticky'
 
-const headerClasses = `${pageSpecificClasses} flex gap-4 justify-center bg-dark-bg-p px-20 py-8 z-50 top-0 bg-bg-primary-70 shadow-header backdrop-blur-lg shadow-fg-primary`;
+const headerClasses = `${pageSpecificClasses} flex gap-4 justify-center bg-dark-bg-p px-12 py-8 z-50 top-0 bg-bg-primary-70 shadow-header backdrop-blur-lg shadow-fg-primary h-32`;
 
 const animateHeader = {
   old: {
@@ -68,6 +68,8 @@ const myHeaderTransition = {
 <header
     id="header"
     class={headerClasses}
+    transition:name="header"
+    transition:animate={myHeaderTransition}
 >
     <div class="flex gap-4 items-center justify-between w-200">
         { isHome ? 

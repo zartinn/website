@@ -5,7 +5,7 @@ export function getTextProps(tag: TextTag, className?: string, type: 'default' |
     const classMap = {
       h1: {
         default: 'text-h1',
-        xl: 'text-h1-xl font-bold',
+        xl: 'text-h1 desktop:text-h1-xl font-bold',
         small: ''
       },
       h2: {
@@ -19,7 +19,7 @@ export function getTextProps(tag: TextTag, className?: string, type: 'default' |
         default: 'text-h3',
       },
       p: {
-        xl: 'text-body-xl',
+        xl: 'text-body desktop:text-body-xl',
         default: 'text-body',
         small: 'text-body-small'
       }
