@@ -1,5 +1,5 @@
 const fs = require('fs');
-const iconsDir = './src/assets/icons/';
+const iconsDir = './src/assets/icons/technologies/';
 const outputPath = `${iconsDir}index.ts`;
 
 let imports = '';
