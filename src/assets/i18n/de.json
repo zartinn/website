@@ -44,6 +44,7 @@
     "CRAFT": {
         "TITLE": "Fachkompetenz",
         "DESCRIPTION": "Tiefgreifende Expertise in modernen Technologien und Entwicklungspraktiken",
+        "DESCRIPTION_LONG": "Tauchen Sie ein in die Grundpfeiler meines Handwerks - die Methoden und Praktiken, die ich befolge. In diesem Abschnitt entdecken Sie nicht nur die Dienstleistungen, die ich anbiete, sondern auch den philosophischen Ansatz, den ich verfolge. Von der Priorisierung direkter Kommunikation mit Kunden bis zur Sicherstellung zukunftssicherer Softwaregestaltung verbinde ich Fachwissen mit Empathie und sorge dafür, dass jedes Projekt ein maßgeschneidertes Meisterwerk ist.",
         "MANIFESTO": {
             "client": {
                 "TITLE": "Client-Centric Rapid Development",
@@ -73,14 +74,17 @@
     },
     "CONTACT": {
         "TITLE": "Kontakt",
+        "DESCRIPTION_LONG": "Haben Sie eine Idee, eine Frage oder möchten Sie einfach nur Hallo sagen? Dies ist Ihr Portal, um direkt mit mir in Kontakt zu treten. Sei es für Projektbesprechungen, technische Beratungen oder einfach nur etwas Technik-Geplauder, meine virtuelle Tür steht immer offen und wartet darauf, Verbindungen und Kollaborationen zu fördern.",
         "DESCRIPTION": "Offene Kommunikationskanäle für zukünftige Zusammenarbeiten"
     },
     "FEATS": {
         "TITLE": "Erfolge",
+        "DESCRIPTION_LONG": "Betreten Sie eine Galerie meiner beruflichen Errungenschaften. Hier finden Sie eine sorgfältig ausgewählte Sammlung von Projekten aus verschiedenen Bereichen und Herausforderungen. Jedes Unterfangen erzählt eine Geschichte von Hingabe, Können und dem unermüdlichen Streben nach Exzellenz und vermittelt einen Eindruck davon, was ich zu bieten habe.",
         "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen"
     },
     "JOURNEY": {
         "TITLE": "Laufbahn",
+        "DESCRIPTION_LONG": "Durchqueren Sie die Zeitleiste meines beruflichen Lebens. Von bescheidenen Anfängen bis zu bedeutenden Meilensteinen erleben Sie die Entwicklung eines Codierers, der zum Technikexperten wurde. Dieser Abschnitt gibt Einblick in die Erfahrungen, Herausforderungen und Erkenntnisse, die meine Reise in der sich ständig weiterentwickelnden Techniklandschaft geprägt haben.",
         "DESCRIPTION": "Eine berufliche Laufbahn, die sich durch kontinuierliches Lernen und Anpassungsfähigkeit auszeichnet"
     }
 }

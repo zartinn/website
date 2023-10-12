@@ -44,6 +44,7 @@
     "CRAFT": {
         "TITLE": "Craft",
         "DESCRIPTION": "In-depth expertise in modern technologies and development practices",
+        "DESCRIPTION_LONG": "Dive into my expertise and methodologies. From client-centric development to architectural excellence, discover the services and approaches that shape my work and deliver outstanding results.",
         "MANIFESTO": {
             "client": {
                 "TITLE": "Client-Centric Rapid Development",
@@ -73,14 +74,17 @@
     },
     "CONTACT": {
         "TITLE": "Contact",
+        "DESCRIPTION_LONG": "Have an idea, a query, or just want to say hi? This is your portal to connect with me directly. Be it project discussions, technical consultations, or just some tech banter, my virtual door is always open.",
         "DESCRIPTION": "Open channels for communication and future collaborations"
     },
     "FEATS": {
         "TITLE": "Feats",
+        "DESCRIPTION_LONG": "Browse my collection of past projects and contributions. From straightforward solutions to more complex endeavors, see the practical outcomes and the methods that have defined each piece of my work.",
         "DESCRIPTION": "Selected achievements that exemplify my problem-solving skills and dedication"
     },
     "JOURNEY": {
         "TITLE": "Journey",
+        "DESCRIPTION_LONG": "Embark on a journey through the landmarks of my career. From my earliest coding adventures to mastering advanced tech realms, see the evolution, the challenges, and the triumphs that have shaped my path.",
         "DESCRIPTION": "A professional trajectory characterized by continuous learning and adaptability"
     }
 }

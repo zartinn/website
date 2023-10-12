@@ -15,17 +15,20 @@ const sortedFiles = fs.readdirSync(iconsDir).sort((a, b) => {
 
 sortedFiles.forEach(file => {
   if (file.match(/\.svg$/)) {
-    // Strip numerical prefix and hyphen from filename
-    const cleanName = file.replace(/^\d+-/, '');
+    // Strip off 'icon-' prefix and '.svg' extension
+    const cleanName = file.replace(/^\d+-icon-/, '').replace('.svg', '');
     
     // Convert filename to camelCase for variable name
-    const iconName = cleanName.replace('.svg', '').replace(/-([a-z])/g, g => g[1].toUpperCase());
+    const iconName = cleanName.replace(/-([a-z])/g, g => g[1].toUpperCase());
 
-    // Convert camelCase back to regular words for alt text
-    const altText = iconName.replace(/([A-Z])/g, ' $1').toLowerCase();
+    // Generate readable text for the icon
+    const readableText = cleanName.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
+    // Generate alt text with 'icon' word included
+    const altText = `${readableText} Icon`;
+    
     imports += `import ${iconName} from './${file}';\n`;
-    iconArray += `  { img: ${iconName}, alt: "${altText}" },\n`; 
+    iconArray += `  { img: ${iconName}, alt: "${altText}", text: "${readableText}" },\n`; 
   }
 });
 

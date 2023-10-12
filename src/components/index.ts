@@ -1,6 +1,7 @@
 export { default as Card } from './Card/Card.astro';
 export { default as CardLink } from './Card/CardLink.astro';
 export { default as Header } from './Header/Header.astro';
+export { default as Footer } from './Footer/Footer.astro';
 export { default as Link } from './Link/Link.astro';
 export { default as LangLink } from './LangLink/LangLink.astro';
 export { default as MyImage } from './MyImage/MyImage.astro';

@@ -11,8 +11,6 @@ import technical from '../../assets/images/manifesto/technical-services.png';
 import aws from '../../assets/images/manifesto/cloud-expertise.png';
 import codequality from '../../assets/images/manifesto/code-quality.png';
 
-
-
 interface Props {
   T: Translations['CRAFT']
 }
@@ -47,11 +45,12 @@ const manifestoInfo = Object.keys(T.MANIFESTO).map((key, idx) => {
     <!-- Technologies Section -->
     <Section backgroundColor="secondary">
       <ContentContainer singleContainer>
-        <H2 className="mb-16">Technologies I have worked with</H2>
-        <ul class="grid grid-cols-4 grid-rows-4 gap-y-16 gap-x-32">
+        <H2 className="mb-16 text-center">Technologies I have worked with</H2>
+        <ul class="grid grid-cols-2 grid-rows-8 desktop:grid-cols-4 desktop:grid-rows-4 gap-y-16 gap-x-32">
           { icons.map(icon => (
-            <li class="flex justify-center">
+            <li class="group flex flex-col justify-center items-center gap-4">
               <Image src={icon.img} alt={icon.alt} height="96"/>
+              <span class="text-body-xl text-fg-primary opacity-0 translate-y-1/2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">{icon.text}</span>
             </li>
           ))}
         </ul>

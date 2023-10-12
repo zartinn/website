@@ -1,36 +1,36 @@
-import iconTypescript from './0-icon-typescript.svg';
-import iconJavscript from './1-icon-javscript.svg';
-import iconReact from './3-icon-react.svg';
-import iconNodejs from './4-icon-nodejs.svg';
-import iconNextjs from './5-icon-nextjs.svg';
-import iconExpress from './6-icon-express.svg';
-import iconTailwindcss from './7-icon-tailwindcss.svg';
-import iconAws from './8-icon-aws.svg';
-import iconAngular from './9-icon-angular.svg';
-import iconAstro from './10-icon-astro.svg';
-import iconCypress from './11-icon-cypress.svg';
-import iconSass from './12-icon-sass.svg';
-import iconSocket from './13-icon-socket.svg';
-import iconGit from './14-icon-git.svg';
-import iconMongodb from './15-icon-mongodb.svg';
-import iconPostgresql from './16-icon-postgresql.svg';
+import typeScript from './0-icon-typeScript.svg';
+import javaScript from './1-icon-javaScript.svg';
+import react from './3-icon-react.svg';
+import nodeJS from './4-icon-nodeJS.svg';
+import nextJS from './5-icon-nextJS.svg';
+import expressJS from './6-icon-expressJS.svg';
+import tailwindCSS from './7-icon-tailwindCSS.svg';
+import AWS from './8-icon-AWS.svg';
+import angular from './9-icon-angular.svg';
+import astro from './10-icon-astro.svg';
+import cypress from './11-icon-cypress.svg';
+import SASS from './12-icon-SASS.svg';
+import websockets from './13-icon-websockets.svg';
+import git from './14-icon-git.svg';
+import mongoDB from './15-icon-mongoDB.svg';
+import postgreSQL from './16-icon-postgreSQL.svg';
 const icons = [
-  { img: iconTypescript, alt: "icon typescript" },
-  { img: iconJavscript, alt: "icon javscript" },
-  { img: iconReact, alt: "icon react" },
-  { img: iconNodejs, alt: "icon nodejs" },
-  { img: iconNextjs, alt: "icon nextjs" },
-  { img: iconExpress, alt: "icon express" },
-  { img: iconTailwindcss, alt: "icon tailwindcss" },
-  { img: iconAws, alt: "icon aws" },
-  { img: iconAngular, alt: "icon angular" },
-  { img: iconAstro, alt: "icon astro" },
-  { img: iconCypress, alt: "icon cypress" },
-  { img: iconSass, alt: "icon sass" },
-  { img: iconSocket, alt: "icon socket" },
-  { img: iconGit, alt: "icon git" },
-  { img: iconMongodb, alt: "icon mongodb" },
-  { img: iconPostgresql, alt: "icon postgresql" },
+  { img: typeScript, alt: "TypeScript Icon", text: "TypeScript" },
+  { img: javaScript, alt: "JavaScript Icon", text: "JavaScript" },
+  { img: react, alt: "React Icon", text: "React" },
+  { img: nodeJS, alt: "NodeJS Icon", text: "NodeJS" },
+  { img: nextJS, alt: "NextJS Icon", text: "NextJS" },
+  { img: expressJS, alt: "ExpressJS Icon", text: "ExpressJS" },
+  { img: tailwindCSS, alt: "TailwindCSS Icon", text: "TailwindCSS" },
+  { img: AWS, alt: "AWS Icon", text: "AWS" },
+  { img: angular, alt: "Angular Icon", text: "Angular" },
+  { img: astro, alt: "Astro Icon", text: "Astro" },
+  { img: cypress, alt: "Cypress Icon", text: "Cypress" },
+  { img: SASS, alt: "SASS Icon", text: "SASS" },
+  { img: websockets, alt: "Websockets Icon", text: "Websockets" },
+  { img: git, alt: "Git Icon", text: "Git" },
+  { img: mongoDB, alt: "MongoDB Icon", text: "MongoDB" },
+  { img: postgreSQL, alt: "PostgreSQL Icon", text: "PostgreSQL" },
 ];
 
 export default icons;
