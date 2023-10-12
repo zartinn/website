@@ -1,7 +1,8 @@
 ---
-import Link from '../Link/Link.astro';
 import Logo from '../Icons/Logo.astro';
+import DownloadCV from '../DownloadCV/DownloadCV.astro';
 import ThemeToggle from '../Icons/ThemeToggle.astro';
+import { BackIcon } from '..';
 
 interface Props {
     page?: string;
@@ -42,8 +43,10 @@ const isActive = (linkId: string) => {
     const currentPage = page || 'home';
     return currentPage === linkId;
 }
-const pageSpecificClasses = isHome ? 'sticky' : 'absolute w-screen -translate-y-full'
-const headerClasses = `${pageSpecificClasses} flex gap-4 justify-center bg-dark-bg-p px-20 py-8 z-50 top-0 bg-bg-primary-70 shadow-header backdrop-blur-lg shadow-fg-primary transition-transform`;
+// const pageSpecificClasses = isHome ? 'sticky' : 'absolute w-screen -translate-y-full'
+const pageSpecificClasses = 'sticky'
+
+const headerClasses = `${pageSpecificClasses} flex gap-4 justify-center bg-dark-bg-p px-20 py-8 z-50 top-0 bg-bg-primary-70 shadow-header backdrop-blur-lg shadow-fg-primary`;
 
 const animateHeader = {
   old: {
@@ -65,20 +68,21 @@ const myHeaderTransition = {
 <header
     id="header"
     class={headerClasses}
-    transition:name="header"
-    transition:animate={myHeaderTransition}
 >
     <div class="flex gap-4 items-center justify-between w-200">
-        <a href="/" rel="prefetch-intent">
-            <Logo />
-        </a>
-        <div class="flex gap-12">
+        { isHome ? 
+            <Logo/>
+             :
+            <BackIcon/>
+        }
+        <div class="flex gap-12 items-center">
             <!-- <nav class="grid grid-cols-5 gap-10">
                 {menu.map(menuItem => 
                     <Link linkInfo={menuItem} active={isActive(menuItem.id)}/>
                 )}
             </nav> -->
             <ThemeToggle/>
+            <DownloadCV/>
         </div>
     </div>
 </header>

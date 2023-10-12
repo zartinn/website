@@ -40,7 +40,7 @@ module.exports = {
           header: `0px -3px 15px 0px`,
         },
         minHeight: {
-          section: '25rem'
+          section: '35rem'
         },
         width: {
           'content-double': '34rem',

@@ -11,12 +11,16 @@ import Sun from './Sun.astro';
 <script>
     const toggleEvent = () => {
         const toggleIcon = document.getElementById("toggle-icon");
+        const downloadCVLink = document.getElementById('download-cv');
         toggleIcon?.addEventListener('click', () => {
             const currentTheme = localStorage.getItem('theme') || 'light';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             const root = document.documentElement;
             root.setAttribute('theme', newTheme);
             localStorage.setItem('theme', newTheme);
+
+            const cvFileName = newTheme === 'dark' ? 'Zachoszcz-CV-dark.pdf' : 'Zachoszcz-CV.pdf'
+            downloadCVLink?.setAttribute('href', `/assets/${cvFileName}`);
         });
     }
 

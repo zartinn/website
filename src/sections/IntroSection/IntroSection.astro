@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { ContentContainer, H1, P, Section, BackIcon } from '../../components';
+import { ContentContainer, H1, P, Section } from '../../components';
 import { myBackgroundTransition } from '../../utils/animations';
 
 interface Props {
@@ -16,7 +16,6 @@ const imageClass = id === 'feats' ? 'object-feats' : '';
 ---
 
 <Section>
-    <BackIcon className="absolute left-8 top-8"/>
     <Image
         src={image} 
         alt={`${id} background image`}

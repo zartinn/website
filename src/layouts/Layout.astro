@@ -22,8 +22,15 @@ const isHome = pathname === '/';
 	<head>
 		<script data-astro="raw">
 			const getTheme = () => localStorage.getItem("theme") || "light";
-			const setTheme = (theme) => document.documentElement.setAttribute("theme", theme);
+			const setTheme = (theme) => {
+				document.documentElement.setAttribute("theme", theme);
+
+				const downloadCVLink = document.getElementById('download-cv');
+				const cvFileName = theme === 'dark' ? 'Zachoszcz-CV-dark.pdf' : 'Zachoszcz-CV.pdf'
+				downloadCVLink?.setAttribute('href', `/assets/${cvFileName}`);
+			}
 			setTheme(getTheme());
+
 
 			window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
 			document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
@@ -35,7 +42,7 @@ const isHome = pathname === '/';
 		<link rel="preload" href="/assets/fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions fallback="none"/>
+		<ViewTransitions />
 	</head>
 	<body class="bg-bg-primary">
 		<Header isHome={isHome}/>
