@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import { Header } from '../components';
+import { Header, Footer } from '../components';
 import '../styles/view-transitions.css';
 interface Props {
 	title: string;
@@ -44,9 +44,10 @@ const isHome = pathname === '/';
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="bg-bg-primary">
+	<body class="bg-bg-primary overflow-x-hidden">
 		<Header isHome={isHome}/>
 		<slot />
+		<Footer/>
 	</body>
 </html>
 
@@ -55,6 +56,13 @@ const isHome = pathname === '/';
         font-family: 'GT Americano';
         src: url('/assets/fonts/GT-America-Standard-Regular.woff2') format('woff2'),
             url('/assets/fonts/GT-America-Standard-Regular.woff') format('woff');
+  		font-display: swap;
+    }
+    @font-face {
+        font-family: 'GT Americano';
+        src: url('/assets/fonts/GT-America-Standard-Bold.woff2') format('woff2'),
+            url('/assets/fonts/GT-America-Standard-Bold.woff') format('woff');
+		font-weight: bold;
   		font-display: swap;
     }
 </style>

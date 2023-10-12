@@ -40,6 +40,7 @@ module.exports = {
       extend: {
         boxShadow: {
           header: `0px -3px 15px 0px`,
+          footer: `0px 3px 15px 0px`,
         },
         minHeight: {
           section: '35rem'
