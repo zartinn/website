@@ -46,17 +46,20 @@ const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 			</ContentContainer>
 		</Section>
 		<Section>
-			<ContentContainer singleContainer className="flex flex-col desktop:grid grid-cols-2 grid-rows-2 gap-20">
-				{linkInfos.map(info => (
-					<CardLink
-						id={info.id}
-						src={info.image}
-						alt={info.alt}
-						href={info.href}
-						title={info.title}
-						description={info.description}
-					/>
-				))}
+			<ContentContainer singleContainer className="flex flex-col gap-20">
+				<H2 className="text-center">Discover & Connect</H2>
+				<div class="flex flex-col desktop:grid grid-cols-2 grid-rows-2 gap-20">
+					{linkInfos.map(info => (
+						<CardLink
+							id={info.id}
+							src={info.image}
+							alt={info.alt}
+							href={info.href}
+							title={info.title}
+							description={info.description}
+						/>
+					))}
+				</div>
 			</ContentContainer>
 		</Section>
 	</main>

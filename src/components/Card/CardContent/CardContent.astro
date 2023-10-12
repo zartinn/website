@@ -20,9 +20,6 @@ if (id) {
 	transitionProps.title = {
 		transitionName: `${id}-title`
 	}
-	transitionProps.description = {
-		transitionName: `${id}-description`
-	}
 }
 
 const beforeElClasses = 'before:w-[calc(100%_+_4px)] before:h-[calc(100%_+_4px)] before:absolute before:-top-0.5 before:-left-0.5 before:bg-gradient-to-br before:from-clr-primary before:to-clr-secondary before:rounded-3xl';
@@ -40,7 +37,7 @@ const beforeElClasses = 'before:w-[calc(100%_+_4px)] before:h-[calc(100%_+_4px)]
 </div>
 <H3 className="text-center" {...transitionProps.title}>{title}</H3>
 <div class="h-1 w-1/2 bg-gradient-to-r from-clr-primary to-clr-secondary rounded-3xl"></div>
-<P className="text-center" {...transitionProps.description}>{description}</P>
+<P className="text-center">{description}</P>
 { tools &&
     <div class="h-1 w-1/2 bg-gradient-to-r from-clr-primary to-clr-secondary rounded-3xl"></div>
     <P className="text-center italic" type="small">{tools}</P>

@@ -154,4 +154,31 @@ const isHome = pathname === '/';
 			Courier New,
 			monospace;
 	}
+
+	.card.active {
+		filter: grayscale(0);
+	}
+	.card.active img {
+		transform: scale(1.05)
+	}
 </style>
+
+<script>
+	const setCardListeners = () => {
+		const cardElements = Array.from(document.getElementsByClassName('card'));
+	
+		cardElements.forEach((cardEl, idx) => {
+			cardEl.addEventListener('touchstart', () => {
+				cardEl.classList.add('active');
+				cardElements.forEach((card, i) => {
+					if (idx !== i) {
+						card.classList.remove('active');
+					}
+				})
+			});
+		});
+	}
+
+	window.addEventListener("DOMContentLoaded", () => setCardListeners());
+	document.addEventListener("astro:after-swap", () => setCardListeners());
+</script>
