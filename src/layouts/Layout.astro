@@ -44,7 +44,7 @@ const isHome = pathname === '/';
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="bg-bg-primary overflow-x-hidden">
+	<body class="bg-bg-primary overflow-x-hidden flex flex-col min-h-screen">
 		<Header isHome={isHome}/>
 		<slot />
 		<Footer/>

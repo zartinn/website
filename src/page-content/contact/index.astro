@@ -1,5 +1,5 @@
 ---
-import { ContentContainer, H2, Header, Section } from '../../components';
+import { ContentContainer, H2, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/contact.png';
 import type { Translations } from '../../utils/typings';
@@ -15,8 +15,7 @@ const { T } = Astro.props;
 ---
 
 <Layout title="Contact - Get in Touch">
-  <!-- <Header page="contact"/> -->
-  <main transition:name="contact">
+  <main transition:name="contact" class="flex-grow">
     <IntroSection
       id="contact",
       image={image}

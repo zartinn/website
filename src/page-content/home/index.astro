@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import type { Translations } from '../../utils/typings';
-import { Header, Section, Title, ContentContainer, MyImage, H2, P, CardLink } from '../../components';
+import { Section, Title, ContentContainer, MyImage, H2, P, CardLink } from '../../components';
 import zartin1 from '../../assets/images/zartin_1.jpg';
 import craft from '../../assets/images/cards/craft.png';
 import feats from '../../assets/images/cards/feats.png';
@@ -30,9 +30,7 @@ const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 ---
 
 <Layout title="Welcome to my Portfolio">
-	<!-- Header on each page due to View Transition problem when in Layout -->
-	<!-- <Header page="home"/> -->
-	<main>
+	<main class="flex-grow">
 		<Section>
 			<ContentContainer>
 				<Title T={T.INTRO.TITLE} />

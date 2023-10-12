@@ -1,5 +1,5 @@
 ---
-import { ContentContainer, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H2, P, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/journey.png';
 import type { Translations } from '../../utils/typings';
@@ -16,8 +16,7 @@ const { T } = Astro.props;
 ---
 
 <Layout title="Journey - Career Path and Milestones">
-	  <!-- <Header page="journey"/> -->
-    <main transition:name="journey">
+    <main transition:name="journey" class="flex-grow">
       <IntroSection
         id="journey",
         image={image}

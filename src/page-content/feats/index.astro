@@ -1,5 +1,5 @@
 ---
-import { ContentContainer, H2, Header, P, Section } from '../../components';
+import { ContentContainer, H2, P, Section } from '../../components';
 import { IntroSection } from '../../sections';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/feats_wide.png';
@@ -14,8 +14,7 @@ const { T } = Astro.props;
 ---
 
 <Layout title="Feats - Professional Accomplishments">
-  <!-- <Header page="feats"/> -->
-  <main transition:name="feats">
+  <main transition:name="feats" class="flex-grow">
     <IntroSection
       id="feats",
       image={image}
