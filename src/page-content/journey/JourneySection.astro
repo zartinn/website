@@ -2,14 +2,14 @@
 import { Timeline } from '../../components';
 interface Props {
     className: string,
-    station: { date: string, event: string }
+    station: { date: string, event: string },
+    position?: 'top' | 'bottom' | 'default'
 }
 
-const { className, station } = Astro.props;
+const { className, station, position = 'default' } = Astro.props;
 ---
 
 <div class={`relative flex flex-col h-screen p-12 justify-center snap-start scroll-mt-32 items-center ${className}`}>
     <!-- Timeline -->
-    <Timeline station={station}/>
-    <slot/>
+    <Timeline station={station} position={position}/>
 </div>

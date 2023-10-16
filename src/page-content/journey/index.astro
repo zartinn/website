@@ -45,6 +45,12 @@ const stations = [
     }
 ]
 
+const getPosition = (idx: number) => {
+  if (idx === 0) return 'top';
+  if (idx === stations.length - 1) return 'bottom';
+  return 'default';
+}
+
 ---
 
 <Layout title="Journey - Career Path and Milestones">
@@ -58,7 +64,7 @@ const stations = [
 
       <div class="relative flex flex-col">
         {stations.map((station, idx) => (
-          <JourneySection station={station} className={idx % 2 === 0 ? 'bg-bg-secondary' : 'bg-bg-primary'}/>
+          <JourneySection station={station} position={getPosition(idx)} className={idx % 2 === 0 ? 'bg-bg-secondary' : 'bg-bg-primary'}/>
         ))}
       </div>
     </main>

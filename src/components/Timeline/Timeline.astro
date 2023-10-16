@@ -7,22 +7,35 @@ interface Props {
 
 const { station, position = 'default' } = Astro.props;
 
+let timelineHeight = '';
+if (position === 'top') {
+    timelineHeight = 'h-[calc(100%_-_2.5rem)] top-10';
+} else if (position === 'bottom') {
+    timelineHeight = 'h-[calc(100%_-_2.5rem)] bottom-10';
+} else {
+    timelineHeight = 'h-full top-0';
+}
+
 ---
 
-<div class="timeline h-full absolute top-0 self-center flex flex-col justify-center items-center z-10">
+<div class={`timeline ${timelineHeight} absolute self-center flex flex-col justify-center items-center z-10`}>
+    { position === 'top' &&
+        // Top Bubble
+        <div class="absolute h-5 w-5 rounded-full bg-clr-primary top-0 -translate-y-2"></div>
+    }
     <div class="h-full w-2 absolute top-0 border-clr-primary overflow-visible border-x">
         <!-- sentinel for Intersectionabserver -->
         <div class="timeline-sentinel h-0 w-full absolute top-24 left-0 pointer-events-none"></div>
         <!-- BG that will scale from top to bottom once a threshold is met -->
         <div class="timeline-bg h-full bg-clr-primary transition-transform origin-top duration-500 ease-linear"></div>
     </div>
-    <div class="content">
+    <div class="content z-10">
         <P>{station.date}</P>
     </div>
-    <!-- top bubble -->
-    <!-- <div class="absolute h-5 w-5 rounded-full bg-clr-primary top-0 -translate-x-2 -translate-y-2"></div> -->
-    <!-- bottom bubble -->
-    <!-- <div class="absolute h-5 w-5 rounded-full bg-clr-primary bottom-0 -translate-x-2 translate-y-2"></div> -->
+    { position === 'bottom' &&
+        // bottom bubble
+        <div class="absolute h-5 w-5 rounded-full bg-clr-primary bottom-0 translate-y-2"></div>
+    }
 </div>
 
 
