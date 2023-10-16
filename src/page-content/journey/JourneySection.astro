@@ -1,0 +1,15 @@
+---
+import { Timeline } from '../../components';
+interface Props {
+    className: string,
+    station: { date: string, event: string }
+}
+
+const { className, station } = Astro.props;
+---
+
+<div class={`relative flex flex-col h-screen p-12 justify-center snap-start scroll-mt-32 items-center ${className}`}>
+    <!-- Timeline -->
+    <Timeline station={station}/>
+    <slot/>
+</div>

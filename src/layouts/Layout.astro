@@ -11,13 +11,14 @@ const url = Astro.url
 const removedLangPathName = url.pathname.replace('/de', '');
 const pathname = removedLangPathName === '' ? '/' : removedLangPathName;
 const isHome = pathname === '/';
+const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-m:text-html-m desktop-l:text-html-l desktop-xl:text-html-default text-html-default';
 
 ---
 
 <!doctype html>
 <html
 	lang="en"
-	class="desktop:text-html-xs desktop-s:text-html-s desktop-m:text-html-m desktop-l:text-html-l desktop-xl:text-html-default text-html-default"
+	class={`${rootFontSizeClasses}`}
 >
 	<head>
 		<script data-astro="raw">

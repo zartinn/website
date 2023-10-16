@@ -1,9 +1,10 @@
 ---
-import { ContentContainer, H2, P, Section } from '../../components';
+import { ContentContainer, H1, H2, P, Section, Timeline } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/journey.png';
 import type { Translations } from '../../utils/typings';
 import { IntroSection } from '../../sections';
+import JourneySection from './JourneySection.astro';
 
 
 interface Props {
@@ -12,6 +13,37 @@ interface Props {
 
 const { T } = Astro.props;
 
+
+const stations = [
+    {
+        date: '1987',
+        event: 'Birth'
+    },
+    {
+        date: '2008',
+        event: 'High-School graduation'
+    },
+    {
+        date: '2010',
+        event: 'Siemens'
+    },
+    {
+        date: '2011 - 2014',
+        event: 'Bachelor'
+    },
+    {
+        date: '2014 - 2017',
+        event: 'Masters'
+    },
+    {
+        date: '2016 - 2021',
+        event: 'CARIAD SE'
+    },
+    {
+        date: 'from 2022',
+        event: 'Freelancing'
+    }
+]
 
 ---
 
@@ -23,41 +55,62 @@ const { T } = Astro.props;
         title={T.TITLE}
         description={T.DESCRIPTION_LONG}
       />
-  
-      <!-- Section: Early Career -->
-      <Section>
-        <ContentContainer singleContainer>
-          <H2>Early Career</H2>
-          <P>Highlights from the initial stages of my professional journey.</P>
-          <!-- Content detailing early career experiences here -->
-        </ContentContainer>
-      </Section>
-  
-      <!-- Section: Mid-Career -->
-      <Section>
-        <ContentContainer singleContainer>
-          <H2>Mid-Career</H2>
-          <P>Significant experiences and accomplishments from the mid-stage of my career.</P>
-          <!-- Content detailing mid-career milestones here -->
-        </ContentContainer>
-      </Section>
-  
-      <!-- Section: Recent Activities -->
-      <Section>
-        <ContentContainer singleContainer>
-          <H2>Recent Activities</H2>
-          <P>Current engagements and projects that demonstrate my evolving skill set.</P>
-          <!-- Content detailing recent activities and current projects here -->
-        </ContentContainer>
-      </Section>
-  
-      <!-- Section: Future Goals -->
-      <Section>
-        <ContentContainer singleContainer>
-          <H2>Future Goals</H2>
-          <P>Anticipated next steps and objectives for ongoing professional growth.</P>
-          <!-- Content detailing future career goals here -->
-        </ContentContainer>
-      </Section>
+
+      <div class="relative flex flex-col">
+        {stations.map((station, idx) => (
+          <JourneySection station={station} className={idx % 2 === 0 ? 'bg-bg-secondary' : 'bg-bg-primary'}/>
+        ))}
+      </div>
     </main>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  // Grab all the timelines
+  const timelines = document.querySelectorAll('.timeline-sentinel');
+  let isInitialLoad = true;
+
+  // Callback for the IntersectionObserver
+  const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+    if (isInitialLoad) {
+      const lastIntersectingElIdx = entries.findLastIndex(entry => entry.isIntersecting);
+      for (let i = 0; i <= lastIntersectingElIdx; i++) {
+        if (i === 0) {
+          entries[i].target.classList.add('half-visible');
+        }
+        if (i !== lastIntersectingElIdx) {
+          entries[i].target.classList.add('fully-visible');
+        }
+      }
+      return;
+    }
+    // ELSE
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        
+        // Get the previous sibling's .timeline-bg
+        const closestParentTimeline = entry.target.closest('.timeline');
+        const prevTimeline = closestParentTimeline?.previousElementSibling?.querySelector('.timeline-bg');
+        if (prevTimeline) {
+          prevTimeline.classList.add('fully-visible');
+        }
+      }
+    });
+  }
+
+    // Set up the options for the IntersectionObserver
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1
+    };
+
+    // Create the IntersectionObserver
+    const observer = new IntersectionObserver(handleIntersect, options);
+
+    // Start observing all the timelines
+    timelines.forEach(timeline => {
+      observer.observe(timeline);
+    });
+  });
+</script>
