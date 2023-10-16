@@ -1,11 +1,9 @@
 ---
-import { P } from '..';
 interface Props {
-    station: { date: string, event: string },
     position?: 'top' | 'bottom' | 'default'
 }
 
-const { station, position = 'default' } = Astro.props;
+const { position = 'default' } = Astro.props;
 
 let timelineHeight = '';
 if (position === 'top') {
@@ -19,19 +17,21 @@ if (position === 'top') {
 ---
 
 <div class={`timeline ${timelineHeight} absolute self-center flex flex-col justify-center items-center z-10`}>
+    <div class="timeline-sentinel h-0 w-full absolute top-24 left-0 pointer-events-none"></div>
     { position === 'top' &&
         // Top Bubble
         <div class="absolute h-5 w-5 rounded-full bg-clr-primary top-0 -translate-y-2"></div>
     }
-    <div class="h-full w-2 absolute top-0 border-clr-primary overflow-visible border-x">
-        <!-- sentinel for Intersectionabserver -->
-        <div class="timeline-sentinel h-0 w-full absolute top-24 left-0 pointer-events-none"></div>
-        <!-- BG that will scale from top to bottom once a threshold is met -->
+    <!-- Upper timeline half -->
+    <div class="upper-half h-1/2 w-2 absolute top-0 border-clr-primary overflow-visible border-x">
         <div class="timeline-bg h-full bg-clr-primary transition-transform origin-top duration-500 ease-linear"></div>
     </div>
-    <div class="content z-10">
-        <P>{station.date}</P>
+    <div class="absolute h-5 w-5 rounded-full bg-clr-primary bottom-0 top-1/2 -translate-y-1/2"></div>
+    <!-- Lower timeline half -->
+    <div class="lower-half h-1/2 w-2 absolute top-1/2 border-clr-primary overflow-visible border-x">
+        <div class="timeline-bg h-full bg-clr-primary transition-transform origin-top duration-500 ease-linear"></div>
     </div>
+    
     { position === 'bottom' &&
         // bottom bubble
         <div class="absolute h-5 w-5 rounded-full bg-clr-primary bottom-0 translate-y-2"></div>
@@ -39,15 +39,22 @@ if (position === 'top') {
 </div>
 
 
-<style>
+<style is:global>
     .timeline-bg {
         transform: scaleY(0);
     }
-    .timeline-sentinel.half-visible + .timeline-bg {
-        transform: scaleY(0.5);
-    }
-    .timeline-sentinel.fully-visible + .timeline-bg {
+    .journey-section.no-transition .timeline-bg {
+        transition-duration: 0ms;
         transition-delay: 0ms;
-        transform: scaleY(1.5);
+    }
+    .upper-half.visible .timeline-bg,
+    .lower-half.visible .timeline-bg {
+        transform: scaleY(1);
+    }
+    .journey-section:not(.no-transition) .upper-half.visible .timeline-bg {
+        transition-delay: 500ms;
+    }
+    .journey-section:last-of-type:not(.no-transition) .lower-half.visible .timeline-bg {
+        transition-delay: 1000ms;
     }
 </style>

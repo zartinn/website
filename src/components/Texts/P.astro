@@ -6,15 +6,16 @@ interface Props {
 	className?: string;
 	transitionName?: string;
 	type?: 'default' | 'xl' | 'small';
+	textPosition?: 'text-center' | 'text-left' | 'text-right'
 }
 
-const { className, transitionName, type = 'default' } = Astro.props;
+const { className, transitionName, type = 'default', textPosition = 'text-center' } = Astro.props;
 const textProps = getTextProps('p', className, type );
 ---
 
 <Text
 	type={textProps.type}
-	className={textProps.className}
+	className={`${textProps.className} ${textPosition}`}
 	transitionName={transitionName}
 >
 	<slot/>

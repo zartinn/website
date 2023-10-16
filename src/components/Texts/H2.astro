@@ -5,15 +5,17 @@ import { getTextProps } from '../../utils/helper';
 interface Props {
 	className?: string;
 	transitionName?: string;
+	type?: 'default' | 'xl' | 'small';
+	textPosition?: 'text-center' | 'text-left' | 'text-right'
 }
 
-const { className, transitionName } = Astro.props;
-const textProps = getTextProps('h2', className);
+const { className, transitionName, type = 'default', textPosition = 'text-center' } = Astro.props;
+const textProps = getTextProps('h2', className, type);
 ---
 
 <Text
 	type={textProps.type}
-	className={textProps.className}
+	className={`${textProps.className} ${textPosition}`}
 	transitionName={transitionName}
 >
 	<slot/>

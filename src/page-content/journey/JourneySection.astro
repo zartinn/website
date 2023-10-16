@@ -1,15 +1,27 @@
 ---
-import { Timeline } from '../../components';
+import { ContentContainer, H2, MyImage, P, Timeline } from '../../components';
 interface Props {
     className: string,
-    station: { date: string, event: string },
-    position?: 'top' | 'bottom' | 'default'
+    station: { date: string, event: string, description: string, image: { img: ImageMetadata, alt: string } },
+    position?: 'top' | 'bottom' | 'default',
+    idx: number
 }
 
-const { className, station, position = 'default' } = Astro.props;
+const { className, station, position = 'default', idx } = Astro.props;
+const showLeft = idx % 2 === 0;
+const reverseClass = showLeft ? 'flex-row-reverse' : ''
+
 ---
 
-<div class={`relative flex flex-col h-screen p-12 justify-center snap-start scroll-mt-32 items-center ${className}`}>
+<div class={`journey-section relative flex h-screen p-12 justify-center items-center gap-48 ${className} ${reverseClass}`}>
     <!-- Timeline -->
-    <Timeline station={station} position={position}/>
+    <Timeline position={position}/>
+    <ContentContainer className={`content z-10 relative`} itemsPosition={ showLeft ? 'items-start' : 'items-end'}>
+        <H2 className="mb-8" textPosition={showLeft ? 'text-left' : 'text-right'}>{station.date}<br>{station.event}</H2>
+        <P className="italic" textPosition={showLeft ? 'text-left' : 'text-right'}>{station.description}</P>
+    </ContentContainer>
+    <ContentContainer itemsPosition={ showLeft ? 'items-end' : 'items-start'}>
+        <!-- <Image  height={400} width={400} src={station.image.img} alt={station.image.alt}/> -->
+        <MyImage width={400} src={station.image.img} alt={station.image.alt}/>
+    </ContentContainer>
 </div>
