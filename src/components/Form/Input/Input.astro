@@ -1,0 +1,64 @@
+---
+interface Props {
+    name: string;
+    label: string;
+    className?: string;
+    type?: 'input' | 'textarea'
+}
+
+const {name, label, className = '', type = 'input'} = Astro.props
+
+const ElType = type;
+
+---
+
+
+<div class={`flex flex-col justify-center-center relative ${className}`}>
+    <ElType
+        class="p-3 border border-clr-primary text-body focus:outline-clr-primary rounded-lg peer flex-grow text-fg-primary transition-all"
+        name={name}
+        id={name}
+        required
+    />
+    <label
+        for={name}
+        class="absolute text-body top-0 pointer-events-none h-12 translate-y-0 w-full p-3 flex items-center opacity-50 text-fg-primary transition-all"
+    >   
+        {label}
+    </label>
+    <span class="text-body-small pl-3 opacity-0 text-clr-error transition-opacity">{ name === 'email' ? `Please provide a valid email address` : `${label} is required`}</span>
+</div>
+
+
+<style>
+    span {
+        opacity: 0;
+    }
+
+    input.required ~ span,
+    textarea.required ~ span {
+        opacity: 1;
+    }
+
+    input.has-input + label,
+    input:focus + label,
+    textarea.has-input + label,
+    textarea:focus + label {
+        color: var(--clr-primary);
+        opacity: 1;
+        transform: translateY(-75%);
+    }
+
+    input.required,
+    textarea.required {
+        border: 1px solid var(--clr-error);
+    }
+    input:focus.required,
+    textarea:focus.required {
+        outline: 1px solid var(--clr-error);
+    }
+    input:focus.required + label,
+    textarea:focus.required + label {
+        color: var(--clr-error);
+    }
+</style>

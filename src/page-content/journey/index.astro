@@ -1,5 +1,4 @@
 ---
-import { ContentContainer, H1, H2, P, Section, Timeline } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/journey.png';
 import type { Translations } from '../../utils/typings';
@@ -69,7 +68,7 @@ const getPosition = (idx: number) => {
 ---
 
 <Layout title="Journey - Career Path and Milestones">
-    <main transition:name="journey" class="flex-grow">
+    <main transition:name="journey" class="flex-grow" transition:persist="journey-page">
       <IntroSection
         id="journey",
         image={image}

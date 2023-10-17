@@ -1,5 +1,5 @@
 ---
-import { ContentContainer, H2, Section } from '../../components';
+import { ContentContainer, Form, H2, Input, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/contact.png';
 import type { Translations } from '../../utils/typings';
@@ -26,30 +26,8 @@ const { T } = Astro.props;
     <!-- Contact Form -->
     <Section>
       <ContentContainer singleContainer>
-        <H2>Contact Form</H2>
-        <form class="flex flex-col gap-8" action="/submit-form" method="post">
-          <div class="flex flex-col">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-  
-          <div class="flex flex-col">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-  
-          <div class="flex flex-col">
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject">
-          </div>
-  
-          <div class="flex flex-col">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-  
-          <button>Send</button>
-        </form>
+        <H2 type="xl">Say Hi 👋</H2>
+        <Form/>
       </ContentContainer>
     </Section>
   </main>

@@ -1,0 +1,51 @@
+---
+import { Button, Input } from '..';
+---
+
+
+<form class="grid grid-cols-2 gap-8 px-20 py-12 w-full" action="/api/message" method="post" transition-persist="form">
+    <Input name="name" label="Name"/>
+    <Input name="email" label="Email"/>
+    <Input name="subject" label="Subject" className="col-span-2"/>
+    <Input name="message" label="Message" type="textarea" className="col-span-2 h-48"/>
+
+    <Button type="submit" className="col-span-2">Send</Button>
+</form>
+
+
+<script>
+    const inputEls = Array.from<HTMLInputElement | HTMLTextAreaElement>(document.querySelectorAll('input, textarea'));
+    window.addEventListener('pageshow', () => {
+        for (let inputEl of inputEls) {
+            if (inputEl.value === '') {
+                inputEl.classList.remove('has-input')
+            } else {
+                inputEl.classList.add('has-input')
+            }
+        }
+    });
+
+    for (let inputEl of inputEls) {
+        inputEl.addEventListener('change', () => {
+            if (inputEl.value === '') {
+                inputEl.classList.remove('has-input')
+            } else {
+                inputEl.classList.add('has-input')
+            }
+        })
+        inputEl.addEventListener('blur', () => {
+            if (inputEl.value === '') {
+                inputEl.classList.add('required');
+            } else {
+                inputEl.classList.remove('required');
+            }
+        })
+        inputEl.addEventListener('input', () => {
+            if (inputEl.value === '') {
+                inputEl.classList.add('required');
+            } else {
+                inputEl.classList.remove('required');
+            }
+        })
+    }
+</script>
