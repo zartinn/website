@@ -4,6 +4,7 @@ export function setupIntersectionObserver() {
     // Grab all the timelines
     const timelines = document.querySelectorAll('.timeline-sentinel');
 
+
     // Set up the options for the IntersectionObserver
     const options = {
       root: null,
@@ -24,9 +25,14 @@ function handleIntersect(entries: IntersectionObserverEntry[]) {
     if (isInitialLoad) {
         const lastIntersectingElIdx = entries.findLastIndex(entry => entry.isIntersecting);
         for (let i = 0; i <= lastIntersectingElIdx; i++) {
-        const parent = entries[i].target.closest('.timeline');
+        const parent = entries[i].target.closest('.journey-section');
         const upperTimelineHalf = parent?.querySelector('.upper-half');
         const lowerTimelineHalf = parent?.querySelector('.lower-half');
+        const contentContainers = Array.from(parent!.querySelectorAll('.container'))
+        
+        for (const contentContainer of contentContainers) {
+            contentContainer.classList.add('visible');
+        }
 
         upperTimelineHalf?.classList.add('visible');
         if (i !== lastIntersectingElIdx) {
@@ -45,9 +51,15 @@ function handleIntersect(entries: IntersectionObserverEntry[]) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {        
         // Get the previous sibling's .timeline-bg
-        const closestParentTimeline = entry.target.closest('.journey-section');
-        const upperHalf = closestParentTimeline?.querySelector('.upper-half');
-        const lowerHalfSibling = closestParentTimeline?.previousElementSibling?.querySelector('.lower-half');
+        const parent = entry.target.closest('.journey-section');
+        const upperHalf = parent?.querySelector('.upper-half');
+        const lowerHalfSibling = parent?.previousElementSibling?.querySelector('.lower-half');       
+        
+        const contentContainers = Array.from(parent!.querySelectorAll('.container'))
+        
+        for (const contentContainer of contentContainers) {
+            contentContainer.classList.add('visible');
+        }
 
         if (upperHalf) {
             upperHalf.classList.add('visible');
@@ -56,9 +68,9 @@ function handleIntersect(entries: IntersectionObserverEntry[]) {
             lowerHalfSibling.classList.add('visible');
         }
 
-        const nextSibling = closestParentTimeline?.nextElementSibling;
+        const nextSibling = parent?.nextElementSibling;
         if (!nextSibling) {
-            const lowerHalf = closestParentTimeline?.querySelector('.lower-half');
+            const lowerHalf = parent?.querySelector('.lower-half');
             lowerHalf?.classList.add('visible');
         }
         }
