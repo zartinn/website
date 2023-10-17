@@ -3,7 +3,7 @@ import Moon from './Moon.astro';
 import Sun from './Sun.astro';
 ---
 
-<div id="toggle-icon" class="cursor-pointer w-8">
+<div id="toggle-icon" class="cursor-pointer w-8" transition:persist="theme-toggle">
     <Moon/>
     <Sun/>
 </div>
@@ -25,5 +25,4 @@ import Sun from './Sun.astro';
     }
 
     window.addEventListener("DOMContentLoaded", () => toggleEvent());
-    document.addEventListener("astro:after-swap", () => toggleEvent());
 </script>

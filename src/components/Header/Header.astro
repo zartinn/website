@@ -88,16 +88,3 @@ const myHeaderTransition = {
         </div>
     </div>
 </header>
-
-<script>
-    // Transitions API workaround for Header links to work
-    const removeTransitionAttribute = (evt?: AnimationEvent) => {
-        if (!evt || evt.animationName === '-ua-view-transition-fade-out') {
-            const h1El = document.getElementsByTagName('h1')?.item(0);
-            h1El?.removeAttribute('data-astro-transition-scope');
-        }
-    }
-
-    document.addEventListener('animationend', removeTransitionAttribute);
-    removeTransitionAttribute();
-</script>
