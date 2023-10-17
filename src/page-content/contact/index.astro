@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/contact.png';
 import type { Translations } from '../../utils/typings';
 import { IntroSection } from '../../sections';
+import { sendMail } from './send-mail';
 
 
 interface Props {
@@ -13,6 +14,14 @@ interface Props {
 const { T } = Astro.props;
 
 const isGet = Astro.request.method === 'GET';
+
+if (!isGet) {
+  const rawData = await Astro.request.text();
+  const searchParams = new URLSearchParams(rawData);
+
+  // const success = await sendMail(searchParams);
+  // console.log('SUCCESSFULLY SEND MAIL? ', success);
+}
 
 ---
 
