@@ -1,5 +1,5 @@
 ---
-import { ContentContainer, Form, H2, Section } from '../../components';
+import { ContentContainer, Form, H2, P, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/contact.png';
 import type { Translations } from '../../utils/typings';
@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { T } = Astro.props;
+
+const isGet = Astro.request.method === 'GET';
 
 ---
 
@@ -26,8 +28,13 @@ const { T } = Astro.props;
     <!-- Contact Form -->
     <Section>
       <ContentContainer singleContainer>
-        <H2 type="xl">Say Hi 👋</H2>
-        <Form/>
+        { isGet ? 
+            <H2 type="xl">Say Hi 👋</H2>
+            <Form/>
+          :
+          <H2 type="xl" className="mb-12">Thanks for your message!</H2>
+          <P type="xl">We will answer shortly</P>
+        }
       </ContentContainer>
     </Section>
   </main>

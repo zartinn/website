@@ -1,56 +1,32 @@
 ---
 import { Button, Input } from '..';
+
 ---
 
-
-<form class="grid grid-cols-2 gap-8 px-20 py-12 w-full" action="/api/message" method="post" transition-persist="form">
-    <Input name="name" label="Name"/>
-    <Input name="email" label="Email"/>
-    <Input name="subject" label="Subject" className="col-span-2"/>
-    <Input name="message" label="Message" type="textarea" className="col-span-2 h-48"/>
+<form
+    class="grid grid-cols-4 gap-12 px-20 py-12 w-full"
+    action="/contact"
+    method="post"
+    transition-persist="form"
+    id="contact-form"
+    novalidate
+> 
+    <Input name="name" label="Name" className="col-span-2"/>
+    <Input name="email" label="Email" className="col-span-2" />
+    <Input name="subject" label="Subject" className="col-span-4"/>
+    <Input name="message" label="Message" inputType="textarea" className="col-span-4 h-48"/>
 
     <Button type="submit" className="col-span-2">Send</Button>
 </form>
 
 
+
 <script>
-    const inputEls = Array.from<HTMLInputElement | HTMLTextAreaElement>(document.querySelectorAll('input, textarea'));
-    const emailValid = (email: string) => {
-        return email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
-    } 
+    import { setupListener } from './form.utils';
+  
+    setupListener();
 
-    window.addEventListener('pageshow', () => {
-        for (let inputEl of inputEls) {
-            if (inputEl.value === '') {
-                inputEl.classList.remove('has-input')
-            } else {
-                inputEl.classList.add('has-input')
-            }
-        }
-    });
-
-    for (let inputEl of inputEls) {
-        inputEl.addEventListener('change', () => {
-            if (inputEl.value === '') {
-                inputEl.classList.remove('has-input')
-            } else {
-                inputEl.classList.add('has-input')
-            }
-        })
-        inputEl.addEventListener('blur', () => {
-            inputEl.classList.add('touched');
-            if (inputEl.value === '' || (inputEl.name === 'email' && !emailValid(inputEl.value))) {
-                inputEl.classList.add('invalid');
-            } else {
-                inputEl.classList.remove('invalid');
-            }
-        })
-        inputEl.addEventListener('input', () => {
-            if (inputEl.value === ''|| (inputEl.name === 'email' && !emailValid(inputEl.value))) {
-                inputEl.classList.add('invalid');
-            } else {
-                inputEl.classList.remove('invalid');
-            }
-        })
-    }
+    document.addEventListener('astro:after-swap', () => {
+        setupListener();
+    })
 </script>

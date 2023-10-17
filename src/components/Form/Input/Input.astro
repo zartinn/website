@@ -3,22 +3,24 @@ interface Props {
     name: string;
     label: string;
     className?: string;
-    type?: 'input' | 'textarea'
+    inputType?: 'input' | 'textarea';
 }
 
-const {name, label, className = '', type = 'input'} = Astro.props
+const {name, label, className = '', inputType = 'input' } = Astro.props
 
-const ElType = type;
+const ElType = inputType;
 
 ---
 
 
 <div class={`flex flex-col justify-center-center relative ${className}`}>
     <ElType
+        form="contact-form"
         class="p-3 border border-clr-primary text-body focus:outline-clr-primary rounded-lg peer flex-grow text-fg-primary transition-all"
         name={name}
         id={name}
         required
+        type={name === 'email' ? 'email' : 'text'}
     />
     <label
         for={name}
@@ -26,18 +28,20 @@ const ElType = type;
     >   
         {label}
     </label>
-    <span class="text-body-small pl-3 opacity-0 text-clr-error transition-opacity">{ name === 'email' ? `Please provide a valid email address` : `${label} is required`}</span>
+    <span class="text-body-small pl-3 origin-bottom text-clr-error transition-all">{ name === 'email' ? `Please provide a valid email address` : `${label} is required`}</span>
 </div>
 
 
 <style>
     span {
         opacity: 0;
+        transform: scaleY(0)
     }
 
     input.touched.invalid ~ span,
     textarea.touched.invalid ~ span {
         opacity: 1;
+        transform: scaleY(1)
     }
 
     input.has-input + label,

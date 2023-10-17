@@ -98,7 +98,6 @@ const getPosition = (idx: number) => {
   // Callback for the IntersectionObserver
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
     if (isInitialLoad) {
-      console.log(entries.map(entry => entry.isIntersecting))
       const lastIntersectingElIdx = entries.findLastIndex(entry => entry.isIntersecting);
       for (let i = 0; i <= lastIntersectingElIdx; i++) {
         const parent = entries[i].target.closest('.timeline');
@@ -117,11 +116,10 @@ const getPosition = (idx: number) => {
       isInitialLoad = false;
       return;
     }
-    // ELSE
+
+    // IF NOT INITIAL PAGE LOAD:
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        console.log('ELSE')
-        
+      if (entry.isIntersecting) {        
         // Get the previous sibling's .timeline-bg
         const closestParentTimeline = entry.target.closest('.journey-section');
         const upperHalf = closestParentTimeline?.querySelector('.upper-half');
