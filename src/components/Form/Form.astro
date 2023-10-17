@@ -24,9 +24,6 @@ import { Button, Input } from '..';
 <script>
     import { setupListener } from './form.utils';
   
-    setupListener();
-
-    document.addEventListener('astro:after-swap', () => {
-        setupListener();
-    })
+    document.addEventListener('DOMContentLoaded', () => setupListener());
+    document.addEventListener('astro:after-swap', () => setupListener())
 </script>
