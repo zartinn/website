@@ -22,7 +22,7 @@ const ElType = type;
     />
     <label
         for={name}
-        class="absolute text-body top-0 pointer-events-none h-12 translate-y-0 w-full p-3 flex items-center opacity-50 text-fg-primary transition-all"
+        class="absolute text-body top-0 pointer-events-none translate-y-0 w-full p-3 flex items-center opacity-50 text-fg-primary transition-all"
     >   
         {label}
     </label>
@@ -35,8 +35,8 @@ const ElType = type;
         opacity: 0;
     }
 
-    input.required ~ span,
-    textarea.required ~ span {
+    input.touched.invalid ~ span,
+    textarea.touched.invalid ~ span {
         opacity: 1;
     }
 
@@ -49,16 +49,18 @@ const ElType = type;
         transform: translateY(-75%);
     }
 
-    input.required,
-    textarea.required {
+    input.touched.invalid,
+    textarea.touched.invalid {
         border: 1px solid var(--clr-error);
     }
-    input:focus.required,
-    textarea:focus.required {
+    input:focus.touched.invalid,
+    textarea:focus.touched.invalid {
         outline: 1px solid var(--clr-error);
     }
-    input:focus.required + label,
-    textarea:focus.required + label {
+    input.has-input.touched.invalid + label,
+    input:focus.touched.invalid + label,
+    textarea.has-input.touched.invalid + label,
+    textarea:focus.touched.invalid + label {
         color: var(--clr-error);
     }
 </style>

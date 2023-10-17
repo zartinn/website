@@ -9,7 +9,7 @@ export function getTextProps(tag: TextTag, className?: string, type: 'default' |
         small: ''
       },
       h2: {
-        xl: '',
+        xl: 'text-h2 desktop: text-h2-xl',
         small: '',
         default: 'text-h2'
       },
