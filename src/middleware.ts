@@ -1,7 +1,7 @@
 import { defineMiddleware } from "astro:middleware";
 
-const BASIC_AUTH_USER = 'martin';  // change to your desired username
-const BASIC_AUTH_PASS = 'martin';  // change to your desired password
+const BASIC_AUTH_USER = import.meta.env.BASIC_AUTH_USER;
+const BASIC_AUTH_PASS = import.meta.env.BASIC_AUTH_PW;
 const AUTH_STRING = `Basic ${Buffer.from(`${BASIC_AUTH_USER}:${BASIC_AUTH_PASS}`).toString('base64')}`;
 
 
