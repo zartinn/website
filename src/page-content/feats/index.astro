@@ -23,8 +23,8 @@ const { T } = Astro.props;
     />
     { T.FEATS.map((feat, idx) => (
       <Section backgroundColor={idx % 2 === 0 ? 'secondary' : 'primary'}>
-        <ContentContainer singleContainer>
-          <H2>{feat.TITLE}</H2>
+        <ContentContainer singleContainer className="gap-10 max-w-4xl">
+          <H2><span class="text-clr-primary">{feat.TITLE_PREFIX}</span><br><span class="text-h3">{feat.TITLE}</span></H2>
           <P>{feat.DESCRIPTION}</P>
           <Carousel slides={feat.SLIDES}/>
         </ContentContainer>
