@@ -22,7 +22,7 @@ const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-
 >
 	<head>
 		<script data-astro="raw">
-			const getTheme = () => localStorage.getItem("theme") || "light";
+			const getTheme = () => localStorage.getItem("theme") || "dark";
 			const setTheme = (theme) => {
 				document.documentElement.setAttribute("theme", theme);
 
@@ -175,7 +175,7 @@ const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-
 						card.classList.remove('active');
 					}
 				})
-			});
+			}, { passive: true });
 		});
 	}
 
