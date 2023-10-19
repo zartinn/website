@@ -15,11 +15,11 @@ const reverseClass = showLeft ? 'flex-row-reverse' : ''
 
 <div class={`journey-section relative flex h-screen p-12 justify-center items-center gap-48 ${className} ${reverseClass}`}>
     <Timeline position={position}/>
-    <ContentContainer className={`container ${showLeft ? 'right-container' : 'left-container'} content z-10 relative`} itemsPosition={ showLeft ? 'items-start' : 'items-end'}>
+    <ContentContainer className={`container opacity-0 ${showLeft ? 'right-container' : 'left-container'} content z-10 relative`} itemsPosition={ showLeft ? 'items-start' : 'items-end'}>
         <H2 className="mb-8" textPosition={showLeft ? 'text-left' : 'text-right'}>{station.date}<br>{station.event}</H2>
         <P className="italic" textPosition={showLeft ? 'text-left' : 'text-right'}>{station.description}</P>
     </ContentContainer>
-    <ContentContainer className={`container ${showLeft ? 'left-container' : 'right-container'}`} itemsPosition={ showLeft ? 'items-end' : 'items-start'}>
+    <ContentContainer className={`container opacity-0 ${showLeft ? 'left-container' : 'right-container'}`} itemsPosition={ showLeft ? 'items-end' : 'items-start'}>
         <MyImage width={400} src={station.image.img} alt={station.image.alt}/>
     </ContentContainer>
 </div>
@@ -33,10 +33,11 @@ const reverseClass = showLeft ? 'flex-row-reverse' : ''
         transform: translateX(50vw);
     }
     .left-container, .right-container {
-        transition: 300ms transform;
+        transition: 300ms transform, 300ms opacity;
         transition-delay: 300ms;
     }
     .left-container.visible, .right-container.visible {
         transform: translateX(0);
+        opacity: 1;
     }
 </style>
