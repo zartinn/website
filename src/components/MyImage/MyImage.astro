@@ -13,7 +13,7 @@ const { src, alt, width, height } = Astro.props;
 ---
 
 
-<div class="flex rounded-full border-clr-primary border-4 overflow-hidden">
+<div class="flex rounded-full border-clr-primary bg-bg-primary-70 border-4 overflow-hidden max-w-full" style={` width: ${width}px;`}>
     <Image
         src={src}
         alt={alt}
