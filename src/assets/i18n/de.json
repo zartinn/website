@@ -83,64 +83,85 @@
         "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen",
         "FEATS": [
             {
-                "TITLE": "Professional Experience: 'The Foundation of My Expertise'",
-                "DESCRIPTION": "At CARIAD, the digital frontier of the Volkswagen Group, my role transcended traditional software engineering. I was intrinsically involved in crafting and overseeing an expansive SDK that became the bedrock for every web application on the infotainment systems of Volkswagen, Skoda, and Seat vehicles. Partnered with a compact, agile team, we ensured that both in-house teams and third-party suppliers had the tools and knowledge to seamlessly integrate and innovate.",
+                "TITLE_PREFIX": "Professional Experience:",
+                "TITLE": "'The Foundation of My Expertise'",
+                "DESCRIPTION": "My journey at CARIAD was marked by a deep dive into the vast expanse of web technologies, where I was entrusted with the pivotal role of dispatching software to a multitude of vehicles worldwide.",
                 "SLIDES": [
                     {
-                        "TITLE": "1",
-                        "DESCRIPTION": "UI LIbrary, communication protocol, car-functionalities"
+                        "TITLE": "SDK Maintainer",
+                        "DESCRIPTION": "In my tenure at CARIAD, my team and I owned the stewardship of an expansive SDK comprising a variety of libraries, specialized build tools, dynamic applications, cutting-edge documentation, and consistent support mechanisms to aid other teams in the software ecosystem."
                     },
                     {
-                        "TITLE": "2",
-                        "DESCRIPTION": "Extending the Angular CLI"
+                        "TITLE": "Libraries",
+                        "DESCRIPTION": "Spearheaded the creation and management of diverse libraries. This spectrum included white-labelled UI libraries offering thematic dynamism, custom communication protocols, and high-level abstractions for specialized car functions."
                     },
                     {
-                        "TITLE": "3",
-                        "DESCRIPTION": "UI LIbrary, communication protocol, car-functionalities"
+                        "TITLE": "Build Tools",
+                        "DESCRIPTION": "Championed the development of enhanced extensions to the Angular CLI, fine-tuned explicitly for the idiosyncrasies of the infotainment system environment."
                     },
                     {
-                        "TITLE": "4",
-                        "DESCRIPTION": "Extending the Angular CLI"
+                        "TITLE": "Applications",
+                        "DESCRIPTION": "Delivered a comprehensive suite of desktop applications, equipped with monitoring, debugging, analyzing, and testing capabilities, ensuring a smooth development and integration process."
+                    },
+                    {
+                        "TITLE": "Extensive Documentation",
+                        "DESCRIPTION": "Pioneered an advanced documentation paradigm, with features such as auto-generation and auto-deployment, underpinned by our tailored CD/CI pipeline, ensuring seamless access and updates for developers."
+                    },
+                    {
+                        "TITLE": "Support for Other Teams",
+                        "DESCRIPTION": "Established a centralized expertise hub, providing consistent support to various in-house teams and third-party collaborators. From workshops to debugging sessions and email support, we ensured a holistic environment for knowledge sharing and problem-solving."
                     }
                 ]
             },
             {
-                "TITLE": "Educator & Collaborator: 'Shaping the Next Tech Vanguard'",
-                "DESCRIPTION": "Throughout my career, I've not just been a developer but also a mentor, a teacher, and a collaborator. At CARIAD, I led workshops and debugging sessions, aiding teams in harnessing the SDK's full potential. My stint at Spiced Academy further solidified this role, where I actively shaped and delivered curriculum changes, guiding students to become industry-ready.",
+                "TITLE_PREFIX": "Educator & Collaborator:",
+                "TITLE": "'Shaping the Next Tech Vanguard'",
+                "DESCRIPTION": "Blending a psychological insight with technical expertise, I've ventured beyond coding. I've served as both a guide for teams and a mentor for future tech leaders, ensuring they're industry-ready with a human touch.",
                 "SLIDES": [
                     {
-                        "TITLE": "Vlad",
-                        "DESCRIPTION": "Web Developer (former student)",
-                        "LINKEDIN_PROFILE": "https://www.linkedin.com/in/vladyslav-tsurkanenko/",
-                        "TESTIMONIAL": "Best Coach"
-                    },
-                    {
-                        "TITLE": "Benz",
-                        "DESCRIPTION": "Lead Software Engineer at CARIAD",
+                        "TITLE": "Benjamin Dobler",
+                        "DESCRIPTION": "\"I've had the privilege of sharing both workstations and laughs with Zartin. Beyond being a tech genius, they've always been the human touchpoint in every project. Genuine, heartfelt, and a rock in times of chaos. I didn't just find a colleague; I found a friend.\"",
                         "LINKEDIN_PROFILE": "https://www.linkedin.com/in/richapps/",
-                        "TESTIMONIAL": "Bester Mann"
+                        "ROLE": "Project Lead Web-Development"
+                    },
+                    {
+                        "TITLE": "Thomas Volk",
+                        "DESCRIPTION": "\"Navigating complex projects becomes tenfold easier with Zartin on your side. His unwavering commitment, keen insights, and relentless problem-solving made the impossible possible. I owe a lion's share of our project's success to him.\"",
+                        "LINKEDIN_PROFILE": "https://www.linkedin.com/in/thvolk/",
+                        "ROLE": "Head of Engineering"
+                    },
+                    {
+                        "TITLE": "Vladyslav Tsurkanenko",
+                        "DESCRIPTION": "\"Learning from Martin wasn't just about code or tech—it was about understanding, compassion, and real connection. Their dedication wasn't limited to the syllabus; they genuinely cared about each of us, ensuring we didn't just learn, but thrived.\"",
+                        "LINKEDIN_PROFILE": "https://www.linkedin.com/in/vladyslav-tsurkanenko/",
+                        "ROLE": "Web Developer (former Student)"
                     }
                 ]
             },
             {
-                "TITLE": "Featured Project: 'Revamping Spiced Academy's Digital Presence'",
-                "DESCRIPTION": "My recent solo endeavor involved a complete overhaul of Spiced Academy's website. A synthesis of modern tech stacks like NextJS, TypeScript, Tailwind CSS, and GraphQL, the project underscored my commitment to design, functionality, and user experience. With content managed through Contentful CMS, the site became a dynamic blend of adaptability and consistency.",
+                "TITLE_PREFIX": "Featured Project:",
+                "TITLE": "'Revamping Spiced Academy's Digital Presence'",
+                "DESCRIPTION": "I undertook a complete transformation of Spiced Academy's digital presence, emphasizing my dedication to superior design, functionality, and user experience. The platform's adaptability and consistency set new standards.",
                 "SLIDES": [
                     {
-                        "TITLE": "CMS",
-                        "DESCRIPTION": "Content can be changed"
+                        "TITLE": "Technical Modernization",
+                        "DESCRIPTION": "Transitioning from legacy tech stacks requires thorough analysis, risk mitigation, and strategic implementation. Successfully migrating from Handlebars and JQuery to a modern ensemble of NextJS, Tailwind, and GraphQL established a robust platform conducive for advanced functionalities and future scalability."
                     },
                     {
-                        "TITLE": "New Techstack",
-                        "DESCRIPTION": "Technologies like NextJS, TailwindCSS and Contentful"
+                        "TITLE": "Content Management Evolution",
+                        "DESCRIPTION": "To enhance the academy's content agility and adaptability, I integrated a CMS. This empowers content administrators to dynamically adjust and update site content, fostering a consistent and updated user experience without any dependency on development cycles."
                     },
                     {
-                        "TITLE": "CMS",
-                        "DESCRIPTION": "Content can be changed"
+                        "TITLE": "Responsive & Scalable Design Implementation",
+                        "DESCRIPTION": "Implemented a sleek responsive design that delivers a consistent user experience on all devices. This design was crafted with developers in mind, allowing for streamlined scalability and effortless future enhancements."
                     },
                     {
-                        "TITLE": "New Techstack",
-                        "DESCRIPTION": "Technologies like NextJS, TailwindCSS and Contentful"
+                        "TITLE": "Performance and SEO Optimization",
+                        "DESCRIPTION": "A primary metric of a website's success is its performance and visibility. Post overhaul, meticulous optimization strategies were employed, leading to improved site responsiveness and SEO metrics. This ensures that Spiced Academy is optimally positioned in search engine rankings, driving organic traffic and enhancing user engagement."
+                    },
+                    {
+                        "TITLE": "Enhanced Developer Experience",
+                        "DESCRIPTION": "Anticipating future developmental needs, the overhaul focused on enhancing the developer experience. This involved refining the coding environment, meticulous documentation, and establishing streamlined workflows, facilitating seamless future developments and feature integrations."
                     }
                 ]
             }
