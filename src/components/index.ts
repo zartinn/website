@@ -21,6 +21,8 @@ export { default as AstroIcon } from './Icons/technologies/Astro.astro';
 export { default as Input } from './Form/Input/Input.astro';
 export { default as Form } from './Form/Form.astro';
 export { default as Button } from './Button/Button.astro';
+export { default as Carousel } from './Carousel/Carousel.astro';
+
 
 
 

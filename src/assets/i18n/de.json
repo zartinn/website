@@ -81,52 +81,70 @@
         "TITLE": "Erfolge",
         "DESCRIPTION_LONG": "Betreten Sie eine Galerie meiner beruflichen Errungenschaften. Hier finden Sie eine sorgfältig ausgewählte Sammlung von Projekten aus verschiedenen Bereichen und Herausforderungen. Jedes Unterfangen erzählt eine Geschichte von Hingabe, Können und dem unermüdlichen Streben nach Exzellenz und vermittelt einen Eindruck davon, was ich zu bieten habe.",
         "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen",
-        "FEATURED_PROJECT": {
-            "TITLE": "Featured Project: 'Revamping Spiced Academy's Digital Presence'",
-            "DESCRIPTION": "My recent solo endeavor involved a complete overhaul of Spiced Academy's website. A synthesis of modern tech stacks like NextJS, TypeScript, Tailwind CSS, and GraphQL, the project underscored my commitment to design, functionality, and user experience. With content managed through Contentful CMS, the site became a dynamic blend of adaptability and consistency.",
-            "SLIDES": [
-                {
-                    "TITLE": "CMS",
-                    "DESCRIPTION": "Content can be changed"
-                },
-                {
-                    "TITLE": "New Techstack",
-                    "DESCRIPTION": "Technologies like NextJS, TailwindCSS and Contentful"
-                }
-            ]
-        },
-        "PROFESSIONAL_FOUNDATION": {
-            "TITLE": "",
-            "DESCRIPTION": "",
-            "SLIDES": [
-                {
-                    "TITLE": "Libraries",
-                    "DESCRIPTION": "UI LIbrary, communication protocol, car-functionalities"
-                },
-                {
-                    "TITLE": "Build tools",
-                    "DESCRIPTION": "Extending the Angular CLI"
-                }
-            ]
-        },
-        "EDUCATOR": {
-            "TITLE": "",
-            "DESCRIPTION": "",
-            "TESTIMONIALS": [
-                {
-                    "WHO": "Vlad",
-                    "ROLE": "Web Developer (former student)",
-                    "LINKEDIN_PROFILE": "https://www.linkedin.com/in/vladyslav-tsurkanenko/",
-                    "TESTIMONIAL": "Best Coach"
-                },
-                {
-                    "WHO": "Benz",
-                    "ROLE": "Lead Software Engineer at CARIAD",
-                    "LINKEDIN_PROFILE": "https://www.linkedin.com/in/richapps/",
-                    "TESTIMONIAL": "Bester Mann"
-                }
-            ]
-        }
+        "FEATS": [
+            {
+                "TITLE": "Professional Experience: 'The Foundation of My Expertise'",
+                "DESCRIPTION": "At CARIAD, the digital frontier of the Volkswagen Group, my role transcended traditional software engineering. I was intrinsically involved in crafting and overseeing an expansive SDK that became the bedrock for every web application on the infotainment systems of Volkswagen, Skoda, and Seat vehicles. Partnered with a compact, agile team, we ensured that both in-house teams and third-party suppliers had the tools and knowledge to seamlessly integrate and innovate.",
+                "SLIDES": [
+                    {
+                        "TITLE": "1",
+                        "DESCRIPTION": "UI LIbrary, communication protocol, car-functionalities"
+                    },
+                    {
+                        "TITLE": "2",
+                        "DESCRIPTION": "Extending the Angular CLI"
+                    },
+                    {
+                        "TITLE": "3",
+                        "DESCRIPTION": "UI LIbrary, communication protocol, car-functionalities"
+                    },
+                    {
+                        "TITLE": "4",
+                        "DESCRIPTION": "Extending the Angular CLI"
+                    }
+                ]
+            },
+            {
+                "TITLE": "Educator & Collaborator: 'Shaping the Next Tech Vanguard'",
+                "DESCRIPTION": "Throughout my career, I've not just been a developer but also a mentor, a teacher, and a collaborator. At CARIAD, I led workshops and debugging sessions, aiding teams in harnessing the SDK's full potential. My stint at Spiced Academy further solidified this role, where I actively shaped and delivered curriculum changes, guiding students to become industry-ready.",
+                "SLIDES": [
+                    {
+                        "TITLE": "Vlad",
+                        "DESCRIPTION": "Web Developer (former student)",
+                        "LINKEDIN_PROFILE": "https://www.linkedin.com/in/vladyslav-tsurkanenko/",
+                        "TESTIMONIAL": "Best Coach"
+                    },
+                    {
+                        "TITLE": "Benz",
+                        "DESCRIPTION": "Lead Software Engineer at CARIAD",
+                        "LINKEDIN_PROFILE": "https://www.linkedin.com/in/richapps/",
+                        "TESTIMONIAL": "Bester Mann"
+                    }
+                ]
+            },
+            {
+                "TITLE": "Featured Project: 'Revamping Spiced Academy's Digital Presence'",
+                "DESCRIPTION": "My recent solo endeavor involved a complete overhaul of Spiced Academy's website. A synthesis of modern tech stacks like NextJS, TypeScript, Tailwind CSS, and GraphQL, the project underscored my commitment to design, functionality, and user experience. With content managed through Contentful CMS, the site became a dynamic blend of adaptability and consistency.",
+                "SLIDES": [
+                    {
+                        "TITLE": "CMS",
+                        "DESCRIPTION": "Content can be changed"
+                    },
+                    {
+                        "TITLE": "New Techstack",
+                        "DESCRIPTION": "Technologies like NextJS, TailwindCSS and Contentful"
+                    },
+                    {
+                        "TITLE": "CMS",
+                        "DESCRIPTION": "Content can be changed"
+                    },
+                    {
+                        "TITLE": "New Techstack",
+                        "DESCRIPTION": "Technologies like NextJS, TailwindCSS and Contentful"
+                    }
+                ]
+            }
+        ]
     },
     "JOURNEY": {
         "TITLE": "Laufbahn",

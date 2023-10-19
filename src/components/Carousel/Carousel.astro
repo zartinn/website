@@ -1,0 +1,109 @@
+---
+import { H3, P } from '..';
+interface Props {
+    slides: Array<{ TITLE: string, DESCRIPTION: string }>
+}
+
+const { slides } = Astro.props;
+
+const containerClasses = 'relative w-full h-80 rounded-xl p-8 flex flex-col gap-8 items-center border-clr-primary shadow-contrast shadow-sm border-2 overflow-hidden';
+const getInitialPositionClass = (idx: number) => {
+    return idx !== 0 ? 'right' : '' 
+}
+const getInitialActiveClass = (idx: number) => {
+    return idx === 0 ? 'active' : '' 
+}
+
+---
+
+<div class={`slide-container ${containerClasses}`}>
+    { slides.map((slide, idx) => (
+        <div class={`slide absolute inset-0 w-full h-full p-8 flex flex-col gap-20 items-center justify-around ${getInitialPositionClass(idx)}`}>
+            <H3>{slide.TITLE}</H3>
+            <P>{slide.DESCRIPTION}</P>
+        </div>
+    ))}
+    <div class="pagination absolute bottom-4 self-center flex gap-4">
+        { slides.map((_, idx) => (
+            <div class={`bubble h-4 w-4 border border-clr-primary rounded-full cursor-pointer ${getInitialActiveClass(idx)}`}></div>
+        ))}
+    </div>
+</div>
+
+
+<style>
+    .slide {
+        transition: 300ms transform;
+    }
+    .slide.left {
+        transform: translateX(-100%);
+    }
+    .slide.right {
+        transform: translateX(100%);
+    }
+    .pagination .active {
+        background-color: var(--clr-primary);
+    }
+</style>
+
+<script>
+    const slideContainerEls = Array.from(document.querySelectorAll<HTMLElement>('.slide-container'));
+
+    slideContainerEls.forEach((slideContainer) => {
+        const slides = Array.from(slideContainer.querySelectorAll<HTMLElement>('.slide'));
+        const paginationButtons = Array.from(slideContainer.querySelectorAll<HTMLElement>('.pagination .bubble'));
+        let currentActiveIndex = 0;
+        
+        paginationButtons.forEach((button, idx) => {
+            button.addEventListener('click', () => {
+                // Set the clicked pagination button to active and others to inactive
+                paginationButtons.forEach(b => b.classList.remove('active'));
+                button.classList.add('active');
+                currentActiveIndex = idx;
+                
+                // Shift slides
+                slides.forEach((slide, slideIdx) => {
+                    if (slideIdx < idx) {
+                        slide.style.transform = 'translateX(-100%)';
+                    } else if (slideIdx > idx) {
+                        slide.style.transform = 'translateX(100%)';
+                    } else {
+                        slide.style.transform = 'translateX(0%)';
+                    }
+                });
+            });
+        });
+
+        let touchStartX: number;
+        let touchEndX: number;
+        const swipeThreshold = 40;
+
+        slideContainer.addEventListener('touchstart', (event) => {
+            touchStartX = event.changedTouches[0].clientX;
+        });
+
+        slideContainer.addEventListener('touchend', (event) => {
+            touchEndX = event.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            let deltaX = touchEndX - touchStartX;
+
+            if (Math.abs(deltaX) < swipeThreshold) {
+                return; // It's not a valid swipe, bail out!
+            }
+
+            if (deltaX < 0) { // Swipe Left
+                if (currentActiveIndex < slides.length - 1) {
+                    paginationButtons[currentActiveIndex + 1].click();
+                }
+            }
+            if (deltaX > 0) { // Swipe Right
+                if (currentActiveIndex > 0) {
+                    paginationButtons[currentActiveIndex - 1].click();
+                }
+            }
+        }
+    });
+</script>
