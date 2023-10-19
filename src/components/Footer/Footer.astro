@@ -14,7 +14,12 @@ import { AstroIcon, GithubIcon, LinkedinIcon, MailIcon } from '..';
 <footer class="relative w-screen px-12 py-8 bg-bg-secondary shadow-footer shadow-fg-primary flex justify-center">
     <div class="w-200 flex flex-col desktop:flex-row justify-between items-center gap-8">
         <div class="flex gap-8 items-center">
-            <a href="https://www.linkedin.com/in/zachoszcz/" target="_blank" class="hover:scale-110 transition-transform">
+            <a
+                href="https://www.linkedin.com/in/zachoszcz/"
+                target="_blank"
+                class="hover:scale-110 transition-transform"
+                aria-label="My LinkedIn profile"
+            >
                 <LinkedinIcon/>
                 <!-- <Image src={githubIcon} alt="github icon" width="42" height="42"/> -->
             </a>
@@ -22,11 +27,21 @@ import { AstroIcon, GithubIcon, LinkedinIcon, MailIcon } from '..';
                 <Image src={location} alt="github icon" width="46" height="46"/>
                 <span class="text-body text-fg-primary">Berlin, Germany</span>
             </div> -->
-            <a href="https://github.com/zartinn" target="_blank" class="hover:scale-110 transition-transform">
+            <a
+                href="https://github.com/zartinn"
+                target="_blank"
+                class="hover:scale-110 transition-transform"
+                aria-label="my github page"
+            >
                 <GithubIcon/>
                 <!-- <Image src={linkedinIcon} alt="linkedin icon" width="42" height="42"/> -->
             </a>
-            <a href="mailto:martin.zachoszcz@gmail.com" target="_blank" class="hover:scale-110 transition-transform">
+            <a
+                href="mailto:martin.zachoszcz@gmail.com"
+                target="_blank"
+                class="hover:scale-110 transition-transform"
+                aria-label="mail me"
+            >
                 <MailIcon/>
                 <!-- <Image src={mailIcon} alt="mail icon" width="36" height="36"/> -->
             </a>
