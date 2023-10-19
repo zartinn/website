@@ -33,12 +33,12 @@ export function setupCarouselListener() {
     
         slideContainer.addEventListener('touchstart', (event) => {
             touchStartX = event.changedTouches[0].clientX;
-        });
+        }, { passive: true});
     
         slideContainer.addEventListener('touchend', (event) => {
             touchEndX = event.changedTouches[0].clientX;
             handleSwipe();
-        });
+        }, { passive: true});
     
         function handleSwipe() {
             let deltaX = touchEndX - touchStartX;
