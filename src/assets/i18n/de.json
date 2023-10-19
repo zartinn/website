@@ -80,7 +80,53 @@
     "FEATS": {
         "TITLE": "Erfolge",
         "DESCRIPTION_LONG": "Betreten Sie eine Galerie meiner beruflichen Errungenschaften. Hier finden Sie eine sorgfältig ausgewählte Sammlung von Projekten aus verschiedenen Bereichen und Herausforderungen. Jedes Unterfangen erzählt eine Geschichte von Hingabe, Können und dem unermüdlichen Streben nach Exzellenz und vermittelt einen Eindruck davon, was ich zu bieten habe.",
-        "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen"
+        "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen",
+        "FEATURED_PROJECT": {
+            "TITLE": "Featured Project: 'Revamping Spiced Academy's Digital Presence'",
+            "DESCRIPTION": "My recent solo endeavor involved a complete overhaul of Spiced Academy's website. A synthesis of modern tech stacks like NextJS, TypeScript, Tailwind CSS, and GraphQL, the project underscored my commitment to design, functionality, and user experience. With content managed through Contentful CMS, the site became a dynamic blend of adaptability and consistency.",
+            "SLIDES": [
+                {
+                    "TITLE": "CMS",
+                    "DESCRIPTION": "Content can be changed"
+                },
+                {
+                    "TITLE": "New Techstack",
+                    "DESCRIPTION": "Technologies like NextJS, TailwindCSS and Contentful"
+                }
+            ]
+        },
+        "PROFESSIONAL_FOUNDATION": {
+            "TITLE": "",
+            "DESCRIPTION": "",
+            "SLIDES": [
+                {
+                    "TITLE": "Libraries",
+                    "DESCRIPTION": "UI LIbrary, communication protocol, car-functionalities"
+                },
+                {
+                    "TITLE": "Build tools",
+                    "DESCRIPTION": "Extending the Angular CLI"
+                }
+            ]
+        },
+        "EDUCATOR": {
+            "TITLE": "",
+            "DESCRIPTION": "",
+            "TESTIMONIALS": [
+                {
+                    "WHO": "Vlad",
+                    "ROLE": "Web Developer (former student)",
+                    "LINKEDIN_PROFILE": "https://www.linkedin.com/in/vladyslav-tsurkanenko/",
+                    "TESTIMONIAL": "Best Coach"
+                },
+                {
+                    "WHO": "Benz",
+                    "ROLE": "Lead Software Engineer at CARIAD",
+                    "LINKEDIN_PROFILE": "https://www.linkedin.com/in/richapps/",
+                    "TESTIMONIAL": "Bester Mann"
+                }
+            ]
+        }
     },
     "JOURNEY": {
         "TITLE": "Laufbahn",
