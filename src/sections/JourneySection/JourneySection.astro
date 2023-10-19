@@ -9,29 +9,48 @@ interface Props {
 
 const { className, station, position = 'default', idx } = Astro.props;
 const showLeft = idx % 2 === 0;
-const reverseClass = showLeft ? 'flex-row-reverse' : ''
+const reverseClass = showLeft ? 'desktop:flex-row-reverse' : ''
 
 ---
 
-<div class={`journey-section relative flex h-screen p-12 justify-center items-center gap-48 ${className} ${reverseClass}`}>
+<div class={`journey-section relative flex flex-col desktop:flex-row h-fit min-h-screen p-12 pl-20 desktop:pl-12 justify-center items-center gap-24 desktop:gap-48 ${className} ${reverseClass}`}>
     <Timeline position={position}/>
-    <ContentContainer className={`container opacity-0 ${showLeft ? 'right-container' : 'left-container'} content z-10 relative`} itemsPosition={ showLeft ? 'items-start' : 'items-end'}>
-        <H2 className="mb-8" textPosition={showLeft ? 'text-left' : 'text-right'}>{station.date}<br>{station.event}</H2>
-        <P className="italic" textPosition={showLeft ? 'text-left' : 'text-right'}>{station.description}</P>
+    <ContentContainer className={`container opacity-0 ${showLeft ? 'right-container' : 'left-container'} content z-10 relative`}>
+        <H2 className="mb-8"><span class="text-clr-primary">{station.date}</span><br>{station.event}</H2>
+        <P className="italic">{station.description}</P>
     </ContentContainer>
-    <ContentContainer className={`container opacity-0 ${showLeft ? 'left-container' : 'right-container'}`} itemsPosition={ showLeft ? 'items-end' : 'items-start'}>
+    <ContentContainer className={`container opacity-0 ${showLeft ? 'left-container' : 'right-container'}`}>
         <MyImage width={400} src={station.image.img} alt={station.image.alt}/>
     </ContentContainer>
 </div>
 
 
 <style is:global>
-    .left-container {
-        transform: translateX(-50vw);
+    .left-container, .right-container {
+        transform: translateX(100vw);
+        align-items: center;
     }
-    .right-container {
-        transform: translateX(50vw);
+
+    @media (min-width: 1024px) {
+        .left-container {
+            transform: translateX(-50vw);
+            align-items: end;
+        }
+
+        .right-container {
+            transform: translateX(50vw);
+            align-items: start;
+        }
+        .left-container h2,
+        .left-container p {
+            text-align: right;
+        }
+        .right-container h2,
+        .right-container p {
+            text-align: left;
+        }
     }
+
     .left-container, .right-container {
         transition: 300ms transform, 300ms opacity;
         transition-delay: 300ms;

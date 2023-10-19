@@ -1,14 +1,13 @@
 ---
 interface Props {
     className?: string
-    singleContainer?: boolean,
-    itemsPosition?: 'items-center' | 'items-start' | 'items-end'
+    singleContainer?: boolean
 }
-const { className = '', singleContainer = false, itemsPosition = 'items-center' } = Astro.props;
+const { className = '', singleContainer = false } = Astro.props;
 
 
 ---
 
-<div class={`w-full flex flex-col ${itemsPosition} ${singleContainer ? 'desktop:w-content-single' : 'desktop:w-content-double'} ${className}`}>
+<div class={`w-full flex flex-col ${singleContainer ? 'desktop:w-content-single' : 'desktop:w-content-double'} ${className}`}>
     <slot />
 </div>
