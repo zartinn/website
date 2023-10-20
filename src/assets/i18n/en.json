@@ -1,4 +1,9 @@
 {
+    "FOOTER": {
+        "INFO_DEVELOP1": "Designed and",
+        "INFO_DEVELOP2": "developed",
+        "INFO_BY": "by Martin Zachoszcz"
+    },
     "HOME": {
         "INTRO": {
             "TITLE": {
@@ -45,6 +50,8 @@
         "TITLE": "Craft",
         "DESCRIPTION": "In-depth expertise in modern technologies and development practices",
         "DESCRIPTION_LONG": "Dive into my expertise and methodologies. From client-centric development to architectural excellence, discover the services and approaches that shape my work and deliver outstanding results.",
+        "TECHNOLOGIES": "Technologies I have worked with",
+        "MANIFESTO_TITLE": "My Technical Manifesto",
         "MANIFESTO": {
             "client": {
                 "TITLE": "Client-Centric Rapid Development",
@@ -75,7 +82,31 @@
     "CONTACT": {
         "TITLE": "Contact",
         "DESCRIPTION_LONG": "Have an idea, a query, or just want to say hi? This is how to connect with me directly. Be it project discussions, technical consultations, or just some tech banter, my virtual door is always open.",
-        "DESCRIPTION": "Open channels for communication and future collaborations"
+        "DESCRIPTION": "Open channels for communication and future collaborations",
+        "WELCOME": "Say Hi 👋",
+        "THANKS": "Thanks for your message!",
+        "THANKS2": "We will answer shortly",
+        "FORM": {
+            "BUTTON": "Send",
+            "FIELDS": {
+                "NAME": {
+                    "VALUE": "Name",
+                    "ERROR": "Name is required"
+                },
+                "EMAIL": {
+                    "VALUE": "Email",
+                    "ERROR": "Please provide a valid email address"
+                },
+                "SUBJECT": {
+                    "VALUE": "Subject",
+                    "ERROR": "Subject is required"
+                },
+                "MESSAGE": {
+                    "VALUE": "Message",
+                    "ERROR": "Message is required"
+                }
+            }
+        }
     },
     "FEATS": {
         "TITLE": "Feats",

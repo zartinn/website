@@ -1,5 +1,12 @@
 ---
 import { Button, Input } from '..';
+import type { Translations } from '../../utils/typings';
+
+interface Props {
+    T: Translations['CONTACT']['FORM']
+}
+
+const { T } = Astro.props;
 
 ---
 
@@ -10,12 +17,33 @@ import { Button, Input } from '..';
     id="contact-form"
     novalidate
 > 
-    <Input name="name" label="Name" className="col-span-2"/>
-    <Input name="email" label="Email" className="col-span-2" />
-    <Input name="subject" label="Subject" className="col-span-4"/>
-    <Input name="message" label="Message" inputType="textarea" className="col-span-4 h-48"/>
-
-    <Button type="submit" className="col-span-2">Send</Button>
+    <!-- TODO: DRY -->
+    <Input
+        name="name"
+        label={T.FIELDS.NAME.VALUE}
+        errorMessage={T.FIELDS.NAME.ERROR}
+        className="col-span-2"
+    />
+    <Input
+        name="email"
+        label={T.FIELDS.EMAIL.VALUE}
+        errorMessage={T.FIELDS.EMAIL.ERROR}
+        className="col-span-2"
+    />
+    <Input
+        name="subject"
+        label={T.FIELDS.SUBJECT.VALUE}
+        errorMessage={T.FIELDS.SUBJECT.ERROR}
+        className="col-span-4"
+    />
+    <Input
+        name="message"
+        label={T.FIELDS.MESSAGE.VALUE}
+        errorMessage={T.FIELDS.MESSAGE.ERROR}
+        inputType="textarea"
+        className="col-span-4 h-48"
+    />
+    <Button type="submit" className="col-span-2">{T.BUTTON}</Button>
 </form>
 
 

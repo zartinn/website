@@ -8,11 +8,13 @@ import { getStations } from './data';
 
 
 interface Props {
-  T: Translations['JOURNEY']
+  T: Translations
 }
 
 const { T } = Astro.props;
-const stations = getStations(T.STATIONS);
+const JOURNEY_T = T.JOURNEY;
+
+const stations = getStations(JOURNEY_T.STATIONS);
 const getPosition = (idx: number) => {
   if (idx === 0) return 'top';
   if (idx === stations.length - 1) return 'bottom';
@@ -21,13 +23,13 @@ const getPosition = (idx: number) => {
 
 ---
 
-<Layout title="Journey - Career Path and Milestones">
+<Layout title="Journey - Career Path and Milestones" T={T}>
     <main transition:name="journey" class="flex-grow mt-header" transition:persist="journey-page">
       <IntroSection
         id="journey",
         image={image}
-        title={T.TITLE}
-        description={T.DESCRIPTION_LONG}
+        title={JOURNEY_T.TITLE}
+        description={JOURNEY_T.DESCRIPTION_LONG}
       />
 
       <div class="relative flex flex-col">

@@ -6,29 +6,30 @@ import image from '../../assets/images/cards/feats_wide.png';
 import type { Translations } from '../../utils/typings';
 
 interface Props {
-  T: Translations['FEATS']
+  T: Translations
 }
 
 const { T } = Astro.props;
+const FEATS_T = T.FEATS;
 
 ---
 
-<Layout title="Feats - Professional Accomplishments">
+<Layout title="Feats - Professional Accomplishments" T={T}>
   <main transition:name="feats" class="flex-grow mt-header">
     <IntroSection
       id="feats",
       image={image}
-      title={T.TITLE}
-      description={T.DESCRIPTION_LONG}
+      title={FEATS_T.TITLE}
+      description={FEATS_T.DESCRIPTION_LONG}
     />
-    { T.FEATS.map((feat, idx) => (
+    { FEATS_T.FEATS.map((feat, idx) => (
       <Section
         backgroundColor={idx % 2 === 0 ? 'secondary' : 'primary'}
         paddingClass="py-32 px-12 desktop:px-12"
       >
         <ContentContainer singleContainer className="gap-10 max-w-4xl">
           <H2><span class="text-clr-primary">{feat.TITLE_PREFIX}</span><br><span class="text-h3">{feat.TITLE}</span></H2>
-          <P>{feat.DESCRIPTION}</P>
+          <P className="text-center">{feat.DESCRIPTION}</P>
           <Carousel slides={feat.SLIDES}/>
         </ContentContainer>
       </Section>

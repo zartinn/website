@@ -1,12 +1,14 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import { Header, Footer } from '../components';
+import type { Translations } from '../utils/typings';
 import '../styles/view-transitions.css';
 interface Props {
 	title: string;
+	T: Translations
 }
 
-const { title } = Astro.props;
+const { title, T } = Astro.props;
 const url = Astro.url
 const removedLangPathName = url.pathname.replace('/de', '');
 const pathname = removedLangPathName === '' ? '/' : removedLangPathName;
@@ -48,7 +50,7 @@ const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-
 	<body class="bg-bg-primary overflow-x-hidden flex flex-col min-h-screen">
 		<Header isHome={isHome}/>
 		<slot />
-		<Footer/>
+		<Footer T={T.FOOTER}/>
 	</body>
 </html>
 

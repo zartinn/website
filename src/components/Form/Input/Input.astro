@@ -2,11 +2,12 @@
 interface Props {
     name: string;
     label: string;
+    errorMessage: string;
     className?: string;
     inputType?: 'input' | 'textarea';
 }
 
-const {name, label, className = '', inputType = 'input' } = Astro.props
+const {name, label, className = '', inputType = 'input', errorMessage } = Astro.props
 
 const ElType = inputType;
 
@@ -28,7 +29,7 @@ const ElType = inputType;
     >   
         {label}
     </label>
-    <span class="text-body-small pl-3 origin-bottom text-clr-error transition-all">{ name === 'email' ? `Please provide a valid email address` : `${label} is required`}</span>
+    <span class="text-body-small pl-3 origin-bottom text-clr-error transition-all">{ errorMessage }</span>
 </div>
 
 

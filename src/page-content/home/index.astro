@@ -9,31 +9,32 @@ import journey from '../../assets/images/cards/journey.png';
 import contact from '../../assets/images/cards/contact.png';
 
 interface Props {
-	T: Translations['HOME']
+	T: Translations
 }
 
 const { T } = Astro.props;
+const HOME_T = T.HOME
 
 const images = [craft, feats, journey, contact];
-const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
-	const cardKey = key as keyof typeof T.CARDS;
+const linkInfos = Object.keys(HOME_T.CARDS).map((key, idx) => {
+	const cardKey = key as keyof typeof HOME_T.CARDS;
 	return {
 		id: cardKey,
 		image: images[idx],
-		alt: T.CARDS[cardKey].ALT,
+		alt: HOME_T.CARDS[cardKey].ALT,
 		href: `/${cardKey}`,
-		title: T.CARDS[cardKey].TITLE,
-		description: T.CARDS[cardKey].DESCRIPTION
+		title: HOME_T.CARDS[cardKey].TITLE,
+		description: HOME_T.CARDS[cardKey].DESCRIPTION
 	}
 });
 
 ---
 
-<Layout title="Welcome to my Portfolio">
+<Layout title="Welcome to my Portfolio" T={T}>
 	<main class="flex-grow mt-header">
 		<Section>
 			<ContentContainer>
-				<Title T={T.INTRO.TITLE} />
+				<Title T={HOME_T.INTRO.TITLE} />
 			</ContentContainer>
 			<ContentContainer className="flex justify-center items-center">
 				<MyImage src={zartin1} alt="portrait of Martin - ai generated" width={600}/>
@@ -41,8 +42,8 @@ const linkInfos = Object.keys(T.CARDS).map((key, idx) => {
 		</Section>
 		<Section backgroundColor="secondary">
 			<ContentContainer singleContainer className="gap-8">
-				<H2 className="text-center" >{T.TEASER.TITLE}</H2>
-				<P className="text-center">{T.TEASER.DESCRIPTION_1}<span class="text-clr-primary">{T.TEASER.CUSTOMER_FIRST}</span>{T.TEASER.DESCRIPTION_2}</P>
+				<H2 className="text-center" >{HOME_T.TEASER.TITLE}</H2>
+				<P className="text-center">{HOME_T.TEASER.DESCRIPTION_1}<span class="text-clr-primary">{HOME_T.TEASER.CUSTOMER_FIRST}</span>{HOME_T.TEASER.DESCRIPTION_2}</P>
 			</ContentContainer>
 		</Section>
 		<Section>

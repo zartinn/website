@@ -8,10 +8,11 @@ import { sendMail } from './send-mail';
 
 
 interface Props {
-  T: Translations['CONTACT']
+  T: Translations
 }
 
 const { T } = Astro.props;
+const CONTACT_T = T['CONTACT']
 
 const isGet = Astro.request.method === 'GET';
 
@@ -25,24 +26,24 @@ if (!isGet) {
 
 ---
 
-<Layout title="Contact - Get in Touch">
+<Layout title="Contact - Get in Touch" T={T}>
   <main transition:name="contact" class="flex-grow mt-header">
     <IntroSection
       id="contact",
       image={image}
-      title={T.TITLE}
-      description={T.DESCRIPTION_LONG}
+      title={CONTACT_T.TITLE}
+      description={CONTACT_T.DESCRIPTION_LONG}
     />
 
     <!-- Contact Form -->
     <Section>
       <ContentContainer singleContainer>
         { isGet ? 
-            <H2 type="xl">Say Hi 👋</H2>
-            <Form/>
+            <H2 type="xl">{CONTACT_T.WELCOME}</H2>
+            <Form T={CONTACT_T.FORM}/>
           :
-          <H2 type="xl" className="mb-12">Thanks for your message!</H2>
-          <P type="xl">We will answer shortly</P>
+          <H2 type="xl" className="mb-12">{CONTACT_T.THANKS}</H2>
+          <P type="xl" className="text-center">{CONTACT_T.THANKS2}</P>
         }
       </ContentContainer>
     </Section>

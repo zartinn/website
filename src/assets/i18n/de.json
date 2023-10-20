@@ -1,4 +1,9 @@
 {
+    "FOOTER": {
+        "INFO_DEVELOP1": "Designed und",
+        "INFO_DEVELOP2": "entwickelt",
+        "INFO_BY": "von Martin Zachoszcz"
+    },
     "HOME": {
         "INTRO": {
             "TITLE": {
@@ -45,6 +50,8 @@
         "TITLE": "Expertise",
         "DESCRIPTION": "Tiefe Expertise in modernen Technologien und Entwicklungspraktiken",
         "DESCRIPTION_LONG": "Tauchen Sie ein in mein Fachwissen und meine Methoden. Von kundenorientierter Entwicklung bis hin zu architektonischer Exzellenz, entdecken Sie die Dienstleistungen und Ansätze, die meine Arbeit prägen und herausragende Ergebnisse liefern.",
+        "TECHNOLOGIES": "Technologien mit denen ich gearbeitet habe",
+        "MANIFESTO_TITLE": "Mein technisches Handwerk",
         "MANIFESTO": {
             "client": {
                 "TITLE": "Kundenorientierte Schnellentwicklung",
@@ -75,7 +82,31 @@
     "CONTACT": {
         "TITLE": "Kontakt",
         "DESCRIPTION_LONG": "Hast du eine Idee, eine Frage oder willst einfach nur Hallo sagen? So kannst du direkt Kontakt mit mir aufnehmen. Ob Projektgespräche, technische Beratung oder einfach nur technischer Klatsch, meine virtuelle Tür ist immer offen.",
-        "DESCRIPTION": "Offene Kommunikationskanäle für zukünftige Zusammenarbeiten"
+        "DESCRIPTION": "Offene Kommunikationskanäle für zukünftige Zusammenarbeiten",
+        "WELCOME": "Sag Hallo 👋",
+        "THANKS": "Danke für Deine Nachricht!",
+        "THANKS2": "Wir werden uns schnellstmöglichst bei Dir melden",
+        "FORM": {
+            "BUTTON": "Absenden",
+            "FIELDS": {
+                "NAME": {
+                    "VALUE": "Name",
+                    "ERROR": "Name ist erforderlich"
+                },
+                "EMAIL": {
+                    "VALUE": "Email",
+                    "ERROR": "Bitte überprüfe die Email"
+                },
+                "SUBJECT": {
+                    "VALUE": "Betreff",
+                    "ERROR": "Betreff ist erforderlich"
+                },
+                "MESSAGE": {
+                    "VALUE": "Nachricht",
+                    "ERROR": "Nachricht ist erforderlich"
+                }
+            }
+        }
     },
     "FEATS": {
         "TITLE": "Erfolge",

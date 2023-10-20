@@ -12,39 +12,40 @@ import aws from '../../assets/images/manifesto/cloud-expertise.png';
 import codequality from '../../assets/images/manifesto/code-quality.png';
 
 interface Props {
-  T: Translations['CRAFT']
+  T: Translations
 }
 
 const { T } = Astro.props;
+const CRAFT_T = T.CRAFT;
 
 const images = [client, technical, aws, codequality];
-const manifestoInfo = Object.keys(T.MANIFESTO).map((key, idx) => {
-	const cardKey = key as keyof typeof T.MANIFESTO;
+const manifestoInfo = Object.keys(CRAFT_T.MANIFESTO).map((key, idx) => {
+	const cardKey = key as keyof typeof CRAFT_T.MANIFESTO;
 	return {
 		image: images[idx],
-		alt: T.MANIFESTO[cardKey].ALT,
-		title: T.MANIFESTO[cardKey].TITLE,
-		description: T.MANIFESTO[cardKey].DESCRIPTION,
-    tools: T.MANIFESTO[cardKey].TOOLS
+		alt: CRAFT_T.MANIFESTO[cardKey].ALT,
+		title: CRAFT_T.MANIFESTO[cardKey].TITLE,
+		description: CRAFT_T.MANIFESTO[cardKey].DESCRIPTION,
+    tools: CRAFT_T.MANIFESTO[cardKey].TOOLS
 	}
 });
 
 
 ---
 
-<Layout title="Craft - My Expertise">
+<Layout title="Craft - My Expertise" T={T}>
   <main transition:name="craft" class="flex-grow mt-header">
     <IntroSection
       id="craft"
       image={image}
-      title={T.TITLE}
-      description={T.DESCRIPTION_LONG}
+      title={CRAFT_T.TITLE}
+      description={CRAFT_T.DESCRIPTION_LONG}
     />
 
     <!-- Technologies Section -->
     <Section backgroundColor="secondary">
       <ContentContainer singleContainer>
-        <H2 className="mb-16 text-center">Technologies I have worked with</H2>
+        <H2 className="mb-16 text-center">{CRAFT_T.TECHNOLOGIES}</H2>
         <ul class="grid grid-cols-2 grid-rows-8 desktop:grid-cols-4 desktop:grid-rows-4 gap-y-16 gap-x-32">
           { icons.map(icon => (
             <li class="group flex flex-col justify-center items-center gap-4">
@@ -59,7 +60,7 @@ const manifestoInfo = Object.keys(T.MANIFESTO).map((key, idx) => {
     <!-- Methologies/Services Section -->
     <Section>
       <ContentContainer singleContainer>
-        <H2 className="mb-16 text-center">My Technical Manifesto</H2>
+        <H2 className="mb-16 text-center">{CRAFT_T.MANIFESTO_TITLE}</H2>
         <div class="flex flex-col desktop:grid grid-cols-2 grid-rows-2 gap-20">
           {manifestoInfo.map(info => (
             <Card

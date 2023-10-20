@@ -1,13 +1,12 @@
 ---
-import { Image } from 'astro:assets';
-import githubIcon from '../../assets/icons/github.svg';
-import location from '../../assets/icons/location.svg';
-import linkedinIcon from '../../assets/icons/linkedin.svg';
-import mailIcon from '../../assets/icons/mail.svg';
-import astroIcon from '../../assets/icons/technologies/10-icon-astro.svg';
 import { AstroIcon, GithubIcon, LinkedinIcon, MailIcon } from '..';
+import type { Translations } from '../../utils/typings';
 
+interface Props {
+    T: Translations['FOOTER']
+}
 
+const { T } = Astro.props;
 
 ---
 
@@ -21,7 +20,6 @@ import { AstroIcon, GithubIcon, LinkedinIcon, MailIcon } from '..';
                 aria-label="My LinkedIn profile"
             >
                 <LinkedinIcon/>
-                <!-- <Image src={githubIcon} alt="github icon" width="42" height="42"/> -->
             </a>
             <!-- <div class="flex items-center gap-2">
                 <Image src={location} alt="github icon" width="46" height="46"/>
@@ -34,7 +32,6 @@ import { AstroIcon, GithubIcon, LinkedinIcon, MailIcon } from '..';
                 aria-label="my github page"
             >
                 <GithubIcon/>
-                <!-- <Image src={linkedinIcon} alt="linkedin icon" width="42" height="42"/> -->
             </a>
             <a
                 href="mailto:martin.zachoszcz@gmail.com"
@@ -43,14 +40,12 @@ import { AstroIcon, GithubIcon, LinkedinIcon, MailIcon } from '..';
                 aria-label="mail me"
             >
                 <MailIcon/>
-                <!-- <Image src={mailIcon} alt="mail icon" width="36" height="36"/> -->
             </a>
         </div>
         <div class="flex flex-col gap-6 items-center desktop:items-end">
             <span class="text-body-small text-fg-primary text-center desktop:text-right">
-                Designed and
-                <a href="https://github.com/zartinn/website" target="_blank" class="underline text-fg-primary">developed</a>
-                <br>by Martin Zachoszcz © {new Date().getFullYear()}
+                {T.INFO_DEVELOP1}&nbsp;<a href="https://github.com/zartinn/website" target="_blank" class="underline text-fg-primary">{T.INFO_DEVELOP2}</a>
+                <br>{T.INFO_BY} © {new Date().getFullYear()}
             </span>
             <div class="flex">
                 <span class="text-body-small text-fg-primary">Build with </span>
