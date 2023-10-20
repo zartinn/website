@@ -13,15 +13,15 @@
             }
         },
         "TEASER": {
-            "TITLE": "Gemeinsam bauen wir die Lösungen von morgen — heute.",
-            "DESCRIPTION_1": "Dein Projekt ist mein Projekt: Ich liefere umfassende Softwarelösungen mit einer",
-            "DESCRIPTION_2": " Ethik. Als engagierter Problemlöser stelle ich mich Herausforderungen direkt, um robuste, skalierbare Produkte zu schaffen. Lass uns zusammenarbeiten und die Lösungen von morgen bauen — heute.",
+            "TITLE": "Gemeinsam gestalten wir die Lösungen von morgen — heute.",
+            "DESCRIPTION_1": "Dein Projekt ist mein Projekt: Ich biete umfassende Softwarelösungen mit einer",
+            "DESCRIPTION_2": " Ethik. Als engagierter Problemlöser gehe ich Herausforderungen direkt an, um robuste, skalierbare Produkte zu kreieren. Lassen uns zusammenarbeiten und die Lösungen von morgen heute umsetzen.",
             "CUSTOMER_FIRST": " kundenorientierten "
         },
         "CARDS": {
             "craft": {
-                "TITLE": "Fachkompetenz",
-                "DESCRIPTION": "Tiefgreifende Expertise in modernen Technologien und Entwicklungspraktiken",
+                "TITLE": "Expertise",
+                "DESCRIPTION": "Tiefe Expertise in modernen Technologien und Entwicklungspraktiken",
                 "ALT": "Fachkompetenz Kartenbild"
             },
             "feats": {
@@ -31,137 +31,137 @@
             },
             "journey": {
                 "TITLE": "Laufbahn",
-                "DESCRIPTION": "Eine berufliche Laufbahn, die sich durch kontinuierliches Lernen und Anpassungsfähigkeit auszeichnet",
+                "DESCRIPTION": "Eine berufliche Laufbahn, die sich durch kontinuierliches Lernen und Anpassung auszeichnet",
                 "ALT": "Laufbahn Kartenbild"
             },
             "contact": {
                 "TITLE": "Kontakt",
-                "DESCRIPTION": "Offene Kommunikationskanäle für zukünftige Zusammenarbeiten",
+                "DESCRIPTION": "Offene Kommunikationswege für zukünftige Zusammenarbeiten",
                 "ALT": "Kontakt Kartenbild"
             }
         }
     },
     "CRAFT": {
-        "TITLE": "Fachkompetenz",
-        "DESCRIPTION": "Tiefgreifende Expertise in modernen Technologien und Entwicklungspraktiken",
-        "DESCRIPTION_LONG": "Tauchen Sie ein in die Grundpfeiler meines Handwerks - die Methoden und Praktiken, die ich befolge. In diesem Abschnitt entdecken Sie nicht nur die Dienstleistungen, die ich anbiete, sondern auch den philosophischen Ansatz, den ich verfolge. Von der Priorisierung direkter Kommunikation mit Kunden bis zur Sicherstellung zukunftssicherer Softwaregestaltung verbinde ich Fachwissen mit Empathie und sorge dafür, dass jedes Projekt ein maßgeschneidertes Meisterwerk ist.",
+        "TITLE": "Expertise",
+        "DESCRIPTION": "Tiefe Expertise in modernen Technologien und Entwicklungspraktiken",
+        "DESCRIPTION_LONG": "Tauchen Sie ein in mein Fachwissen und meine Methoden. Von kundenorientierter Entwicklung bis hin zu architektonischer Exzellenz, entdecken Sie die Dienstleistungen und Ansätze, die meine Arbeit prägen und herausragende Ergebnisse liefern.",
         "MANIFESTO": {
             "client": {
-                "TITLE": "Client-Centric Rapid Development",
-                "DESCRIPTION": "In today’s fast-paced world, understanding client requirements and adapting quickly is key. I prioritize direct communication and iterative development. This means less time deciphering needs and more time building solutions tailored to you.",
-                "TOOLS": "Real-time collaboration tools (e.g., Slack, Trello) for keeping clients in the loop.",
-                "ALT": "client-centric card image"
+                "TITLE": "Kundenorientierte Schnellentwicklung",
+                "DESCRIPTION": "In der heutigen schnelllebigen Welt ist es entscheidend, die Anforderungen der Kunden zu verstehen und sich schnell anzupassen. Ich priorisiere direkte Kommunikation und iterative Entwicklung. Das bedeutet weniger Zeit für das Entschlüsseln von Bedürfnissen und mehr Zeit für maßgeschneiderte Lösungen.",
+                "TOOLS": "Echtzeit-Kollaborationstools (z.B., Slack, Trello) um Kunden auf dem Laufenden zu halten.",
+                "ALT": "kundenorientiertes Kartenbild"
             },
             "technical": {
-                "TITLE": "Comprehensive Technical Services",
-                "DESCRIPTION": "Whether it's crafting pixel-perfect frontends, robust backends, streamlining CI/CD pipelines, or providing expert consultancy, I offer a comprehensive suite of services. Let's make your vision a reality, from concept to deployment.",
-                "TOOLS": "Frontend (React, Vue, SASS), Backend (Node.js, Express, MongoDB), CI/CD (Jenkins, GitHub Actions), and Consultation sessions via Zoom or Teams.",
-                "ALT": "Technical services card image"
+                "TITLE": "Umfassende Technische Dienstleistungen",
+                "DESCRIPTION": "Ob es darum geht, pixelgenaue Frontends zu erstellen, robuste Backends, CI/CD-Pipelines zu optimieren oder Expertenberatung zu bieten, ich biete ein umfassendes Dienstleistungsangebot. Lassen Sie uns Ihre Vision von Konzept bis Einsatz verwirklichen.",
+                "TOOLS": "Frontend (React, Vue, SASS), Backend (Node.js, Express, MongoDB), CI/CD (Jenkins, GitHub Actions), und Beratungssitzungen über Zoom oder Teams.",
+                "ALT": "Technische Dienstleistungen Kartenbild"
             },
             "aws": {
-                "TITLE": "Architectural Excellence with Cloud Expertise",
-                "DESCRIPTION": "With a certified proficiency in AWS, I pride myself on designing resilient, scalable, and efficient software architectures. From designing robust microservices to leveraging cloud-native solutions, I ensure your software not only meets current demands but is future-proof.",
+                "TITLE": "Architektonische Exzellenz mit Cloud-Kompetenz",
+                "DESCRIPTION": "Mit einer zertifizierten Kompetenz in AWS zeichne ich mich durch das Entwerfen von widerstandsfähigen, skalierbaren und effizienten Softwarearchitekturen aus. Von robusten Mikrodiensten bis hin zu cloud-nativen Lösungen stelle ich sicher, dass Ihre Software nicht nur aktuellen Anforderungen gerecht wird, sondern auch zukunftssicher ist.",
                 "TOOLS": "AWS (Lambda, EC2, S3, etc.), Docker, Serverless Framework, Terraform.",
-                "ALT": "Architectural card image"
+                "ALT": "Architektonisches Kartenbild"
             },
             "codequality": {
-                "TITLE": "Holistic Code Quality",
-                "DESCRIPTION": "Beyond just \"working\" code, I focus on clarity, maintainability, and anticipating unseen edge cases. While Test-Driven Development (TDD) is valuable, I emphasize holistic code quality—ensuring each line is purposeful, tested, and contributes to the larger software vision.",
+                "TITLE": "Ganzheitliche Code-Qualität",
+                "DESCRIPTION": "Über einfach nur \"funktionierenden\" Code hinaus konzentriere ich mich auf Klarheit, Wartbarkeit und die Vorwegnahme von unbekannten Randbedingungen. Während testgetriebene Entwicklung (TDD) wertvoll ist, betone ich ganzheitliche Code-Qualität - sicherstellend, dass jede Zeile zweckmäßig, getestet und zum größeren Software-Vision beiträgt.",
                 "TOOLS": "ESLint, Prettier, Jest, Mocha, Chai.",
-                "ALT": "code quality card image"
+                "ALT": "Code-Qualität Kartenbild"
             }
         }
     },
     "CONTACT": {
         "TITLE": "Kontakt",
-        "DESCRIPTION_LONG": "Haben Sie eine Idee, eine Frage oder möchten Sie einfach nur Hallo sagen? Dies ist Ihr Portal, um direkt mit mir in Kontakt zu treten. Sei es für Projektbesprechungen, technische Beratungen oder einfach nur etwas Technik-Geplauder, meine virtuelle Tür steht immer offen und wartet darauf, Verbindungen und Kollaborationen zu fördern.",
+        "DESCRIPTION_LONG": "Hast du eine Idee, eine Frage oder willst einfach nur Hallo sagen? So kannst du direkt Kontakt mit mir aufnehmen. Ob Projektgespräche, technische Beratung oder einfach nur technischer Klatsch, meine virtuelle Tür ist immer offen.",
         "DESCRIPTION": "Offene Kommunikationskanäle für zukünftige Zusammenarbeiten"
     },
     "FEATS": {
         "TITLE": "Erfolge",
-        "DESCRIPTION_LONG": "Betreten Sie eine Galerie meiner beruflichen Errungenschaften. Hier finden Sie eine sorgfältig ausgewählte Sammlung von Projekten aus verschiedenen Bereichen und Herausforderungen. Jedes Unterfangen erzählt eine Geschichte von Hingabe, Können und dem unermüdlichen Streben nach Exzellenz und vermittelt einen Eindruck davon, was ich zu bieten habe.",
+        "DESCRIPTION_LONG": "Tiefer Einblick in meinen beruflichen Werdegang: Von der Architektur digitaler Lösungen, die modernste Anwendungen antrieben, über das Mentoring der Technik-Innovatoren von morgen bis hin zur Führung von wirkungsvollen Projektrealisierungen. Erlebe die Mischung aus Strategie, Umsetzung und Leidenschaft, die meine Arbeit antreibt.",
         "DESCRIPTION": "Ausgewählte Erfolge, die meine Problemlösungsfähigkeiten und Hingabe unterstreichen",
         "FEATS": [
             {
-                "TITLE_PREFIX": "Professional Experience:",
-                "TITLE": "'The Foundation of My Expertise'",
-                "DESCRIPTION": "My journey at CARIAD was marked by a deep dive into the vast expanse of web technologies, where I was entrusted with the pivotal role of dispatching software to a multitude of vehicles worldwide.",
+                "TITLE_PREFIX": "Berufserfahrung:",
+                "TITLE": "'Das Fundament meiner Expertise'",
+                "DESCRIPTION": "Meine Zeit bei CARIAD war geprägt von einem intensiven Eintauchen in Web-Technologien, wo ich die entscheidende Rolle beim Verteilen von Software an zahlreiche Fahrzeuge weltweit hatte.",
                 "SLIDES": [
                     {
-                        "TITLE": "SDK Maintainer",
-                        "DESCRIPTION": "In my tenure at CARIAD, my team and I owned the stewardship of an expansive SDK comprising a variety of libraries, specialized build tools, dynamic applications, cutting-edge documentation, and consistent support mechanisms to aid other teams in the software ecosystem."
+                        "TITLE": "SDK-Betreuer",
+                        "DESCRIPTION": "Während meiner Zeit bei CARIAD hatten mein Team und ich die Verantwortung für ein weitreichendes SDK mit verschiedenen Bibliotheken, spezialisierten Build-Tools, dynamischen Anwendungen, topaktueller Dokumentation und konstanten Support-Mechanismen, um andere Teams im Software-Ökosystem zu unterstützen."
                     },
                     {
-                        "TITLE": "Libraries",
-                        "DESCRIPTION": "Spearheaded the creation and management of diverse libraries. This spectrum included white-labelled UI libraries offering thematic dynamism, custom communication protocols, and high-level abstractions for specialized car functions."
+                        "TITLE": "Bibliotheken",
+                        "DESCRIPTION": "Initiierte die Erstellung und Verwaltung vielfältiger Bibliotheken. Dazu gehörten White-Label-UI-Bibliotheken mit thematischer Dynamik, benutzerdefinierte Kommunikationsprotokolle und abstrakte Funktionen für spezialisierte Fahrzeugfunktionen."
                     },
                     {
-                        "TITLE": "Build Tools",
-                        "DESCRIPTION": "Championed the development of enhanced extensions to the Angular CLI, fine-tuned explicitly for the idiosyncrasies of the infotainment system environment."
+                        "TITLE": "Build-Tools",
+                        "DESCRIPTION": "Förderung der Entwicklung erweiterter Extensions für das Angular CLI, speziell abgestimmt auf die Eigenheiten des Infotainment-Systemumfelds."
                     },
                     {
-                        "TITLE": "Applications",
-                        "DESCRIPTION": "Delivered a comprehensive suite of desktop applications, equipped with monitoring, debugging, analyzing, and testing capabilities, ensuring a smooth development and integration process."
+                        "TITLE": "Anwendungen",
+                        "DESCRIPTION": "Bereitstellung einer umfassenden Suite von Desktop-Anwendungen mit Überwachungs-, Debugging-, Analyse- und Testfunktionen, um einen reibungslosen Entwicklungs- und Integrationsprozess zu gewährleisten."
                     },
                     {
-                        "TITLE": "Extensive Documentation",
-                        "DESCRIPTION": "Pioneered an advanced documentation paradigm, with features such as auto-generation and auto-deployment, underpinned by our tailored CD/CI pipeline, ensuring seamless access and updates for developers."
+                        "TITLE": "Umfassende Dokumentation",
+                        "DESCRIPTION": "Einführung eines fortschrittlichen Dokumentationsmodells mit Funktionen wie Auto-Generierung und Auto-Deployment, unterstützt durch unsere maßgeschneiderte CD/CI-Pipeline, um Entwicklern einen nahtlosen Zugriff und Updates zu ermöglichen."
                     },
                     {
-                        "TITLE": "Support for Other Teams",
-                        "DESCRIPTION": "Established a centralized expertise hub, providing consistent support to various in-house teams and third-party collaborators. From workshops to debugging sessions and email support, we ensured a holistic environment for knowledge sharing and problem-solving."
+                        "TITLE": "Support für andere Teams",
+                        "DESCRIPTION": "Aufbau eines zentralen Expertisezentrums, das kontinuierliche Unterstützung für verschiedene interne Teams und externe Partner bietet. Von Workshops über Debugging-Sitzungen bis hin zu E-Mail-Support schufen wir ein ganzheitliches Umfeld für Wissensaustausch und Problemlösung."
                     }
                 ]
             },
             {
-                "TITLE_PREFIX": "Educator & Collaborator:",
-                "TITLE": "'Shaping the Next Tech Vanguard'",
-                "DESCRIPTION": "Blending a psychological insight with technical expertise, I've ventured beyond coding. I've served as both a guide for teams and a mentor for future tech leaders, ensuring they're industry-ready with a human touch.",
+                "TITLE_PREFIX": "Bildner & Kollaborateur:",
+                "TITLE": "'Die nächste Tech-Avantgarde formen'",
+                "DESCRIPTION": "Durch das Kombinieren von psychologischem Verständnis mit technischer Expertise bin ich über das Codieren hinausgegangen. Ich war sowohl ein Wegweiser für Teams als auch ein Mentor für zukünftige Tech-Leader und sorgte dafür, dass sie mit einer menschlichen Note branchenbereit sind.",
                 "SLIDES": [
                     {
                         "TITLE": "Benjamin Dobler",
-                        "DESCRIPTION": "\"I've had the privilege of sharing both workstations and laughs with Zartin. Beyond being a tech genius, they've always been the human touchpoint in every project. Genuine, heartfelt, and a rock in times of chaos. I didn't just find a colleague; I found a friend.\"",
+                        "DESCRIPTION": "\"Ich hatte das Privileg, mit Zartin sowohl Arbeitsstationen als auch Lacher zu teilen. Neben seinem technischen Genie war er immer der menschliche Anker in jedem Projekt. Echt, herzlich und ein Fels in stürmischen Zeiten. Ich fand nicht nur einen Kollegen, sondern einen Freund.\"",
                         "LINKEDIN_PROFILE": "https://www.linkedin.com/in/richapps/",
-                        "ROLE": "Project Lead Web-Development"
+                        "ROLE": "Projektleiter Web-Entwicklung"
                     },
                     {
                         "TITLE": "Thomas Volk",
-                        "DESCRIPTION": "\"Navigating complex projects becomes tenfold easier with Zartin on your side. His unwavering commitment, keen insights, and relentless problem-solving made the impossible possible. I owe a lion's share of our project's success to him.\"",
+                        "DESCRIPTION": "\"Komplexe Projekte werden mit Zartin an deiner Seite zehnmal einfacher. Sein unerschütterliches Engagement, seine scharfen Einsichten und sein unermüdliches Problemlösen machten das Unmögliche möglich. Ich verdanke ihm einen Großteil des Erfolgs unseres Projekts.\"",
                         "LINKEDIN_PROFILE": "https://www.linkedin.com/in/thvolk/",
-                        "ROLE": "Head of Engineering"
+                        "ROLE": "Leiter der Technikabteilung"
                     },
                     {
                         "TITLE": "Vladyslav Tsurkanenko",
-                        "DESCRIPTION": "\"Learning from Martin wasn't just about code or tech—it was about understanding, compassion, and real connection. Their dedication wasn't limited to the syllabus; they genuinely cared about each of us, ensuring we didn't just learn, but thrived.\"",
+                        "DESCRIPTION": "\"Von Martin zu lernen, ging nicht nur um Code oder Technik – es ging um Verständnis, Mitgefühl und echte Verbindung. Seine Hingabe beschränkte sich nicht nur auf den Lehrplan; er kümmerte sich wirklich um jeden von uns und sorgte dafür, dass wir nicht nur lernten, sondern florierten.\"",
                         "LINKEDIN_PROFILE": "https://www.linkedin.com/in/vladyslav-tsurkanenko/",
-                        "ROLE": "Web Developer (former Student)"
+                        "ROLE": "Webentwickler (ehemaliger Student)"
                     }
                 ]
             },
             {
-                "TITLE_PREFIX": "Featured Project:",
-                "TITLE": "'Revamping Spiced Academy's Digital Presence'",
-                "DESCRIPTION": "I undertook a complete transformation of Spiced Academy's digital presence, emphasizing my dedication to superior design, functionality, and user experience. The platform's adaptability and consistency set new standards.",
+                "TITLE_PREFIX": "Hervorgehobenes Projekt:",
+                "TITLE": "'Neugestaltung der digitalen Präsenz der Spiced Academy'",
+                "DESCRIPTION": "Ich habe eine komplette Transformation der digitalen Präsenz der Spiced Academy durchgeführt, wobei ich meinen Einsatz für überlegenes Design, Funktionalität und Benutzererfahrung betonte. Die Anpassungsfähigkeit und Konsistenz der Plattform setzte neue Maßstäbe.",
                 "SLIDES": [
                     {
-                        "TITLE": "Technical Modernization",
-                        "DESCRIPTION": "Transitioning from legacy tech stacks requires thorough analysis, risk mitigation, and strategic implementation. Successfully migrating from Handlebars and JQuery to a modern ensemble of NextJS, Tailwind, and GraphQL established a robust platform conducive for advanced functionalities and future scalability."
+                        "TITLE": "Technische Modernisierung",
+                        "DESCRIPTION": "Der Übergang von veralteten Technologiestapeln erfordert gründliche Analysen, Risikominderung und strategische Implementierung. Der erfolgreiche Umzug von Handlebars und JQuery zu einem modernen Ensemble aus NextJS, Tailwind und GraphQL schuf eine robuste Plattform, die für erweiterte Funktionalitäten und zukünftige Skalierbarkeit geeignet ist."
                     },
                     {
-                        "TITLE": "Content Management Evolution",
-                        "DESCRIPTION": "To enhance the academy's content agility and adaptability, I integrated a CMS. This empowers content administrators to dynamically adjust and update site content, fostering a consistent and updated user experience without any dependency on development cycles."
+                        "TITLE": "Evolution des Content-Management",
+                        "DESCRIPTION": "Um die Inhaltsagilität und -anpassungsfähigkeit der Akademie zu erhöhen, integrierte ich ein CMS. Dies ermöglicht es Content-Administratoren, Inhalte der Website dynamisch anzupassen und zu aktualisieren und bietet so eine konsistente und aktuelle Benutzererfahrung ohne Abhängigkeit von Entwicklungszyklen."
                     },
                     {
-                        "TITLE": "Responsive & Scalable Design Implementation",
-                        "DESCRIPTION": "Implemented a sleek responsive design that delivers a consistent user experience on all devices. This design was crafted with developers in mind, allowing for streamlined scalability and effortless future enhancements."
+                        "TITLE": "Implementierung von Responsive & Scalable Design",
+                        "DESCRIPTION": "Einführung eines schlanken, responsiven Designs, das auf allen Geräten eine konsistente Benutzererfahrung bietet. Dieses Design wurde mit Entwicklern im Hinterkopf erstellt und ermöglicht eine einfache Skalierbarkeit und mühelose zukünftige Verbesserungen."
                     },
                     {
-                        "TITLE": "Performance and SEO Optimization",
-                        "DESCRIPTION": "A primary metric of a website's success is its performance and visibility. Post overhaul, meticulous optimization strategies were employed, leading to improved site responsiveness and SEO metrics. This ensures that Spiced Academy is optimally positioned in search engine rankings, driving organic traffic and enhancing user engagement."
+                        "TITLE": "Leistung und SEO-Optimierung",
+                        "DESCRIPTION": "Ein Hauptmaß für den Erfolg einer Website ist ihre Leistung und Sichtbarkeit. Nach der Überarbeitung wurden sorgfältige Optimierungsstrategien eingesetzt, was zu verbesserten Reaktionszeiten der Seite und SEO-Metriken führte. Dies stellt sicher, dass die Spiced Academy optimal in den Suchmaschinenrankings positioniert ist, was den organischen Traffic steigert und die Benutzerbindung erhöht."
                     },
                     {
-                        "TITLE": "Enhanced Developer Experience",
-                        "DESCRIPTION": "Anticipating future developmental needs, the overhaul focused on enhancing the developer experience. This involved refining the coding environment, meticulous documentation, and establishing streamlined workflows, facilitating seamless future developments and feature integrations."
+                        "TITLE": "Verbesserte Entwicklererfahrung",
+                        "DESCRIPTION": "In Erwartung zukünftiger Entwicklungsbedürfnisse konzentrierte sich die Überarbeitung auf die Verbesserung der Entwicklererfahrung. Dies beinhaltete die Verfeinerung der Codierungsumgebung, sorgfältige Dokumentation und den Aufbau von optimierten Arbeitsabläufen, die eine nahtlose zukünftige Entwicklung und Feature-Integration ermöglichen."
                     }
                 ]
             }
@@ -169,7 +169,44 @@
     },
     "JOURNEY": {
         "TITLE": "Laufbahn",
-        "DESCRIPTION_LONG": "Durchqueren Sie die Zeitleiste meines beruflichen Lebens. Von bescheidenen Anfängen bis zu bedeutenden Meilensteinen erleben Sie die Entwicklung eines Codierers, der zum Technikexperten wurde. Dieser Abschnitt gibt Einblick in die Erfahrungen, Herausforderungen und Erkenntnisse, die meine Reise in der sich ständig weiterentwickelnden Techniklandschaft geprägt haben.",
-        "DESCRIPTION": "Eine berufliche Laufbahn, die sich durch kontinuierliches Lernen und Anpassungsfähigkeit auszeichnet"
+        "DESCRIPTION_LONG": "Durchquere die Zeitleiste meines beruflichen Lebens. Von bescheidenen Anfängen bis zu bedeutenden Meilensteinen, erlebe die Entwicklung eines Codierers zum Technikexperten. Dieser Abschnitt gibt Einblick in die Erfahrungen, Herausforderungen und Erkenntnisse, die meine Reise in der sich ständig weiterentwickelnden Technikwelt geprägt haben.",
+        "DESCRIPTION": "Eine berufliche Laufbahn, die sich durch kontinuierliches Lernen und Anpassungsfähigkeit auszeichnet",
+        "STATIONS": [
+            {
+                "DATE": "1987",
+                "EVENT": "Geboren in Berlin",
+                "DESCRIPTION": "Geboren und aufgewachsen im pulsierenden Berlin, begann meine Reise inmitten seiner reichen Geschichte und belebten Straßen."
+            },
+            {
+                "DATE": "2008",
+                "EVENT": "Abitur",
+                "DESCRIPTION": "Meine Schulzeit zeigte eine frühe Leidenschaft für Zahlen, Naturwissenschaften und logische Herausforderungen. Von der Grundschule bis zum Gymnasium vertiefte sich meine Neugier nur noch mehr."
+            },
+            {
+                "DATE": "2008-2010",
+                "EVENT": "Datentechnologie bei Siemens Professional Education",
+                "DESCRIPTION": "Ich tauchte tief in die Welt der Informatik ein und erkundete ein Spektrum von Themen. Diese Zeit war gefüllt mit praktischen Projekten, Praktika und unschätzbaren Lektionen, die mein grundlegendes Verständnis des Fachgebiets formten."
+            },
+            {
+                "DATE": "2011-2014",
+                "EVENT": "Bachelor in Psychologie",
+                "DESCRIPTION": "In einer überraschenden Wendung verfolgte ich einen Bachelor in Psychologie. Diese Reise, obwohl scheinbar abseits der Tech-Spur, rüstete mich mit einzigartigen Perspektiven und Einsichten aus, die seitdem meine Tech-Bestrebungen beeinflusst haben."
+            },
+            {
+                "DATE": "2014-2017",
+                "EVENT": "Master in Human Factors",
+                "DESCRIPTION": "Mit dem Wunsch, mein Wissen in Psychologie und Technik zu verknüpfen, nahm ich am interdisziplinären Programm \"Master in Human Factors\" teil. Hier kehrte ich in die Tech-Welt zurück und kombinierte psychologische Prinzipien mit Ingenieurmodulen. Diese einzigartige Mischung, die die menschliche Psyche mit Tech-Prinzipien verschmilzt, hat mich mit einem besonderen Vorteil im Bereich der Softwareentwicklung ausgestattet."
+            },
+            {
+                "DATE": "2016 - 2022",
+                "EVENT": "Web-Entwickler bei CARIAD SE (ehemals Carmeq GmbH)",
+                "DESCRIPTION": "In dieser Zeit tauchte ich tief in den weiten Ozean der Webentwicklung ein. Obwohl ich immer einen Berührungspunkt mit der Programmierung hatte, war es hier, wo ich die Welt der WEBENTWICKLUNG wirklich umarmte. Als Teil eines Kernteams bauten und pflegten wir ein SDK für Infotainment-Systeme in Autos bekannter Marken wie VW, Skoda, SEAT und MAN. Mehr als nur Werkzeuge zu schaffen, waren wir das vitale Nexus, das Teams unterstützte und sicherstellte, dass ihre Apps nahtlos liefen."
+            },
+            {
+                "DATE": "2022 und darüber hinaus",
+                "EVENT": "Freelancing Odyssey",
+                "DESCRIPTION": "Nach einem halben Jahrzehnt bei CARIAD rief mich das Locklied verschiedener Projekte und unterschiedlicher Technologien. Jetzt, als Freiberufler, biete ich nicht nur technische Fähigkeiten an. Ich bringe eine Mischung aus Leidenschaft, Hingabe und einer einzigartigen Perspektive in jedes Projekt ein und behandle jedes als persönliche Mission."
+            }
+        ]
     }
 }

@@ -4,7 +4,7 @@ import image from '../../assets/images/cards/journey.png';
 import type { Translations } from '../../utils/typings';
 import { IntroSection } from '../../sections';
 import JourneySection from '../../sections/JourneySection/JourneySection.astro';
-import { stations } from './data';
+import { getStations } from './data';
 
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { T } = Astro.props;
-
+const stations = getStations(T.STATIONS);
 const getPosition = (idx: number) => {
   if (idx === 0) return 'top';
   if (idx === stations.length - 1) return 'bottom';
