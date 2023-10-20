@@ -29,14 +29,29 @@ export function setupCarouselListener() {
     
         let touchStartX: number;
         let touchEndX: number;
+        let touchStartY: number;
+        let touchEndY: number;
         const swipeThreshold = 40;
     
         slideContainer.addEventListener('touchstart', (event) => {
             touchStartX = event.changedTouches[0].clientX;
+            touchStartY = event.changedTouches[0].clientY;
         }, { passive: true});
+
+        slideContainer.addEventListener('touchmove', (event) => {
+            touchEndX = event.changedTouches[0].clientX;
+            touchEndY = event.changedTouches[0].clientY;
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                event.preventDefault();
+            }
+        }, { passive: true})
     
         slideContainer.addEventListener('touchend', (event) => {
             touchEndX = event.changedTouches[0].clientX;
+            touchEndY = event.changedTouches[0].clientY;
             handleSwipe();
         }, { passive: true});
     
