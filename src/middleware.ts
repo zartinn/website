@@ -11,7 +11,6 @@ export const onRequest = defineMiddleware((context, next) => {
 
   // Check for Basic Auth
   if (authHeader !== AUTH_STRING) {
-    // Unauthorized
     return new Response('Unauthorized', {
       headers: {
         'WWW-Authenticate': 'Basic realm="Protected Area"'

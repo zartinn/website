@@ -13,7 +13,7 @@ const reverseClass = showLeft ? 'desktop:flex-row-reverse' : ''
 
 ---
 
-<div class={`journey-section relative flex flex-col desktop:flex-row h-fit min-h-screen p-12 pl-20 desktop:pl-12 justify-center items-center gap-24 desktop:gap-48 ${className} ${reverseClass}`}>
+<div class={`journey-section relative flex flex-col desktop:flex-row h-fit min-h-screen p-12 pl-20 desktop:pl-12 justify-center items-center gap-24 desktop:gap-48 overflow-hidden ${className} ${reverseClass}`}>
     <Timeline position={position}/>
     <ContentContainer className={`container opacity-0 ${showLeft ? 'right-container' : 'left-container'} content z-10 relative`}>
         <H2 className="mb-8"><span class="text-clr-primary">{station.date}</span><br>{station.event}</H2>
@@ -33,12 +33,12 @@ const reverseClass = showLeft ? 'desktop:flex-row-reverse' : ''
 
     @media (min-width: 1024px) {
         .left-container {
-            transform: translateX(-50vw);
+            /* transform: translateX(-50vw); */
             align-items: end;
         }
 
         .right-container {
-            transform: translateX(50vw);
+            /* transform: translateX(50vw); */
             align-items: start;
         }
         .left-container h2,

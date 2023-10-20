@@ -6,7 +6,7 @@ interface Props {
 
 const { slides } = Astro.props;
 
-const containerClasses = 'relative w-full rounded-xl flex flex-col gap-8 items-center border-clr-primary shadow-contrast shadow-sm border-2 overflow-hidden';
+const containerClasses = 'relative w-full rounded-xl flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2 overflow-hidden';
 const getInitialPositionalClass = (idx: number) => {
     return idx !== 0 ? 'right' : '' 
 }
@@ -20,7 +20,7 @@ const getPosition = (idx: number) => {
 
 <div class={`slide-container ${containerClasses} h-fit`}>
     { slides.map((slide, idx) => (
-        <div class={`slide ${getPosition(idx)} inset-0 w-full px-16 pb-20 pt-12 flex flex-col items-center justify-center gap-8 ${getInitialPositionalClass(idx)}`}>
+        <div class={`slide ${getPosition(idx)} inset-0 w-full px-8 desktop:px-16 pb-20 pt-8 desktop:pt-12 flex flex-col items-center justify-start gap-8 ${getInitialPositionalClass(idx)}`}>
             { slide.LINKEDIN_PROFILE ?
                 <a href={slide.LINKEDIN_PROFILE} target="_blank"><H3 className="underline text-center hover:text-clr-primary">{slide.TITLE}</H3></a> :
                 <H3 className="text-center">{slide.TITLE}</H3>

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const headerHeight = '8rem';
+
 module.exports = {
     content: ['./src/**/*.{html,ts,js,astro}'],
     theme: {
@@ -47,6 +49,12 @@ module.exports = {
         minHeight: {
           section: '35rem'
         },
+        margin: {
+          header: headerHeight
+        },
+        height: {
+          header: headerHeight
+        },
         width: {
           'content-double': '34rem',
           'content-single': '78rem',
@@ -60,7 +68,7 @@ module.exports = {
           50: '50%'
         },
         objectPosition: {
-          feats: '0 45%'
+          feats: '50% 45%'
         },
         opacity: {
           'bg-image': 'var(--bg-image-opacity)'
