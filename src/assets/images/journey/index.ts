@@ -1,6 +1,6 @@
 import berlin from './berlin.png';
 import highschool from './high-school.png';
-import siemens from './siemens-professional-education.png';
+import siemens from './siemens.png';
 import psychology from './psychology.png';
 import humanFactors from './human-factors.png';
 import cariad from './cariad.png';
