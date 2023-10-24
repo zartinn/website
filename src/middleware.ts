@@ -23,8 +23,8 @@ export const onRequest = defineMiddleware((context, next) => {
   const requestUrl = new URL(context.url);
   const urlLang = requestUrl.pathname.split('/')[1] || '';
   // If the URL doesn't contain a language, redirect to defaultLang
-  if (urlLang === 'en') {
-    const redirectURL = `${requestUrl.pathname.replace('/en', '/')}`.replace(/\/+/g, '/');
+  if (urlLang === 'en' || urlLang === 'de') {
+    const redirectURL = `${requestUrl.pathname.replace(`/${urlLang}`, '/')}`.replace(/\/+/g, '/');
     return context.redirect(redirectURL);
   }
   // Continue with the next middleware or route handler
