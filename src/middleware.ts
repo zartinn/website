@@ -10,7 +10,7 @@ export const onRequest = defineMiddleware((context, next) => {
   const authHeader = context.request.headers.get('authorization') || '';
 
   // Check for Basic Auth
-  if (authHeader !== AUTH_STRING) {
+  if (BASIC_AUTH_USER && authHeader !== AUTH_STRING) {
     return new Response('Unauthorized', {
       headers: {
         'WWW-Authenticate': 'Basic realm="Protected Area"'
