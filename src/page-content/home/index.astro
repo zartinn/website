@@ -1,10 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import type { Translations } from '../../utils/typings';
-import { Section, Title, ContentContainer, MyImage, H2, P, CardLink } from '../../components';
+import { Section, Title, ContentContainer, MyImage, H2, P, CardLink, MeetMeButton, Location } from '../../components';
 import zartin1 from '../../assets/images/zartin_1.jpg';
 import craft from '../../assets/images/cards/craft.png';
-import feats from '../../assets/images/cards/feats.png';
+import feats from '../../assets/images/cards/feats_wide.png';
 import journey from '../../assets/images/cards/journey.png';
 import contact from '../../assets/images/cards/contact.png';
 
@@ -35,6 +35,8 @@ const linkInfos = Object.keys(HOME_T.CARDS).map((key, idx) => {
 		<Section>
 			<ContentContainer>
 				<Title T={HOME_T.INTRO.TITLE} />
+				<Location/>
+				<MeetMeButton/>
 			</ContentContainer>
 			<ContentContainer className="flex justify-center items-center">
 				<MyImage src={zartin1} alt="portrait of Martin - ai generated" width={600}/>

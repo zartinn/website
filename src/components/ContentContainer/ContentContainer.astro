@@ -8,6 +8,6 @@ const { className = '', singleContainer = false } = Astro.props;
 
 ---
 
-<div class={`w-full flex flex-col ${singleContainer ? 'desktop:w-content-single' : 'desktop:w-content-double'} ${className}`}>
+<div class={`w-full flex flex-col gap-8 ${singleContainer ? 'desktop:w-content-single' : 'desktop:w-content-double'} ${className}`}>
     <slot />
 </div>
