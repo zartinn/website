@@ -86,6 +86,8 @@
         "WELCOME": "Sag Hallo 👋",
         "THANKS": "Danke für Deine Nachricht!",
         "THANKS2": "Wir werden uns schnellstmöglichst bei Dir melden",
+        "ERROR": "Etwas ist schief gelaufen",
+        "ERROR2": "Bitte versuche es später nochmal oder kontaktiere uns direkt an contact@zartin.dev",
         "FORM": {
             "BUTTON": "Absenden",
             "FIELDS": {

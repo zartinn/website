@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/contact.png';
 import type { Translations } from '../../utils/typings';
 import { IntroSection } from '../../sections';
-import { sendMail } from './send-mail';
+import { prepareMails } from './send-mail';
 
 
 interface Props {
@@ -15,13 +15,20 @@ const { T } = Astro.props;
 const CONTACT_T = T['CONTACT']
 
 const isGet = Astro.request.method === 'GET';
+let success;
 
 if (!isGet) {
   const rawData = await Astro.request.text();
   const searchParams = new URLSearchParams(rawData);
 
-  // const success = await sendMail(searchParams);
-  // console.log('SUCCESSFULLY SEND MAIL? ', success);
+  const data = {
+    name: searchParams.get('name')!,
+    email: searchParams.get('email')!,
+    subject: searchParams.get('subject')!,
+    message: searchParams.get('message')!,
+  }
+
+  success = await prepareMails(data);
 }
 
 ---
@@ -42,8 +49,12 @@ if (!isGet) {
             <H2 type="xl">{CONTACT_T.WELCOME}</H2>
             <Form T={CONTACT_T.FORM}/>
           :
-          <H2 type="xl" className="mb-12">{CONTACT_T.THANKS}</H2>
-          <P type="xl" className="text-center">{CONTACT_T.THANKS2}</P>
+          success ? 
+            <H2 type="xl" className="mb-12">{CONTACT_T.THANKS}</H2>
+            <P type="xl" className="text-center">{CONTACT_T.THANKS2}</P>
+          :
+            <H2 type="xl" className="mb-12">{CONTACT_T.ERROR}</H2>
+            <P type="xl" className="text-center">{CONTACT_T.ERROR2}</P>
         }
       </ContentContainer>
     </Section>

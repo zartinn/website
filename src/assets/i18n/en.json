@@ -86,6 +86,8 @@
         "WELCOME": "Say Hi 👋",
         "THANKS": "Thanks for your message!",
         "THANKS2": "We will answer shortly",
+        "ERROR": "Something went wrong",
+        "ERROR2": "Please try again later or contact us directly at contact@zartin.dev",
         "FORM": {
             "BUTTON": "Send",
             "FIELDS": {
