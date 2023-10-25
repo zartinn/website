@@ -5,10 +5,11 @@ import type { Translations } from '../utils/typings';
 import '../styles/view-transitions.css';
 interface Props {
 	title: string;
-	T: Translations
+	description: string;
+	T: Translations;
 }
 
-const { title, T } = Astro.props;
+const { title, description, T } = Astro.props;
 const url = Astro.url
 const removedLangPathName = url.pathname.replace('/de', '');
 const pathname = removedLangPathName === '' ? '/' : removedLangPathName;
@@ -39,12 +40,13 @@ const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-
 			document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
 		</script>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:image" content="https://zartin.com/z.svg">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preload" href="/assets/fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 		<ViewTransitions />
 	</head>
 	<body class="bg-bg-primary overflow-x-hidden flex flex-col min-h-screen">

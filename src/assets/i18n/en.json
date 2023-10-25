@@ -5,6 +5,8 @@
         "INFO_BY": "by Martin Zachoszcz"
     },
     "HOME": {
+        "SEO_TITLE": "Zartin - Tech Expert & Human-Centric Developer",
+        "SEO_DESCRIPTION": "Welcome to the digital realm of Zartin, where technology meets human touch. Dive into a fusion of expertise and empathy.",
         "INTRO": {
             "TITLE": {
                 "ZARTIN_FULL": "Zartin",
@@ -47,6 +49,8 @@
         }
     },
     "CRAFT": {
+        "SEO_TITLE": "Zartin's Craft - Tech Skills & Artistry",
+        "SEO_DESCRIPTION": "Discover the intricate blend of tech mastery and artistic flair that defines Zartin's professional craft.",
         "TITLE": "Craft",
         "DESCRIPTION": "In-depth expertise in modern technologies and development practices",
         "DESCRIPTION_LONG": "Dive into my expertise and methodologies. From client-centric development to architectural excellence, discover the services and approaches that shape my work and deliver outstanding results.",
@@ -80,6 +84,8 @@
         }
     },
     "CONTACT": {
+        "SEO_TITLE": "Contact Zartin - Connect, Collaborate, Create",
+        "SEO_DESCRIPTION": "Reach out to Zartin for collaborations, projects, or just a good ol' chat. Let's build something meaningful together.",
         "TITLE": "Contact",
         "DESCRIPTION_LONG": "Have an idea, a query, or just want to say hi? This is how to connect with me directly. Be it project discussions, technical consultations, or just some tech banter, my virtual door is always open.",
         "DESCRIPTION": "Open channels for communication and future collaborations",
@@ -111,6 +117,8 @@
         }
     },
     "FEATS": {
+        "SEO_TITLE": "Zartin's Feats - Tech Triumphs & Milestones",
+        "SEO_DESCRIPTION": "Journey through Zartin's professional achievements, showcasing a legacy of technological innovation and excellence.",
         "TITLE": "Feats",
         "DESCRIPTION_LONG": "Dive deep into my professional trajectory: From architecting digital solutions that powered cutting-edge applications, mentoring the tech innovators of tomorrow, to spearheading impactful project realizations. Witness the blend of strategy, execution, and passion that drive my work.",
         "DESCRIPTION": "Selected achievements that exemplify my problem-solving skills and dedication",
@@ -201,6 +209,8 @@
         ]
     },
     "JOURNEY": {
+        "SEO_TITLE": "Zartin's Journey - From Berlin Roots to Tech Pioneer",
+        "SEO_DESCRIPTION": "Traverse the captivating path of Zartin's life and career, from Berlin beginnings to a tech visionary.",
         "TITLE": "Journey",
         "DESCRIPTION_LONG": "Embark on a journey through the landmarks of my career. From my earliest coding adventures to mastering advanced tech realms, see the evolution, the challenges, and the triumphs that have shaped my path.",
         "DESCRIPTION": "A professional trajectory characterized by continuous learning and adaptability",
