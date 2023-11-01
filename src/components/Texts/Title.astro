@@ -13,9 +13,69 @@ const { T } = Astro.props;
 
 <div class="flex flex-col basis-1/2">
     <H1 className="home-title mb-4">
-        {T.GREETING}<br>
-        <span class="text-clr-primary">Z</span>achoszcz,<br>
-        M<span class="text-clr-primary">artin</span>👋
+        <span class="animate one">{T.GREETING}</span><br>
+        <span class="animate two"><span class="text-clr-primary">Z</span>achoszcz,</span><br>
+        <span class="animate three">M<span class="text-clr-primary">artin</span></span><span class="animate four ml-4">👋</span>
     </H1>
     <P>{T.INTRODUCTION_1}&nbsp;<span class="text-clr-primary">Zartin</span>.&nbsp;{T.INTRODUCTION_2}</P>
 </div>
+
+<script>
+    const animateSpans = () => {
+        const animatedSpans = Array.from(document.querySelectorAll('.animate'));
+        requestAnimationFrame(() => {
+            animatedSpans.forEach(span => span.classList.add('visible'));
+        });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => animateSpans());
+    document.addEventListener("astro:after-swap", () => animateSpans());
+</script>
+
+<style>
+    .animate {
+        --animation-base: 0.2s;
+        display: inline-block;
+        transition: transform .8s cubic-bezier(.2, .8, .4,1),opacity .6s cubic-bezier(.2, .8, .4,1);
+        opacity: 0;
+        transform: rotate(3deg) translateY(30px);
+        transform-origin: left;
+    }
+    .animate.visible {
+        opacity: 1;
+        transform: rotate(0) translateY(0);
+    }
+    .animate.one {
+        transition-delay: calc(var(--animation-base) + 1 * .1s);
+    }
+    .animate.two {
+        transition-delay: calc(var(--animation-base) + 2 * .1s);
+    }
+    .animate.three {
+        transition-delay: calc(var(--animation-base) + 3 * .1s);
+    }
+    .animate.four {
+        transition-delay: calc(var(--animation-base) + 4 * .1s);
+        animation: wiggle 0.8s ease 2;
+        transform-origin: center;
+        animation-delay: 1.2s;
+    }
+
+    @keyframes wiggle {
+        0% {
+            transform: rotate(0deg);
+        }
+        20% {
+            transform: rotate(-10deg);
+        }
+        40% {
+            transform: rotate(10deg);
+        }
+        60% {
+            transform: rotate(-10deg);
+        }
+        80% {
+            transform: rotate(0deg);
+        }
+    }
+</style>

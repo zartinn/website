@@ -16,6 +16,8 @@ const pathname = removedLangPathName === '' ? '/' : removedLangPathName;
 const isHome = pathname === '/';
 const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-m:text-html-m desktop-l:text-html-l desktop-xl:text-html-default text-html-default';
 
+const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
+
 ---
 
 <!doctype html>
@@ -47,7 +49,7 @@ const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preload" href="/assets/fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<meta name="generator" content={Astro.generator} />
-		<ViewTransitions />
+		{ !isFirefox && <ViewTransitions />}
 	</head>
 	<body class="bg-bg-primary overflow-x-hidden flex flex-col min-h-screen">
 		<Header isHome={isHome}/>
