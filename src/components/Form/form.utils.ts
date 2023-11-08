@@ -13,10 +13,17 @@ export function setupListener() {
 
 
 export function setupFormListener(formEl: HTMLFormElement, inputEls: Array<HTMLInputElement | HTMLTextAreaElement>) {
-    formEl?.addEventListener('submit', (evt) => {
+    const formContainer = document.getElementById('contact-form');
+    const loadingContainer = document.getElementById('contact-loading');
+    const successContainer = document.getElementById('contact-success');
+    const errorContainer = document.getElementById('contact-error');
+    
+    formEl?.addEventListener('submit', async (evt) => {
+        evt.preventDefault();
         let isInvalid = false;
         let firstInvalidEl: HTMLInputElement | HTMLTextAreaElement | undefined;
 
+        let formValues: any = {};
         for (let inputEl of inputEls) {
             if (inputEl.value === '' || (inputEl.name === 'email' && !emailValid(inputEl.value))) {
                 inputEl.classList.add('invalid');
@@ -27,13 +34,41 @@ export function setupFormListener(formEl: HTMLFormElement, inputEls: Array<HTMLI
                 }
             } else {
                 inputEl.classList.remove('invalid');
+                formValues[inputEl.name] = inputEl.value;
             }
 
         }
 
         if (isInvalid) {
-            evt.preventDefault();
             firstInvalidEl?.focus();
+        } else {
+            loadingContainer?.classList.remove('hidden');
+            loadingContainer?.classList.add('flex');
+            formContainer?.classList.add('hidden');
+
+            let success;
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    body: JSON.stringify(formValues),
+                    headers: {
+                        'Content-Type': 'application/json', // Set the Content-Type to 'application/json'
+                    },
+                });
+                success = res.status === 201;
+            } catch (e) {
+                success = false;
+                console.log('Error while doing /api/contact request');
+            }
+
+            loadingContainer?.classList.add('hidden');
+            loadingContainer?.classList.remove('flex');
+
+            if (success) {
+                successContainer?.classList.remove('hidden');
+            } else {
+                errorContainer?.classList.remove('hidden');
+            }
         }
     });
 }

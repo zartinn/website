@@ -21,7 +21,8 @@ module.exports = {
         'clr-primary': 'var(--clr-primary)',
         'clr-secondary': 'var(--clr-secondary)',
         'contrast': 'var(--contrast-border)',
-        'clr-error': 'var(--clr-error)'
+        'clr-error': 'var(--clr-error)',
+        'transparent': 'transparent'
       },
       fontFamily: {
         americano: 'GT Americano',
@@ -78,7 +79,8 @@ module.exports = {
           'bg-image': 'var(--bg-image-opacity)'
         },
         animation: {
-          'image': 'move 2s ease-in infinite'
+          'image': 'move 2s ease-in infinite',
+          'spin': 'spin 1.5s linear infinite'
         }
       }
     },

@@ -23,6 +23,7 @@ export { default as Form } from './Form/Form.astro';
 export { default as Button } from './Buttons/Button.astro';
 export { default as MeetMeButton } from './Buttons/MeetMeButton.astro';
 export { default as Location } from './Location/Location.astro';
+export { default as LoadingSpinner } from './LoadingSpinner/LoadingSpinner.astro';
 export { default as Carousel } from './Carousel/Carousel.astro';
 
 

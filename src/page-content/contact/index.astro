@@ -1,11 +1,9 @@
 ---
-import { ContentContainer, Form, H2, P, Section } from '../../components';
+import { ContentContainer, Form, H2, LoadingSpinner, P, Section } from '../../components';
 import Layout from '../../layouts/Layout.astro';
 import image from '../../assets/images/cards/contact.png';
 import type { Translations } from '../../utils/typings';
-import { IntroSection } from '../../sections';
-import { prepareMails } from './send-mail';
-
+import { IntroSection } from '../../sections'
 
 interface Props {
   T: Translations
@@ -13,23 +11,6 @@ interface Props {
 
 const { T } = Astro.props;
 const CONTACT_T = T['CONTACT']
-
-const isGet = Astro.request.method === 'GET';
-let success;
-
-if (!isGet) {
-  const rawData = await Astro.request.text();
-  const searchParams = new URLSearchParams(rawData);
-
-  const data = {
-    name: searchParams.get('name')!,
-    email: searchParams.get('email')!,
-    subject: searchParams.get('subject')!,
-    message: searchParams.get('message')!,
-  }
-
-  success = await prepareMails(data);
-}
 
 ---
 
@@ -45,17 +26,21 @@ if (!isGet) {
     <!-- Contact Form -->
     <Section>
       <ContentContainer singleContainer>
-        { isGet ? 
-            <H2 type="xl">{CONTACT_T.WELCOME}</H2>
-            <Form T={CONTACT_T.FORM}/>
-          :
-          success ? 
-            <H2 type="xl" className="mb-12">{CONTACT_T.THANKS}</H2>
-            <P type="xl" className="text-center">{CONTACT_T.THANKS2}</P>
-          :
-            <H2 type="xl" className="mb-12">{CONTACT_T.ERROR}</H2>
-            <P type="xl" className="text-center">{CONTACT_T.ERROR2}</P>
-        }
+        <div id="contact-form">
+          <H2 type="xl">{CONTACT_T.WELCOME}</H2>
+          <Form T={CONTACT_T.FORM}/>
+        </div>
+        <div id="contact-success" class="hidden">
+          <H2 type="xl" className="mb-12">{CONTACT_T.THANKS}</H2>
+          <P type="xl" className="text-center">{CONTACT_T.THANKS2}</P>
+        </div>
+        <div id="contact-error" class="hidden">
+          <H2 type="xl" className="mb-12">{CONTACT_T.ERROR}</H2>
+          <P type="xl" className="text-center">{CONTACT_T.ERROR2}</P>
+        </div>
+        <div id="contact-loading" class="hidden justify-center items-center">
+          <LoadingSpinner/>
+        </div>
       </ContentContainer>
     </Section>
   </main>

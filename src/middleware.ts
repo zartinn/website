@@ -7,18 +7,6 @@ const AUTH_STRING = `Basic ${Buffer.from(`${BASIC_AUTH_USER}:${BASIC_AUTH_PASS}`
 
 // `context` and `next` are automatically typed
 export const onRequest = defineMiddleware((context, next) => {    
-  const authHeader = context.request.headers.get('authorization') || '';
-
-  // Check for Basic Auth
-  if (BASIC_AUTH_USER && authHeader !== AUTH_STRING) {
-    return new Response('Unauthorized', {
-      headers: {
-        'WWW-Authenticate': 'Basic realm="Protected Area"'
-      },
-      status: 401
-    })
-  }
-
   // Extract current language from URL
   const requestUrl = new URL(context.url);
   const urlLang = requestUrl.pathname.split('/')[1] || '';
