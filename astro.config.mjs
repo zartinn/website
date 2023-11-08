@@ -9,15 +9,21 @@ console.log(isDev);
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  integrations: [tailwind(), prefetch({
-    throttle: 2
-  })],
+  output: 'hybrid',
+  integrations: [tailwind(), prefetch()],
+  redirects: {
+    '/de': '/',
+    '/de/[...page]': '/[...page]'
+  },
+  build: {
+    inlineStylesheets: 'never'
+  },
   adapter: isDev ?
     node({
       mode: 'standalone',
     }) :
     vercel({
       imageService: true,
+      edgeMiddleware: true,
     })
 });
