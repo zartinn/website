@@ -5,11 +5,10 @@ import vercel from "@astrojs/vercel/serverless";
 import node from "@astrojs/node";
 
 const isDev = process.argv.includes('--dev');
-console.log(isDev);
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
+  output: 'server',
   integrations: [tailwind(), prefetch()],
   redirects: {
     '/de': '/',
