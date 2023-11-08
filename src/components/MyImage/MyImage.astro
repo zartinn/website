@@ -13,13 +13,15 @@ const { src, alt, width, height } = Astro.props;
 ---
 
 
-<div class="flex rounded-full border-clr-primary bg-bg-primary-70 border-4 overflow-hidden max-w-full" style={` width: ${width}px;`}>
+<div class="flex rounded-full border-clr-primary border-4 overflow-hidden max-w-full" style={` width: ${width}px;`}>
     <Image
         src={src}
         alt={alt}
         width={width}
+        onload="this.classList.remove('animate-image')"
+        onerror="this.classList.remove('animate-image')"
         height={height}
         loading="eager"
-        class="w-full hover:scale-105 transition-transform duration-500"
+        class="w-full hover:scale-105 transition-transform duration-500 bg-clr-primary animate-image"
     />
 </div>

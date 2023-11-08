@@ -72,6 +72,19 @@ const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 		font-weight: bold;
   		font-display: swap;
     }
+
+    @keyframes move {
+        0% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.5;
+        }
+    }
+
 </style>
 
 <style is:global>
@@ -86,36 +99,10 @@ const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 		--dark-shadow: rgb(30 30 30 / 0.4);
 		--primary-clr-light: 25, 144, 255;
 		--secondary-clr-light: 111, 183, 250;
-		/* --secondary-clr-light: rgb(111, 183, 250); */
 		--primary-clr-dark: 138, 199, 255;
 		--secondary-clr-dark: 40, 149, 251;
-		/* --secondary-clr-dark: rgb(40, 149, 251); */
-		--fg-primary: rgb(var(--light-primary));
-		--fg-shadow: var(--light-shadow);
-		--contrast-border: rgb(var(--dark-border));
-		--bg-primary: rgb(var(--dark-primary));
-		--bg-primary-70: rgba(var(--dark-primary), 0.85);
-		--clr-primary: rgb(var(--primary-clr-dark));
-		--clr-secondary: rgb(var(--secondary-clr-dark));
 
 		--bg-image-opacity: 0.3;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--fg-primary: rgb(var(--light-primary));
-			--fg-shadow: var(--light-shadow);
-			--contrast-border: rgb(var(--dark-border));
-			--bg-primary: rgb(var(--dark-primary));
-			--bg-primary-70: rgba(var(--dark-primary), 0.85);
-			--bg-secondary: rgb(var(--dark-secondary));
-			--clr-primary: rgb(var(--primary-clr-dark));
-			--clr-secondary: rgb(var(--secondary-clr-dark));
-			--clr-error: darkred;
-
-			--bg-image-opacity: 0.3;
-			color-scheme: dark;
-		}
 	}
 
 	:root[theme="dark"] {
@@ -149,16 +136,10 @@ const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 	* {
 		transition: background-color 150ms, color 150ms, opacity 150ms;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	img {
+		/* Hide alt text in mozilla browser while image is loading: */
+		color: transparent;
 	}
 
 	.card.active {

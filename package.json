@@ -6,10 +6,12 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build-dev": "astro build --dev",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^6.0.3",
     "@astrojs/prefetch": "^0.4.0",
     "@astrojs/react": "^3.0.2",
     "@astrojs/tailwind": "^5.0.0",

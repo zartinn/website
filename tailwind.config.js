@@ -72,6 +72,9 @@ module.exports = {
         },
         opacity: {
           'bg-image': 'var(--bg-image-opacity)'
+        },
+        animation: {
+          'image': 'move 2s ease-in infinite'
         }
       }
     },

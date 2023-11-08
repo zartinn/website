@@ -32,7 +32,9 @@ const myCardTransition = {
     src={src}
     alt={alt}
     width={400}
-    class={`z-10 rounded-3xl w-full group-hover:scale-105 transition-transform duration-500 object-cover`}
+    onload="this.classList.remove('animate-image')"
+    onerror="this.classList.remove('animate-image')"
+    class={`z-10 rounded-3xl w-full group-hover:scale-105 transition-transform duration-500 object-cover bg-clr-primary animate-image`}
     transition:animate={myCardTransition}
     transition:name={transitionName}
 />
