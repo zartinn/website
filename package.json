@@ -8,6 +8,7 @@
     "build": "astro build",
     "build-dev": "astro build --dev",
     "preview": "astro preview",
+    "preview-dev": "astro preview --dev",
     "astro": "astro"
   },
   "dependencies": {

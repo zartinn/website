@@ -53,13 +53,17 @@ module.exports = {
           header: headerHeight
         },
         height: {
-          header: headerHeight
+          header: headerHeight,
+          icon: '6rem'
         },
         width: {
           'content-double': '34rem',
           'content-single': '78rem',
           150: '58rem',
           200: '96rem'
+        },
+        maxWidth: {
+          icon: '6rem'
         },
         scale: {
           102: '1.02'
