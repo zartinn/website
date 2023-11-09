@@ -12,11 +12,28 @@ const { isHome } = Astro.props;
 
 const headerClasses = `fixed top-0 w-screen flex gap-4 justify-center bg-dark-bg-p px-12 py-8 z-50 bg-bg-primary-70 shadow-header backdrop-blur-lg shadow-fg-primary h-header`;
 
+const animateHeader = {
+  old: {
+    name: 'toHeaderOld',
+    fillMode: 'forwards',
+  },
+  new: {
+    name: 'toHeaderNew',
+    fillMode: 'backwards',
+  }
+};
+
+const myHeaderTransition = {
+  forwards: animateHeader,
+  backwards: animateHeader,
+};
 ---
 
 <header
     id="header"
     class={headerClasses}
+    transition:name="header"
+    transition:animate={myHeaderTransition}
 >
     <div class="flex gap-4 items-center justify-between w-200">
         { isHome ? 
