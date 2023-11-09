@@ -13,22 +13,6 @@ interface Props {
 
 const { src, alt, href, title, description, id = '' } = Astro.props;
 
-
-const transitionProps: any = {}
-if (id) {
-	transitionProps.link = {
-		transitionName: id
-	};
-	transitionProps.image = {
-		transitionName: `${id}-image`,
-	}
-	transitionProps.title = {
-		transitionName: `${id}-title`
-	}
-	transitionProps.description = {
-		transitionName: `${id}-description`
-	}
-}
 const containerClasses = 'grayscale-50 hover:grayscale-0 transition-all duration-500 group rounded-xl p-8 flex flex-col gap-8 items-center border-contrast shadow-contrast shadow-sm border-2 cursor-pointer';
 
 ---

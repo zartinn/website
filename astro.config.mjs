@@ -21,7 +21,5 @@ export default defineConfig({
     node({
       mode: 'standalone',
     }) :
-    vercel({
-      imageService: true,
-    })
+    vercel()
 });
