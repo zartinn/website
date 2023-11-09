@@ -8,7 +8,6 @@ const paths = ['/', '/contact', '/feats', '/journey', '/craft'];
 // `context` and `next` are automatically typed
 export const onRequest = defineMiddleware(async (context, next) => {  
   const authHeader = context.request.headers.get('authorization') || '';
-  console.log('MIDDLEWARE');
   // Check for Basic Auth
   if (BASIC_AUTH_USER && authHeader !== AUTH_STRING) {
     return new Response('Unauthorized', {
@@ -19,7 +18,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
     })
   }
 
-  console.log('MIDDLEWARE BEFORE LANG');
   // Extract current language from URL
   const requestUrl = new URL(context.url);
   const urlLang = requestUrl.pathname.split('/')[1] || '';
@@ -40,7 +38,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
   } else {
     return next();
   }
-  next();
 });
 
 async function generateETag(content: ArrayBuffer) {

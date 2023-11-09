@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import prefetch from "@astrojs/prefetch";
+import vercel from "@astrojs/vercel/serverless";
 import node from "@astrojs/node";
-import netlify from '@astrojs/netlify/functions';
 
 const isDev = process.argv.includes('--dev');
 
@@ -21,5 +21,7 @@ export default defineConfig({
     node({
       mode: 'standalone',
     }) :
-    netlify()
+    vercel({
+      imageService: true,
+    })
 });
