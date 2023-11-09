@@ -1,5 +1,4 @@
 import { defineMiddleware } from "astro:middleware";
-import etag from 'etag';
 
 const BASIC_AUTH_USER = import.meta.env.BASIC_AUTH_USER;
 const BASIC_AUTH_PASS = import.meta.env.BASIC_AUTH_PW;
@@ -7,19 +6,20 @@ const AUTH_STRING = `Basic ${Buffer.from(`${BASIC_AUTH_USER}:${BASIC_AUTH_PASS}`
 
 const paths = ['/', '/contact', '/feats', '/journey', '/craft'];
 // `context` and `next` are automatically typed
-export const onRequest = defineMiddleware(async (context, next) => {  
+export const onRequest = defineMiddleware((context, next) => {  
   const authHeader = context.request.headers.get('authorization') || '';
-
+  console.log('MIDDLEWARE');
   // Check for Basic Auth
-  if (BASIC_AUTH_USER && authHeader !== AUTH_STRING) {
-    return new Response('Unauthorized', {
-      headers: {
-        'WWW-Authenticate': 'Basic realm="Protected Area"'
-      },
-      status: 401
-    })
-  }
+  // if (BASIC_AUTH_USER && authHeader !== AUTH_STRING) {
+  //   return new Response('Unauthorized', {
+  //     headers: {
+  //       'WWW-Authenticate': 'Basic realm="Protected Area"'
+  //     },
+  //     status: 401
+  //   })
+  // }
 
+  console.log('MIDDLEWARE BEFORE LANG');
   // Extract current language from URL
   const requestUrl = new URL(context.url);
   const urlLang = requestUrl.pathname.split('/')[1] || '';
@@ -30,12 +30,23 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   // Continue with the next middleware or route handler
-  const res = await next();
-  if (paths.includes(context.url.pathname)) {
-    const clonedRes = res.clone();
-    const body = await clonedRes.text();
-    res.headers.set('Etag', etag(body));
-  }
-
-  return res;
+  // if (paths.includes(context.url.pathname) && context.request.method === 'GET') {
+  //   const res = await next();
+  //   const clonedRes = res.clone();
+  //   const body = await clonedRes.arrayBuffer();
+  //   const etag = await generateETag(body);
+  //   res.headers.set('Etag', etag);
+  //   return res
+  // } else {
+  //   return next();
+  // }
+  next();
 });
+
+async function generateETag(content: ArrayBuffer) {
+  const hashBuffer = await crypto.subtle.digest('SHA-256', content);  
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  return `W/"${hashHex}"`;
+}
