@@ -23,6 +23,6 @@ export default defineConfig({
     }) :
     vercel({
       imageService: true,
-      edgeMiddleware: true,
+      edgeMiddleware: true
     })
 });
