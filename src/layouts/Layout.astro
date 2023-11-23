@@ -27,9 +27,17 @@ const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 >
 	<head>
 		<script data-astro="raw">
-			const getTheme = () => localStorage.getItem("theme") || "dark";
+			const getTheme = () => {
+				let theme = localStorage.getItem('theme');
+				if (!theme) {
+					theme = 'dark';
+					localStorage.setItem('theme', theme);
+				}
+				return theme;
+			}
+
 			const setTheme = (theme) => {
-				document.documentElement.setAttribute("theme", theme);
+				document.documentElement.setAttribute('theme', theme);
 
 				const downloadCVLink = document.getElementById('download-cv');
 				const cvFileName = theme === 'dark' ? 'Zachoszcz-CV-dark.pdf' : 'Zachoszcz-CV.pdf'
@@ -37,9 +45,8 @@ const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 			}
 			setTheme(getTheme());
 
-
-			window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
-			document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
+			window.addEventListener('DOMContentLoaded', () => setTheme(getTheme()));
+			document.addEventListener('astro:after-swap', () => setTheme(getTheme()));
 		</script>
 		<meta charset="UTF-8" />
 		<title>{title}</title>
