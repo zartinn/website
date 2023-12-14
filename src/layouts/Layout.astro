@@ -19,6 +19,7 @@ const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-
 const userAgent = Astro.request.headers.get('user-agent');
 const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox');
 console.log('USER-AGENT: ', userAgent);
+console.log('IS FIREFOX', isFirefox);
 
 ---
 
@@ -58,7 +59,7 @@ console.log('USER-AGENT: ', userAgent);
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preload" href="/assets/fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<meta name="generator" content={Astro.generator} />
-		{ !isFirefox && <ViewTransitions />}
+		<!-- { !isFirefox && <ViewTransitions />} -->
 	</head>
 	<body class="bg-bg-primary overflow-x-hidden flex flex-col min-h-screen">
 		<Header isHome={isHome}/>
