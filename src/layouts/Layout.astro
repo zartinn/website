@@ -16,7 +16,9 @@ const pathname = removedLangPathName === '' ? '/' : removedLangPathName;
 const isHome = pathname === '/';
 const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-m:text-html-m desktop-l:text-html-l desktop-xl:text-html-default text-html-default';
 
-const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
+const userAgent = Astro.request.headers.get('user-agent');
+const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox');
+console.log('USER-AGENT: ', userAgent);
 
 ---
 
