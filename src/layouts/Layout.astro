@@ -177,5 +177,8 @@ console.log('IS FIREFOX', isFirefox);
 	}
 
 	window.addEventListener("DOMContentLoaded", () => setCardListeners());
-	document.addEventListener("astro:after-swap", () => setCardListeners());
+	document.addEventListener("astro:after-swap", () => {
+		console.log('AFTER SWAP');
+		setCardListeners()
+		});
 </script>

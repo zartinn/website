@@ -25,7 +25,3 @@ export { default as MeetMeButton } from './Buttons/MeetMeButton.astro';
 export { default as Location } from './Location/Location.astro';
 export { default as LoadingSpinner } from './LoadingSpinner/LoadingSpinner.astro';
 export { default as Carousel } from './Carousel/Carousel.astro';
-
-
-
-
