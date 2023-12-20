@@ -1,5 +1,6 @@
 ---
-import { Button, Input } from '..';
+import Button from '../Buttons/Button.astro';
+import Input from './Input/Input.astro';
 import type { Translations } from '../../utils/typings';
 
 interface Props {
@@ -12,8 +13,6 @@ const { T } = Astro.props;
 
 <form
     class="flex flex-col desktop:grid desktop:grid-cols-4 gap-12 py-12 w-full"
-    method="POST"
-    transition-persist="form"
     id="contact-form"
     novalidate
 > 
@@ -51,6 +50,8 @@ const { T } = Astro.props;
 <script>
     import { setupListener } from './form.utils';
   
-    document.addEventListener('DOMContentLoaded', () => setupListener());
-    document.addEventListener('astro:page-load', () => setupListener())
+    let loaded = false;
+    document.addEventListener('DOMContentLoaded', () => { loaded = true; setupListener()});
+    document.addEventListener('astro:page-load', () => {if (!loaded) setupListener()});
+    document.addEventListener('astro:before-swap', () => {loaded = false});
 </script>

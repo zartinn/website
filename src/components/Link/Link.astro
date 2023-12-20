@@ -1,5 +1,5 @@
 ---
-import { LangLink } from '..';
+import LangLink from '../LangLink/LangLink.astro';
 interface Props {
     active?: boolean,
     linkInfo: { id: string, link: string, name: string}
@@ -16,7 +16,6 @@ const className = `h-fit transition-colors relative font-americano text-body ${a
 
 <div class="flex items-center">
     <LangLink
-        rel="prefetch-intent"
         href={`/${linkInfo.link}`}
         transitionName={getTransitionName(linkInfo)}
         className={className}

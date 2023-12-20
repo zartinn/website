@@ -41,12 +41,6 @@ export function setupCarouselListener() {
         slideContainer.addEventListener('touchmove', (event) => {
             touchEndX = event.changedTouches[0].clientX;
             touchEndY = event.changedTouches[0].clientY;
-            const deltaX = touchEndX - touchStartX;
-            const deltaY = touchEndY - touchStartY;
-
-            if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                event.preventDefault();
-            }
         }, { passive: true})
     
         slideContainer.addEventListener('touchend', (event) => {

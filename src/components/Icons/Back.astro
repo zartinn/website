@@ -10,8 +10,6 @@ const {className = '' } = Astro.props;
 <svg
     role="button"
     aria-label="go back"
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="var(--fg-primary)"
     class={`${className} border-2 border-fg-primary shadow-md p-1 h-16 w-16 transition-transform hover:scale-105 z-10 rounded-full cursor-pointer shrink-0`}
@@ -23,13 +21,13 @@ const {className = '' } = Astro.props;
 
 
 <script>
+    const goBack = () => window.history.back();
+
     const goBackListener = () => {
         const backIcon = document.getElementById('back-icon');
-        backIcon?.addEventListener('click', () => {
-            window.history.back();
-        })
+        backIcon?.addEventListener('click', goBack);
     }
     
-    window.addEventListener("DOMContentLoaded", () => goBackListener());
-    document.addEventListener("astro:page-load", () => goBackListener());
+    window.addEventListener("DOMContentLoaded", goBackListener);
+    document.addEventListener("astro:page-load", goBackListener);
 </script>

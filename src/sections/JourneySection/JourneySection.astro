@@ -1,5 +1,9 @@
 ---
-import { ContentContainer, H2, MyImage, P, Timeline } from '../../components';
+import ContentContainer from '../../components/ContentContainer/ContentContainer.astro';
+import H2 from '../../components/Texts/H2.astro';
+import MyImage from '../../components/MyImage/MyImage.astro';
+import P from '../../components/Texts/P.astro';
+import Timeline from '../../components/Timeline/Timeline.astro';
 interface Props {
     className: string,
     station: { date: string, event: string, description: string, image: { img: ImageMetadata, alt: string } },

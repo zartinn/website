@@ -28,8 +28,8 @@ const { T } = Astro.props;
         });
     }
 
-    window.addEventListener("DOMContentLoaded", () => animateSpans());
-    document.addEventListener("astro:page-load", () => animateSpans());
+    document.addEventListener("DOMContentLoaded", () => animateSpans());
+    document.addEventListener("astro:after-swap", () => animateSpans());
 </script>
 
 <style>

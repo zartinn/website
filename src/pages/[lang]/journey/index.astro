@@ -27,7 +27,7 @@ const getPosition = (idx: number) => {
 ---
 
 <Layout title={T.HOME.SEO_TITLE} description={T.HOME.SEO_DESCRIPTION} T={T}>
-  <main transition:name="journey" class="flex-grow mt-header" transition:persist="journey-page">
+  <main transition:name="journey" class="flex-grow mt-header">
     <IntroSection
       id="journey",
       image={image}
@@ -51,6 +51,8 @@ const getPosition = (idx: number) => {
 <script>
   import { setupIntersectionObserver } from '../../../utils/setup-intersection-observer';
 
-  document.addEventListener('DOMContentLoaded', () => setupIntersectionObserver());
-  document.addEventListener('astro:page-load', () => setupIntersectionObserver());
+  let loaded = false;
+  window.addEventListener('DOMContentLoaded', () =>{ loaded=true; setupIntersectionObserver()});
+  document.addEventListener('astro:page-load', () =>{ if (!loaded) setupIntersectionObserver()});
+  document.addEventListener('astro:before-swap', () =>{ loaded = false});
 </script>
