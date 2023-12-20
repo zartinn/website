@@ -20,6 +20,7 @@ export function setupFormListener(formEl: HTMLFormElement, inputEls: Array<HTMLI
     
     formEl?.addEventListener('submit', async (evt) => {
         evt.preventDefault();
+        evt.stopPropagation();
         let isInvalid = false;
         let firstInvalidEl: HTMLInputElement | HTMLTextAreaElement | undefined;
 
