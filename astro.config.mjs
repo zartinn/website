@@ -10,7 +10,7 @@ export default defineConfig({
   prefetch: {
     defaultStrategy: 'viewport'
   },
-  output: 'hybrid',
+  output: 'server',
   integrations: [tailwind()],
   build: {
     inlineStylesheets: 'never'
