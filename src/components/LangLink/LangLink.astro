@@ -2,18 +2,17 @@
 interface Props {
     href: string,
     className?: string,
-    rel?: string,
     transitionName?: string,
 }
 
-const { href, className, rel, transitionName } = Astro.props;
+const { href, className, transitionName } = Astro.props;
 const { lang = '' } = Astro.params;
 const langLink = lang ? `/${lang}${href}` : href;
 ---
 
 <a
     href={langLink}
-    rel="prefetch"
+    data-astro-prefetch
     class={className}
     transition:name={transitionName}
 >

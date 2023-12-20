@@ -16,11 +16,6 @@ const pathname = removedLangPathName === '' ? '/' : removedLangPathName;
 const isHome = pathname === '/';
 const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-m:text-html-m desktop-l:text-html-l desktop-xl:text-html-default text-html-default';
 
-const userAgent = Astro.request.headers.get('user-agent');
-const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox');
-console.log('USER-AGENT: ', userAgent);
-console.log('IS FIREFOX', isFirefox);
-
 ---
 
 <!doctype html>
@@ -49,7 +44,7 @@ console.log('IS FIREFOX', isFirefox);
 			setTheme(getTheme());
 
 			window.addEventListener('DOMContentLoaded', () => setTheme(getTheme()));
-			document.addEventListener('astro:after-swap', () => setTheme(getTheme()));
+			document.addEventListener('astro:page-load', () => setTheme(getTheme()));
 		</script>
 		<meta charset="UTF-8" />
 		<title>{title}</title>
@@ -59,7 +54,7 @@ console.log('IS FIREFOX', isFirefox);
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preload" href="/assets/fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<meta name="generator" content={Astro.generator} />
-		<!-- { !isFirefox && <ViewTransitions />} -->
+		<ViewTransitions />
 	</head>
 	<body class="bg-bg-primary overflow-x-hidden flex flex-col min-h-screen">
 		<Header isHome={isHome}/>
@@ -177,8 +172,5 @@ console.log('IS FIREFOX', isFirefox);
 	}
 
 	window.addEventListener("DOMContentLoaded", () => setCardListeners());
-	document.addEventListener("astro:after-swap", () => {
-		console.log('AFTER SWAP');
-		setCardListeners()
-		});
+	document.addEventListener("astro:page-load", () => setCardListeners());
 </script>

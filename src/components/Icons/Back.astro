@@ -29,5 +29,5 @@ const {className = '' } = Astro.props;
     }
     
     window.addEventListener("DOMContentLoaded", () => goBackListener());
-    document.addEventListener("astro:after-swap", () => goBackListener());
+    document.addEventListener("astro:page-load", () => goBackListener());
 </script>

@@ -29,7 +29,7 @@ const { T } = Astro.props;
     }
 
     window.addEventListener("DOMContentLoaded", () => animateSpans());
-    document.addEventListener("astro:after-swap", () => animateSpans());
+    document.addEventListener("astro:page-load", () => animateSpans());
 </script>
 
 <style>

@@ -18,5 +18,22 @@
                 }
             ]
         }
+    ],
+    "redirects": [
+        {
+            "source": "/:path(craft|feats|journey|contact)?",
+            "destination": "/:path",
+            "statusCode": 200
+        },
+        {
+            "source": "/:part/:path(craft|feats|journey|contact)?",
+            "destination": "/:path",
+            "statusCode": 307
+        },
+        {
+            "source": "/:path*",
+            "destination": "/",
+            "statusCode": 404
+        }
     ]
 }

@@ -52,5 +52,5 @@ const { T } = Astro.props;
     import { setupListener } from './form.utils';
   
     document.addEventListener('DOMContentLoaded', () => setupListener());
-    document.addEventListener('astro:after-swap', () => setupListener())
+    document.addEventListener('astro:page-load', () => setupListener())
 </script>

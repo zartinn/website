@@ -1,14 +1,43 @@
 ---
-import { Feats } from '../../../page-content';
-import T from '../../../assets/i18n/de.json';
+import { Carousel, ContentContainer, H2, P, Section } from '../../../components';
+import { IntroSection } from '../../../sections';
+import Layout from '../../../layouts/Layout.astro';
+import image from '../../../assets/images/cards/feats_wide.png';
+import type { Translations } from '../../../utils/typings';
 
+interface Props {}
 export function getStaticPaths() {
   return [
     {params: {lang: 'de'}},
     {params: {lang: 'en'}}
   ];
 }
+const lang = Astro.params.lang || 'en';
+const T: Translations = await import(`../../../assets/i18n/${lang}.json`);
+const FEATS_T = T.FEATS;
 
 ---
 
-<Feats T={T}/>
+
+<Layout title={T.HOME.SEO_TITLE} description={T.HOME.SEO_DESCRIPTION} T={T}>
+  <main transition:name="feats" class="flex-grow mt-header">
+    <IntroSection
+      id="feats",
+      image={image}
+      title={FEATS_T.TITLE}
+      description={FEATS_T.DESCRIPTION_LONG}
+    />
+    { FEATS_T.FEATS.map((feat, idx) => (
+      <Section
+        backgroundColor={idx % 2 === 0 ? 'secondary' : 'primary'}
+        paddingClass="py-32 px-12 desktop:px-12"
+      >
+        <ContentContainer singleContainer className="gap-10 max-w-4xl">
+          <H2><span class="text-clr-primary">{feat.TITLE_PREFIX}</span><br><span class="text-h3">{feat.TITLE}</span></H2>
+          <P className="text-center">{feat.DESCRIPTION}</P>
+          <Carousel slides={feat.SLIDES}/>
+        </ContentContainer>
+      </Section>
+    ))}
+  </main>
+</Layout>

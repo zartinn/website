@@ -57,5 +57,5 @@ const getPosition = (idx: number) => {
     import { setupCarouselListener } from './script';
 
     document.addEventListener('DOMContentLoaded', () => setupCarouselListener());
-    document.addEventListener('astro:after-swap', () => setupCarouselListener());
+    document.addEventListener('astro:page-load', () => setupCarouselListener());
 </script>
