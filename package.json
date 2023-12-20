@@ -3,12 +3,12 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host=192.168.178.20",
     "start": "astro dev",
     "build": "astro build",
-    "build-dev": "astro build --dev",
+    "build-dev": "astro build --dev --host=192.168.178.20",
     "preview": "astro preview",
-    "preview-dev": "astro preview --dev",
+    "preview-dev": "astro preview --dev --host=192.168.178.20",
     "astro": "astro"
   },
   "dependencies": {

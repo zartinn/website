@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import image from '../assets/images/404.jpg';
+import { IntroSection } from '../sections';
+import type { Translations } from '../utils/typings';
+
+
+const lang = Astro.params.lang || 'en';
+const T: Translations = await import(`../assets/i18n/${lang}.json`);
+
+---
+
+<Layout title="Page not found" T={T} is404>
+  <main class="flex-grow mt-header">
+    <IntroSection
+      id="journey",
+      image={image}
+      title={'404'}
+      description='The page you are looking for does not exist.'
+    />
+  </main>
+</Layout>

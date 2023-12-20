@@ -10,9 +10,10 @@ export default defineConfig({
   prefetch: {
     defaultStrategy: 'viewport'
   },
-  output: 'static',
+  output: 'hybrid',
   integrations: [tailwind()],
   build: {
     inlineStylesheets: 'never'
-  }
+  },
+  adapter: isDev ? node({mode: 'standalone'}) : vercel()
 });
