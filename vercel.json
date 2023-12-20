@@ -21,19 +21,54 @@
     ],
     "redirects": [
         {
-            "source": "/:path(craft|feats|journey|contact)?",
-            "destination": "/:path",
-            "statusCode": 200
-        },
-        {
-            "source": "/:part/:path(craft|feats|journey|contact)?",
-            "destination": "/:path",
-            "statusCode": 307
-        },
-        {
-            "source": "/:path*",
+            "source": "/en(/)?",
             "destination": "/",
-            "statusCode": 404
+            "permanent": true
+        },
+        {
+            "source": "/de(/)?",
+            "destination": "/",
+            "permanent": false
+        },
+        {
+            "source": "/en/craft(/)?",
+            "destination": "/craft",
+            "permanent": true
+        },
+        {
+            "source": "/de/craft(/)?",
+            "destination": "/craft",
+            "permanent": false
+        },
+        {
+            "source": "/en/feats(/)?",
+            "destination": "/feats",
+            "permanent": true
+        },
+        {
+            "source": "/de/feats(/)?",
+            "destination": "/feats",
+            "permanent": false
+        },
+        {
+            "source": "/en/journey(/)?",
+            "destination": "/journey",
+            "permanent": true
+        },
+        {
+            "source": "/de/journey(/)?",
+            "destination": "/journey",
+            "permanent": false
+        },
+        {
+            "source": "/en/contact(/)?",
+            "destination": "/contact",
+            "permanent": true
+        },
+        {
+            "source": "/de/contact(/)?",
+            "destination": "/contact",
+            "permanent": false
         }
     ]
 }

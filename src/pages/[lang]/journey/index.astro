@@ -4,7 +4,7 @@ import image from '../../../assets/images/cards/journey.png';
 import type { Translations } from '../../../utils/typings';
 import { IntroSection } from '../../../sections';
 import JourneySection from '../../../sections/JourneySection/JourneySection.astro';
-import { getStations } from './data';
+import { getStations } from '../../../utils/helper';
 
 interface Props {}
 export function getStaticPaths() {
@@ -49,7 +49,7 @@ const getPosition = (idx: number) => {
 </Layout>
 
 <script>
-  import { setupIntersectionObserver } from './script';
+  import { setupIntersectionObserver } from '../../../utils/setup-intersection-observer';
 
   document.addEventListener('DOMContentLoaded', () => setupIntersectionObserver());
   document.addEventListener('astro:page-load', () => setupIntersectionObserver());
