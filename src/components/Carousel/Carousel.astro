@@ -1,5 +1,7 @@
 ---
-import { H3, P } from '..';
+import H3 from '../Texts/H3.astro';
+import P from '../Texts/P.astro';
+
 interface Props {
     slides: Array<{ TITLE: string, DESCRIPTION: string, LINKEDIN_PROFILE?: string, ROLE?: string }>
 }
@@ -56,6 +58,8 @@ const getPosition = (idx: number) => {
 <script>
     import { setupCarouselListener } from './script';
 
-    document.addEventListener('DOMContentLoaded', () => setupCarouselListener());
-    document.addEventListener('astro:after-swap', () => setupCarouselListener());
+    let loaded = false;
+    document.addEventListener('DOMContentLoaded', () => { loaded = true; setupCarouselListener()});
+    document.addEventListener('astro:page-load', () =>{ if (!loaded) setupCarouselListener()});
+    document.addEventListener('astro:before-swap', () =>{ loaded = false;});
 </script>

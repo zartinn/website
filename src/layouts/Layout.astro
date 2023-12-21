@@ -1,22 +1,22 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import { Header, Footer } from '../components';
+import Header from '../components/Header/Header.astro';
+import Footer from '../components/Footer/Footer.astro';
 import type { Translations } from '../utils/typings';
 import '../styles/view-transitions.css';
 interface Props {
 	title: string;
-	description: string;
+	description?: string;
 	T: Translations;
+	is404?: boolean;
 }
 
-const { title, description, T } = Astro.props;
+const { title, description, T, is404 } = Astro.props;
 const url = Astro.url
 const removedLangPathName = url.pathname.replace('/de', '');
 const pathname = removedLangPathName === '' ? '/' : removedLangPathName;
 const isHome = pathname === '/';
 const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-m:text-html-m desktop-l:text-html-l desktop-xl:text-html-default text-html-default';
-
-const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 
 ---
 
@@ -45,21 +45,20 @@ const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 			}
 			setTheme(getTheme());
 
-			window.addEventListener('DOMContentLoaded', () => setTheme(getTheme()));
 			document.addEventListener('astro:after-swap', () => setTheme(getTheme()));
 		</script>
 		<meta charset="UTF-8" />
 		<title>{title}</title>
-		<meta name="description" content={description} />
+		{ description && <meta name="description" content={description} />}
 		<meta property="og:image" content="https://zartin.dev/zartin.jpg">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preload" href="/assets/fonts/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<meta name="generator" content={Astro.generator} />
-		{ !isFirefox && <ViewTransitions />}
+		<ViewTransitions fallback="swap"/>
 	</head>
 	<body class="bg-bg-primary overflow-x-hidden flex flex-col min-h-screen">
-		<Header isHome={isHome}/>
+		<Header showLogo={isHome || is404}/>
 		<slot />
 		<Footer T={T.FOOTER}/>
 	</body>
@@ -173,6 +172,9 @@ const isFirefox = !!Astro.request.headers.get('user-agent')?.includes('Firefox')
 		});
 	}
 
-	window.addEventListener("DOMContentLoaded", () => setCardListeners());
-	document.addEventListener("astro:after-swap", () => setCardListeners());
+	let loaded = false;
+	document.addEventListener("DOMContentLoaded", () => { loaded = true; setCardListeners()});
+	document.addEventListener("astro:page-load", () => { if (!loaded) setCardListeners()});
+	document.addEventListener("astro:before-swap", () => { loaded = false });
+
 </script>

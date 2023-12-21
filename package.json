@@ -1,28 +1,23 @@
 {
   "name": "portfolio-astro",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host=192.168.178.20",
     "start": "astro dev",
     "build": "astro build",
-    "build-dev": "astro build --dev",
+    "build-dev": "astro build --dev --host=192.168.178.20",
     "preview": "astro preview",
-    "preview-dev": "astro preview --dev",
+    "preview-dev": "astro preview --dev --host=192.168.178.20",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^6.0.3",
-    "@astrojs/prefetch": "^0.4.0",
-    "@astrojs/react": "^3.0.2",
-    "@astrojs/tailwind": "^5.0.0",
-    "@astrojs/vercel": "^5.0.2",
-    "@vercel/edge": "^1.1.1",
-    "astro": "^3.3.1",
+    "@astrojs/node": "^7.0.1",
+    "@astrojs/tailwind": "^5.0.3",
+    "@astrojs/vercel": "^6.1.0",
+    "astro": "~4.0.6",
     "nodemailer": "6.9.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.7",

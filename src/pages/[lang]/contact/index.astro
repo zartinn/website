@@ -1,14 +1,57 @@
 ---
-import { Contact } from '../../../page-content';
-import T from '../../../assets/i18n/de.json';
+import ContentContainer from '../../../components/ContentContainer/ContentContainer.astro';
+import Form from '../../../components/Form/Form.astro';
+import H2 from '../../../components/Texts/H2.astro';
+import P from '../../../components/Texts/P.astro';
+import LoadingSpinner from '../../../components/LoadingSpinner/LoadingSpinner.astro';
+import Section from '../../../components/Section/Section.astro';
+import Layout from '../../../layouts/Layout.astro';
+import image from '../../../assets/images/cards/contact.png';
+import type { Translations } from '../../../utils/typings';
+import { IntroSection } from '../../../sections'
 
+interface Props {}
 export function getStaticPaths() {
   return [
     {params: {lang: 'de'}},
     {params: {lang: 'en'}}
   ];
 }
+const lang = Astro.params.lang || 'en';
+const T: Translations = await import(`../../../assets/i18n/${lang}.json`);
+
+const CONTACT_T = T['CONTACT']
 
 ---
 
-<Contact T={T}/>
+<Layout title={T.HOME.SEO_TITLE} description={T.HOME.SEO_DESCRIPTION} T={T}>
+  <main transition:name="contact" class="flex-grow mt-header">
+    <IntroSection
+      id="contact",
+      image={image}
+      title={CONTACT_T.TITLE}
+      description={CONTACT_T.DESCRIPTION_LONG}
+    />
+
+    <!-- Contact Form -->
+    <Section>
+      <ContentContainer singleContainer>
+        <div id="contact-form">
+          <H2 type="xl">{CONTACT_T.WELCOME}</H2>
+          <Form T={CONTACT_T.FORM}/>
+        </div>
+        <div id="contact-success" class="hidden">
+          <H2 type="xl" className="mb-12">{CONTACT_T.THANKS}</H2>
+          <P type="xl" className="text-center">{CONTACT_T.THANKS2}</P>
+        </div>
+        <div id="contact-error" class="hidden">
+          <H2 type="xl" className="mb-12">{CONTACT_T.ERROR}</H2>
+          <P type="xl" className="text-center">{CONTACT_T.ERROR2}</P>
+        </div>
+        <div id="contact-loading" class="hidden justify-center items-center">
+          <LoadingSpinner/>
+        </div>
+      </ContentContainer>
+    </Section>
+  </main>
+</Layout>

@@ -9,11 +9,9 @@ import Sun from './Sun.astro';
 </div>
 
 <script>
-    const toggleEvent = () => {
-        const toggleIcon = document.getElementById("toggle-icon");
-        const downloadCVLink = document.getElementById('download-cv');
-        toggleIcon?.addEventListener('click', () => {
-            const currentTheme = localStorage.getItem('theme') || 'light';
+    let downloadCVLink: HTMLElement | null = null;
+    const handleClick = () => {
+        const currentTheme = localStorage.getItem('theme') || 'light';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             const root = document.documentElement;
             root.setAttribute('theme', newTheme);
@@ -21,8 +19,14 @@ import Sun from './Sun.astro';
 
             const cvFileName = newTheme === 'dark' ? 'Zachoszcz-CV-dark.pdf' : 'Zachoszcz-CV.pdf'
             downloadCVLink?.setAttribute('href', `/assets/${cvFileName}`);
-        });
     }
 
-    window.addEventListener("DOMContentLoaded", () => toggleEvent());
+    const toggleEvent = () => {
+        const toggleIcon = document.getElementById("toggle-icon");
+        downloadCVLink = document.getElementById('download-cv');
+        toggleIcon?.addEventListener('click', handleClick);
+    }
+
+    document.addEventListener('DOMContentLoaded', toggleEvent);
+    document.addEventListener('astro:page-load', toggleEvent);
 </script>

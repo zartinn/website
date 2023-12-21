@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import prefetch from "@astrojs/prefetch";
 import vercel from "@astrojs/vercel/serverless";
 import node from "@astrojs/node";
 
@@ -8,18 +7,13 @@ const isDev = process.argv.includes('--dev');
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  integrations: [tailwind(), prefetch()],
-  redirects: {
-    '/de': '/',
-    '/de/[...page]': '/[...page]'
+  prefetch: {
+    defaultStrategy: 'viewport'
   },
+  output: 'server',
+  integrations: [tailwind()],
   build: {
     inlineStylesheets: 'never'
   },
-  adapter: isDev ?
-    node({
-      mode: 'standalone',
-    }) :
-    vercel()
+  adapter: isDev ? node({mode: 'standalone'}) : vercel()
 });

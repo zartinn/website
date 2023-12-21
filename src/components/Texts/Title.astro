@@ -28,7 +28,7 @@ const { T } = Astro.props;
         });
     }
 
-    window.addEventListener("DOMContentLoaded", () => animateSpans());
+    document.addEventListener("DOMContentLoaded", () => animateSpans());
     document.addEventListener("astro:after-swap", () => animateSpans());
 </script>
 

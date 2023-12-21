@@ -1,14 +1,3 @@
-# This is to allow all robots to index the entire site
 User-agent: *
-Disallow:
-
-# Example to block a specific robot from a specific path
-# User-agent: Googlebot
-# Disallow: /no-google/
-
-# Example to block all robots from a specific path
-# User-agent: *
-# Disallow: /private/
-
-# Sitemap can be added to guide search engines
-# Sitemap: http://www.yoursite.com/sitemap.xml
+Allow: /
+Sitemap: https://consultwhite.com/sitemap.xml

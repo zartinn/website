@@ -2,13 +2,14 @@
 import Logo from '../Icons/Logo.astro';
 import DownloadCV from '../DownloadCV/DownloadCV.astro';
 import ThemeToggle from '../Icons/ThemeToggle.astro';
-import { BackIcon } from '..';
+import LangLink from '../LangLink/LangLink.astro';
+import BackIcon from '../Icons/Back.astro';
 
 interface Props {
-    isHome?: boolean;
+    showLogo?: boolean;
 }
 
-const { isHome } = Astro.props;
+const { showLogo } = Astro.props;
 
 const headerClasses = `fixed top-0 w-screen flex gap-4 justify-center bg-dark-bg-p px-12 py-8 z-50 bg-bg-primary-70 shadow-header backdrop-blur-lg shadow-fg-primary h-header`;
 
@@ -36,11 +37,14 @@ const myHeaderTransition = {
     transition:animate={myHeaderTransition}
 >
     <div class="flex gap-4 items-center justify-between w-200">
-        { isHome ? 
+        { showLogo ? 
+          <LangLink href="/">
             <Logo/>
-             :
-            <BackIcon/>
+          </LangLink>
+          :
+          <BackIcon/>
         }
+
         <div class="flex gap-12 items-center">
             <ThemeToggle/>
             <DownloadCV/>
