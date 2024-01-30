@@ -43,8 +43,8 @@ const rootFontSizeClasses = 'desktop:text-html-xs desktop-s:text-html-s desktop-
 				const cvFileName = theme === 'dark' ? 'Zachoszcz-CV-dark.pdf' : 'Zachoszcz-CV.pdf'
 				downloadCVLink?.setAttribute('href', `/assets/${cvFileName}`);
 			}
-			setTheme(getTheme());
 
+			document.addEventListener('DOMContentLoaded', () => setTheme(getTheme()));
 			document.addEventListener('astro:after-swap', () => setTheme(getTheme()));
 		</script>
 		<meta charset="UTF-8" />
